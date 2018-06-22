@@ -5,7 +5,9 @@ Uses new Core2
 
 This Software is provided as is with all faults, defects 
 and errors, and without warranty of any kind.
-Free from the CloudCoin Consortium.
+Free from the CloudCoin Consortium. You can see a working sample here:
+
+https://bank.cloudcoin.global/
                                                  
 CloudBank offers many services:
 
