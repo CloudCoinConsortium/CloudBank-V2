@@ -56,12 +56,13 @@ There are also standards for how the transactions will go:
 Note that these are still under development
 
 ------------------------------------------------------------------
-Config file:
-The following will be needed in app configurations:
+General Rules:
 
-bank_server =  https://CloudCoin.co/ (Use the name of the local host)
+The name of the servers is the URL:
 
-timezone = UTC-7 (use the customer's  timezone)
+bank_server =  https://bank.CloudCoin.com/ (Use the name of the local host)
+
+The time will always be in ISO 8601 zulu time. 
 
 For security, the system admin must setup SSL and limit the servers that can connect to this web server. 
 ----------------------------------------------------------------
@@ -92,14 +93,13 @@ https://bank.cloudcoin.global/service/print_welcome
 
 ```
 Response if success:
-```
+```javascript
 {
-	"bank_server": "https://bank.cloudcoin.global",
-	"status": "welcome",
-	"message": "CloudCoin Bank. Used to Authenticate, Store and Payout CloudCoins. 
-	This Software is provided as is with all faults, defects and errors, and without warranty of any kind.  
-	Free from the CloudCoin Consortium.",
-	"time": "2016-40-21 10:40:PM"
+"bank_server":"Bank.CloudCoin.Global",
+"status":"welcome",
+"version":"2.0",
+"message":"CloudCoin Bank. Used to Authenticate, Store and Payout CloudCoins.This Software is provided as is with all faults, defects and errors, and without warranty of any kind.Free from the CloudCoin Consortium.",
+"time":"2018-06-22T21:14:32.1768440-07:00"
 }
 ```
 
