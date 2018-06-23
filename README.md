@@ -73,7 +73,7 @@ The CloudBank requires a key and will be in the following format
 {
     "url":"bank.CloudCoin.Global",
     "privatekey":"6e2b96d6204a4212ae57ab84260e747f",
-    "accountID":"CloudCoin@Protonmail.com"
+    "account":"CloudCoin@Protonmail.com"
 }
 ```
 
