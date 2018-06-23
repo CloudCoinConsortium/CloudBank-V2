@@ -107,7 +107,7 @@ Response if success:
 
 Sample GET Request:
 ```
-https://bank.cloudcoin.global/service/echo?id=CloudCoin@Protonmail.com&pk=640322f6d30c45328914b441ac0f4e5b
+https://bank.cloudcoin.global/service/echo?account=CloudCoin@Protonmail.com&pk=640322f6d30c45328914b441ac0f4e5b
 ```
 
 Echo Response for good
