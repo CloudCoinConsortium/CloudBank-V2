@@ -99,7 +99,7 @@ Response if success:
 "status":"welcome",
 "version":"2.0",
 "message":"CloudCoin Bank. Used to Authenticate, Store and Payout CloudCoins.This Software is provided as is with all faults, defects and errors, and without warranty of any kind.Free from the CloudCoin Consortium.",
-"time":"2018-06-22T21:14:32.1768440-07:00"
+"time":"2018-06-23T05:18:34.3025868Z"
 }
 ```
 
@@ -113,20 +113,26 @@ https://bank.cloudcoin.global/service/echo?account=CloudCoin@Protonmail.com&pk=6
 Echo Response for good
 ```
 {
-    "bank_server":"bank.CloudCoin.global",
-    "status":"ready",
-    "message":"The RAIDA is ready for counterfeit detection.",
-    "time":"2016-49-21 7:49:PM"
+"bank_server":"Bank.CloudCoin.Global",
+"status":"ready",
+"version":"2.0",
+"message":"The RAIDA is ready for counterfeit detection.",
+"time":"2018-06-23T05:18:34.3025868Z",
+"readyCount":25,
+"notReadyCount":0
 }
 ```
 
 Echo Response for bad
 ```
 {
-    "bank_server":"bank.CloudCoin.global",
-    "status":"fail",
-    "message":"Not enough RAIDA servers can be contacted to import new coins.",
-    "time":"2016-49-21 7:49:PM"
+"bank_server":"Bank.CloudCoin.Global",
+"status":"fail",
+"version":"2.0",
+"message":"Not enough RAIDA servers can be contacted to import new coins.",
+"time":"2018-06-23T05:18:34.3025868Z",
+"readyCount":3,
+"notReadyCount":22
 }
 ```
 
