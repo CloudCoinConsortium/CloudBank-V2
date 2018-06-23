@@ -324,25 +324,24 @@ If powning process is complete:
 
 Gets the totals of CloudCoins in the bank.
 
-Sample POST Request:
+Sample GET Request:
 
 ```
-https://bank.cloudcoin.global/service/show_coins
-pk=baa7578e207b7cfaa0b8336d7ed4a4f8
-account=CloudCoin@Protonmail.com
+https://bank.cloudcoin.global/service/show_coins?pk=baa7578e207b7cfaa0b8336d7ed4a4f8&account=CloudCoin@Protonmail.com
 ```
 Sample Response if good:
 ```
 {
- "bank_server":"bank.cloudcoin.global",
-  "account":"CloudCoin@Protonmail.com",
- "status":"coins_shown",
- "ones":205,
- "fives":10,
- "twentyfives":105,
- "hundreds":1050,
- "twohundredfifties":98,
- "time":"2016-49-21 7:49:PM"
+"bank_server":"Bank.CloudCoin.Global",
+"status":"coins_shown",
+"message":"Coin totals returned.",
+"ones":3,
+"fives":0,
+"twentyfives":0,
+"hundreds":0,
+"twohundredfifties":1,
+"time":"2018-06-23T05:53:39.4155794Z",
+"version":"2.0"
 }
 ```
 
@@ -353,7 +352,13 @@ Sample Response if fail:
  "account":"CloudCoin@Protonmail.com",
  "status":"fail",
  "message":"Private key incorrect"
- "time":"2016-49-21 7:49:PM"
+ "ones":0,
+ "fives":0,
+ "twentyfives":0,
+ "hundreds":0,
+ "twohundredfifties":0,
+ "time":"2018-06-23T05:53:39.4155794Z",
+ "version":"2.0"
 }
 ```
 
