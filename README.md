@@ -88,7 +88,7 @@ Get's the bank's welcome information. Note that the web server must be configure
 
 Sample request
 ```
-https://bank.cloudcoin.global/service/print_welcome?id=CloudCoin@Protonmail.com&pk=6e2b96d6204a4212ae57ab84260e747f
+https://bank.cloudcoin.global/service/print_welcome
 
 ```
 Response if success:
@@ -96,7 +96,6 @@ Response if success:
 {
 	"bank_server": "https://bank.cloudcoin.global",
 	"status": "welcome",
-	"version":"4.07.17",
 	"message": "CloudCoin Bank. Used to Authenticate, Store and Payout CloudCoins. 
 	This Software is provided as is with all faults, defects and errors, and without warranty of any kind.  
 	Free from the CloudCoin Consortium.",
