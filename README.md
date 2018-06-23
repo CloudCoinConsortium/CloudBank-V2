@@ -333,6 +333,7 @@ Sample Response if good:
 ```
 {
 "bank_server":"Bank.CloudCoin.Global",
+"account":"CloudCoin@Protonmail.com",
 "status":"coins_shown",
 "message":"Coin totals returned.",
 "ones":3,
