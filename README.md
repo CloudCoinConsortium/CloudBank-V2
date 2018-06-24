@@ -369,7 +369,7 @@ Sample Response if fail:
 Sample GET Request:
 
 ```
-https://bank.CloudCoin.global/service/withdraw_account?amount=254&pk=ef50088c8218afe53ce2ecd655c2c786&account=CloudCoin@Protonmail.com
+https://bank.CloudCoin.global/service/withdraw_one_stack?amount=254&pk=ef50088c8218afe53ce2ecd655c2c786&account=CloudCoin@Protonmail.com
 
 ```
 sample response if good
