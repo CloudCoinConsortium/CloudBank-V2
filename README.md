@@ -366,33 +366,11 @@ Sample Response if fail:
 
 ## WITHDRAW ONE STACK SERVICE
 
-Sample POST Request:
+Sample GET Request:
 
 ```
-https://jerry.CloudCoin.co/bank/withdraw_account
-tag=PaymentForSample
-amount=254
-sendby=json
-pk=ef50088c8218afe53ce2ecd655c2c786
-account=CloudCoin@Protonmail.com
+https://bank.CloudCoin.global/service/withdraw_account?amount=254&pk=ef50088c8218afe53ce2ecd655c2c786&account=CloudCoin@Protonmail.com
 
-phase 2 add email option: 
-
-https://CloudCoin.co/bank/withdraw_account.aspx
-tag=PaymentForSample
-amount=254
-sendby=email
-pk=ef50088c8218afe53ce2ecd655c2c786
-account=CloudCoin@Protonmail.com
-
-phase 2 add url option: 
-
-https://CloudCoin.co/bank/withdraw_account.aspx
-tag=PaymentForSample
-amount=254
-sendby=url
-pk=ef50088c8218afe53ce2ecd655c2c786
-account=CloudCoin@Protonmail.com
 ```
 sample response if good
 
