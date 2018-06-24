@@ -219,12 +219,16 @@ Sample Response if receipt number already in use :
 
 The get receipt service returns a receipt based on the receipt id. 
 
+### Sample Request
 ```
-https://bitshares.CloudCoin.global/bank/get_receipt.aspx?recipt=ef50088c8218afe53ce2ecd655c2c786
+https://bitshares.CloudCoin.global/bank/get_receipt.aspx?rn=ef50088c8218afe53ce2ecd655c2c786&account=CloudCoin@Protonmail.com
 
 ```
+rn= Receipt Number.
 
-### Sample Reciepts
+Account is the account ID within the bank
+
+### Sample Response
 If powning process has not been started
 ```
 {
