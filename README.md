@@ -75,7 +75,7 @@ For security, the system admin must setup SSL and limit the servers that can con
 
 ## Key file format
 The CloudBank requires a key and will be in the following format
-```javascript
+```http
 {
     "url":"bank.CloudCoin.Global",
     "privatekey":"6e2b96d6204a4212ae57ab84260e747f",
@@ -98,7 +98,7 @@ https://bank.cloudcoin.global/service/print_welcome
 
 ```
 Response if success:
-```javascript
+```http
 {
 "bank_server":"Bank.CloudCoin.Global",
 "status":"welcome",
@@ -129,7 +129,7 @@ Echo Response for good
 ```
 
 Echo Response for bad
-```
+```http
 {
 "bank_server":"Bank.CloudCoin.Global",
 "status":"fail",
@@ -149,7 +149,7 @@ The program must put a stack file in a folder that is accessible via the web to 
 
 
 Sample POST Request:
-```
+```http
 https://bank.cloudcoin.global/service/deposit_one_stack
 account=CloudCoin@Protonmail.com
 stack=
@@ -174,7 +174,7 @@ stack=
 
 
 Sample Response if good:
-```
+```http
 {
  "bank_server":"bank.cloudcoin.global",
  "account":"CloudCoin@Protonmail.com",
@@ -186,7 +186,7 @@ Sample Response if good:
 ```
 
 Sample Response if bad file bad:
-```
+```http
 {
  "bank_server":"bank.cloudcoin.global",
   "account":"CloudCoin@Protonmail.com",
@@ -197,7 +197,7 @@ Sample Response if bad file bad:
 }
 ```
 Sample Response if nothing attached :
-```
+```http
 {
  "bank_server":"bank.cloudcoin.global",
   "account":"CloudCoin@Protonmail.com",
@@ -209,7 +209,7 @@ Sample Response if nothing attached :
 ```
 
 Sample Response if receipt number already in use :
-```
+```http
 {
  "bank_server":"bank.cloudcoin.global",
   "account":"CloudCoin@Protonmail.com",
@@ -225,7 +225,7 @@ Sample Response if receipt number already in use :
 The get receipt service returns a receipt based on the receipt id. 
 
 ### Sample Request
-```
+```http
 https://bitshares.CloudCoin.global/bank/get_receipt.aspx?rn=ef50088c8218afe53ce2ecd655c2c786&account=CloudCoin@Protonmail.com
 
 ```
@@ -235,7 +235,7 @@ Account is the account ID within the bank
 
 ### Sample Response
 If powning process has not been started
-```
+```http
 {
 	"receipt_id": "e054a34f2790fd3353ea26e5d92d9d2f",
 	"time": "2016-49-21 7:49:PM",
@@ -282,7 +282,7 @@ If powning process has not been started
 ```
 
 If powning process is complete:
-```
+```http
 {
         "receipt_id":"e054a34f2790fd3353ea26e5d92d9d2f",
 	"time": "2016-49-21 7:49:PM",
@@ -333,11 +333,11 @@ Gets the totals of CloudCoins in the bank.
 
 Sample GET Request:
 
-```
+```http
 https://bank.cloudcoin.global/service/show_coins?pk=baa7578e207b7cfaa0b8336d7ed4a4f8&account=CloudCoin@Protonmail.com
 ```
 Sample Response if good:
-```
+```http
 {
 "bank_server":"Bank.CloudCoin.Global",
 "account":"CloudCoin@Protonmail.com",
@@ -354,7 +354,7 @@ Sample Response if good:
 ```
 
 Sample Response if fail:
-```
+```http
 {
  "bank_server":"bank.cloudcoin.global",
  "account":"CloudCoin@Protonmail.com",
@@ -375,13 +375,13 @@ Sample Response if fail:
 
 Sample GET Request:
 
-```
+```http
 https://bank.CloudCoin.global/service/withdraw_one_stack?amount=254&pk=ef50088c8218afe53ce2ecd655c2c786&account=CloudCoin@Protonmail.com
 
 ```
 sample response if good
 
-```
+```http
 {
 	"cloudcoin": [
 		{ 
@@ -402,7 +402,7 @@ sample response if good
 ```
 
 Sample Response if fail:
-```
+```http
 {
  "bank_server":"bank.cloudcoin.global",
  "account":"CloudCoin@Protonmail.com",
@@ -434,13 +434,13 @@ Gets the totals of CloudCoins in the bank.The price in different currencies, the
 
 Sample GET Request:
 
-```
+```http
 https://bank.cloudcoin.global/service/show_coins_forsale?account=CloudCoin@Protonmail.com
 
 ```
 
 Sample Response if good:
-```
+```http
 {
  "exchange_server":"bank.cloudcoin.global",
  "account":"CloudCoin@Protonmail.com",
@@ -459,7 +459,7 @@ Sample Response if good:
 ```
 
 Sample Response if fail:
-```
+```http
 {
  "exchange_server":"bank.cloudcoin.global",
  "account":"CloudCoin@Protonmail.com",
@@ -479,13 +479,13 @@ This allows the account owner to mark some of their coins for sale so that other
 
 Sample GET Request:
 
-```
+```http
 https://bank.cloudcoin.global/service/mark_coins_forsale?account=CloudCoin@Protonmail.com&pk=c92d1656ded0a4f68e5171c8331e0aea&ones=3&fives=23&twentyfives=2&hundreds=20&twohundredfifties=0
 
 ```
 
 Sample Response if good:
-```
+```http
 {
  "exchange_server":"bank.cloudcoin.global",
  "account":"CloudCoin@Protonmail.com",
@@ -497,7 +497,7 @@ Sample Response if good:
 ```
 
 Sample Response if fail:
-```
+```http
 {
  "exchange_server":"bank.cloudcoin.global",
  "account":"CloudCoin@Protonmail.com",
@@ -515,7 +515,7 @@ This allows an order to be placed using the Green.money ACH payment system. Note
 
 Sample POST Request:
 
-```
+```http
 https://bank.cloudcoin.global/service/place_order_with_green_money?
 account=CloudCoin@Protonmail.com
 GreenButton_id=11087
@@ -527,7 +527,7 @@ Affiliate=Bill Jenkins
 ```
 
 Sample Response if good:
-```
+```http
 {
  "exchange_server":"bank.cloudcoin.global",
  "account":"CloudCoin@Protonmail.com",
@@ -540,7 +540,7 @@ Sample Response if good:
 
 Sample Response if fail:
 NOTE: The programmer should add the error that caused the fail instead of the "Error detail here" text. 
-```
+```http
 {
  "exchange_server":"bank.cloudcoin.global",
  "account":"CloudCoin@Protonmail.com",
@@ -556,7 +556,7 @@ Allows the user to get a check from the CloudBank if the Green Pay status is pai
 
 Sample POST Request:
 
-```
+```http
 https://bank.cloudcoin.global/service/green_pay_status?id=2018.3.28.23.20.b0b7dc
 
 ```
@@ -564,7 +564,7 @@ https://bank.cloudcoin.global/service/green_pay_status?id=2018.3.28.23.20.b0b7dc
 Sample Response if good: 
 NOTE: This is the same response as the Write Check service.
 
-```
+```http
 {
  "bank_server":"bank.cloudcoin.global",
  "account":"CloudCoin@Protonmail.com",
@@ -577,7 +577,7 @@ NOTE: This is the same response as the Write Check service.
 
 Sample Response if fail:
 NOTE: The programmer should add the exact reason the customer was not able to recieve a check
-```
+```http
 {
  "exchange_server":"bank.cloudcoin.global",
  "account":"CloudCoin@Protonmail.com",
@@ -711,7 +711,7 @@ by (Who signed the check)
 
 memo (some account info or memo)
 
-```
+```http
 https://ccc.CloudCoin.Global/write_check
 pk=a4b5e66f4b51418e81e8dc93e9db6503
 action=email
@@ -725,7 +725,7 @@ Memo=For Yard Work
 
 ```
 Sample Request for URL
-```
+```http
 https://ccc.CloudCoin.Global/write_check
 pk=a4b5e66f4b51418e81e8dc93e9db6503
 action=url
@@ -740,7 +740,7 @@ Memo=For Yard Work
 ```
 
 Sample Response if Success for email action:
-```
+```http
 {
  "bank_server":"bank.cloudcoin.global",
  "status":"emailed",
@@ -750,7 +750,7 @@ Sample Response if Success for email action:
 ```
 
 Sample Response if Success for url action:
-```
+```http
 {
  "bank_server":"bank.cloudcoin.global",
  "status":"url",
@@ -761,7 +761,7 @@ Sample Response if Success for url action:
 
 
 Sample Response if Fail:
-```
+```http
 {
  "bank_server":"bank.cloudcoin.global",
  "status":"error",
@@ -822,26 +822,26 @@ receive=json
 
 
 Sample GET Request for a raw json stack file that can be imported into a program:
-```
+```http
 https://ccc.CloudCoin.Global/checks?id=c3c3ab7b75ab4d089d2d4a287c1ef232&receive=json
 ```
 
 Sample GET Request for a email stack file that can be sent to a person:
-```
+```http
 https://ccc.CloudCoin.Global/checks?id=c3c3ab7b75ab4d089d2d4a287c1ef232&receive=email&contact=Billy@gmail.com
 ```
 
 Sample GET Request for a json response to be sent to an SMS address:
-```
+```http
 https://ccc.CloudCoin.Global/checks?id=c3c3ab7b75ab4d089d2d4a287c1ef232&receive=sms&contact=5305942578
 ```
 Sample GET Request that downloads a file to a harddrive:
-```
+```http
 https://ccc.CloudCoin.Global/checks?id=c3c3ab7b75ab4d089d2d4a287c1ef232&receive=download
 ```
 
 Sample Response if Success:
-```
+```http
 IF download is used, the browser Will download a stack file. Make sure your web server's mime type for .stack is set to download. 
 
 otherwise: 
@@ -855,7 +855,7 @@ otherwise:
 ```
 
 Sample Response if on Hold:
-```
+```http
 {
  "bank_server":"ccc.CloudCoin.global",
  "status":"hold",
@@ -865,7 +865,7 @@ Sample Response if on Hold:
 ```
 
 Sample Response if it does not exist in the Pending folder:
-```
+```http
 NOTE: This standard is not finished. We may want to tell them it has already been cashed, if it was canceled and relavant info about the date it was canceled or cashed. 
 {
  "bank_server":"ccc.CloudCoin.global",
@@ -886,7 +886,7 @@ NOTE: This standard is bad and not finished. We must create a way for them to up
  
 *CHANGE_MAKER REQUEST STRING*
 
-```javascript
+```http
 https://bank.cloudcoin.global/service/make_change?
 method=100D
 stack=
@@ -912,7 +912,7 @@ stack=
 if good:
 
 *CHANGE_MAKER RESPONSE STRING*
-```javascript
+```http
 {
 	"cloudcoin": 
 	[
@@ -984,7 +984,7 @@ if good:
 }
 ```
 if bad:
-```javascript
+```http
 {
 	"server": "www.myBank.com",
 	"status": "fail",
@@ -1056,7 +1056,7 @@ lang
 Used only for strings. Can be any language using a two character code using the HTML ISO Country codes. First two are language and second two are country seperated by a hyphen. 
 
 Sample Response if successful:
-```javascript
+```http
 {
 "secret":"ball",
 "iso8601":"2018-06-09T14:45:15Z"
@@ -1117,7 +1117,7 @@ The transfer can operate under four modes:
 
 The sender and receiver will need a  
 
-```javascript
+```http
 {
 	"type":"authenticate_and_forward"
 	"shared_secret":"magic",
@@ -1162,7 +1162,7 @@ Message sent from Trusted Transfer Service to Receiver over websockets
 
 If Authentication is good. Note that the only difference is an added "status"
 
-```javascript
+```http
 {
 	"shared_secret":"magic",
 	"status":"good",
@@ -1205,7 +1205,7 @@ If Authentication is good. Note that the only difference is an added "status"
 ```
 if counterfeit coins were sent or some other problem:
 
-```javascript
+```http
 {
 	"shared_secret":"magic",
 	"status":"fail",
@@ -1223,7 +1223,7 @@ if counterfeit coins were sent or some other problem:
 
 Message sent sender if the payment was sent successfully. Note that an array of CloudCoins may be attached assuming there is change due to the sender.
 
-```javascript
+```http
 {
 	"receipt_id": "e054a34f2790fd3353ea26e5d92d9d2f",
 	"shared_secret":"magic",
@@ -1310,7 +1310,7 @@ If the payment failed because of:
 3. Receiver did not connect or lost contact. 
 Note that there still may be some change or CloudCoins that were not sent to the receiver being returned. 
 
-```javascript
+```http
 {
 	"receipt_id": "e054a34f2790fd3353ea26e5d92d9d2f",
 	"shared_secret":"magic",
@@ -1487,6 +1487,7 @@ Account IDs cannot contain any of the following characters:
 Your CloudBank may treat your Account identifiers as either case sensitive or case insensitive. This depends on if your CloudBank is hosted on a Linux (PHP) or Windows (C#) System. 
 
 POST:
+```http
 https://cloudcoin.global/bank/account.php?
 
 uid=e24b3a755916472f8768e4e9992827a0 (recover uid if left off)
@@ -1498,11 +1499,11 @@ newpw=fbd9bf492bf149aeac3dc2a5bdcc38b2 (option. Change password if include.)
 email=Billy@Hotsplt.com (recover email if left off)
 
 newmail=Billy@Protonmail.com (optional. Change email if included)
-
+```
 
 Note: If the account has already been created the API just says success. 
 Response if success:
-```
+```http
 {
 	"server": "www.myBank.com",
 	"status": "added",
@@ -1512,7 +1513,7 @@ Response if success:
 ```
 
 Response if fail:
-```
+```http
 {
 	"server": "www.myBank.com",
 	"status": "notadded",
@@ -1564,7 +1565,7 @@ https://cloudcoin.global/bank/change_owner.php?nn=1&sn=15489521&newid=273C9DFA80
 *CHANGE RESPONSE STRING*
 
 if success
-```javascript
+```http
 {
     "server": "www.myBank.com",
 	"status": "change",
@@ -1573,7 +1574,7 @@ if success
 }
 ```
 if fail
-```javascript
+```http
 {
     "server": "www.myBank.com",
 	"status": "fail",
@@ -1603,7 +1604,7 @@ he size of the file small.
 
 Example of a CloudCoin check embedded in a file name:
 
-```
+```http
 250.CloudCoin.1.16777216.cb5e46ce270545b39b5efa9d9e199d93.www.myBank.com.2017.05.17.13.45.Any user memo here less 
 than 155 characters.check
 ```
@@ -1629,7 +1630,7 @@ Inside you can place a memo too.
 https://cloudcoin.global/bank/issue_reference.php?nn=1&sn=88772322&method=1
 
 *ISSUE_REFERENCE RESPONSE STRING*
-```javascript
+```http
 {
 	"server": "www.myBank.com",
 	"status": "success",
@@ -1639,7 +1640,7 @@ https://cloudcoin.global/bank/issue_reference.php?nn=1&sn=88772322&method=1
 }
 ```
 if bad:
-```javascript
+```http
 {
 	"server": "www.myBank.com",
 	"status": "fail",
@@ -1658,7 +1659,7 @@ if bad:
 https://cloudcoin.global/bank/deposit_reference.php?an=cb5e46ce270545b39b5efa9d9e199d93
 
 *DEPOSIT_REFERENCE RESPONSE STRING*
-```javascript
+```http
 {
 	"server": "www.myBank.com",
 	"status": "success",
@@ -1668,7 +1669,7 @@ https://cloudcoin.global/bank/deposit_reference.php?an=cb5e46ce270545b39b5efa9d9
 }
 ```
 if bad:
-```javascript
+```http
 {
 	"server": "www.myBank.com",
 	"status": "fail",
@@ -1685,7 +1686,7 @@ if bad:
 https://RAIDA20.cloudcoin.global/bank/detect_reference?nn=1&sn=16777216&an=1836843d928347fb22c2142b49d772b5&pan=1836843d928347fb22c2142b49d772b5
 
 *Detection Response Example If Passed:*
-```javascript
+```http
 {
   "server":"www.myBank.com",
   "status":"pass",
@@ -1698,7 +1699,7 @@ https://RAIDA20.cloudcoin.global/bank/detect_reference?nn=1&sn=16777216&an=18368
 Note that the 1 after the word Authentic: is the serial number of the unit that was tested.
  
 *Detection Response Example If failed to authenticate:*
-```javascript
+```http
 {
   "server":"www.myBank.com",
   "status":"fail",
