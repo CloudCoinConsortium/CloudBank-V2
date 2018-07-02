@@ -71,7 +71,7 @@
             Response.End();
         }else if(!File.Exists(FileLocation))
         {
-            serviceResponse.message = "Error: File not Found " + AppDomain.CurrentDomain.BaseDirectory + @"\" + path+@"\Receipts\"+ id + ".json";
+            serviceResponse.message = "Error: File not Found ";
             json = new JavaScriptSerializer().Serialize(serviceResponse);
             Response.Write(json);
             Response.End();
