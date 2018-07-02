@@ -49,6 +49,11 @@ Many services are available:
 8. Write and Send Check
 9. Cash Check
 
+Exchange Services Available
+1. Show Coins for Sale
+2. Mark Coins for Sale
+
+
 There are also standards for how the transactions will go:
 1. Merchant / Buyer Collaboration
 2. Buyer Initiated
@@ -70,7 +75,7 @@ For security, the system admin must setup SSL and limit the servers that can con
 
 ## Key file format
 The CloudBank requires a key and will be in the following format
-```
+```javascript
 {
     "url":"bank.CloudCoin.Global",
     "privatekey":"6e2b96d6204a4212ae57ab84260e747f",
@@ -88,7 +93,7 @@ The CloudBank requires a key and will be in the following format
 Get's the bank's welcome information. Note that the web server must be configured to use extentionless urls.
 
 Sample request
-```
+```http
 https://bank.cloudcoin.global/service/print_welcome
 
 ```
@@ -106,12 +111,12 @@ Response if success:
 ## ECHO RAIDA SERVICE
 
 Sample GET Request:
-```
+```http
 https://bank.cloudcoin.global/service/echo?account=CloudCoin@Protonmail.com&pk=640322f6d30c45328914b441ac0f4e5b
 ```
 
 Echo Response for good
-```
+```http
 {
 "bank_server":"Bank.CloudCoin.Global",
 "status":"ready",
