@@ -448,6 +448,45 @@ Sample Response if good:
  "twentyfives":105,
  "hundreds":1050,
  "twohundredfifties":98,
+ "time":"2018-06-23T05:53:39.4155794Z",
+ "version":"2.0"
+}
+```
+
+Sample Response if fail:
+```
+{
+ "exchange_server":"bank.cloudcoin.global",
+ "account":"CloudCoin@Protonmail.com",
+ "status":"fail",
+ "message":"Some error happened"
+ "time":"2018-06-23T05:53:39.4155794Z",
+ "version":"2.0"
+}
+```
+
+
+
+
+
+## Mark Coins For Sale
+This allows the account owner to mark some of their coins for sale so that others will be able to buy them. 
+
+Sample GET Request:
+
+```
+https://bank.cloudcoin.global/service/mark_coins_forsale?account=CloudCoin@Protonmail.com&pk=c92d1656ded0a4f68e5171c8331e0aea&ones=3&fives=23&twentyfives=2&hundreds=20&twohundredfifties=0
+
+```
+
+Sample Response if good:
+```
+{
+ "exchange_server":"bank.cloudcoin.global",
+ "account":"CloudCoin@Protonmail.com",
+ "status":"success",
+ "message":"Coins marked for sale",
+ "currencies":["dollars","bitcoin"],
  "time":"2016-49-21 7:49:PM"
 }
 ```
@@ -459,9 +498,11 @@ Sample Response if fail:
  "account":"CloudCoin@Protonmail.com",
  "status":"fail",
  "message":"Some error happened"
- "time":"2016-49-21 7:49:PM"
+ "time":"2018-06-23T05:53:39.4155794Z",
+ "version":"2.0"
 }
 ```
+
 
 ## Place Order With Green.money ACH
 
