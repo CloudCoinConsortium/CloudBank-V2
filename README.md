@@ -430,7 +430,7 @@ Gets the totals of CloudCoins in the bank.The price in different currencies, the
 Sample GET Request:
 
 ```
-https://bank.cloudcoin.global/service/show_coins_for_sale?account=CloudCoin@Protonmail.com
+https://bank.cloudcoin.global/service/show_coins_forsale?account=CloudCoin@Protonmail.com
 
 ```
 
