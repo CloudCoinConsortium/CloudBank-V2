@@ -1,0 +1,235 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Get Receipt</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Le styles -->
+    <link href="css/bootstrap2.css" rel="stylesheet">
+    <style type="text/css">
+      body {
+        padding-top: 20px;
+        padding-bottom: 40px;
+      }
+
+      /* Custom container */
+      .container-narrow {
+        margin: 0 auto;
+        max-width: 700px;
+      }
+      .container-narrow > hr {
+        margin: 30px 0;
+      }
+
+      /* Main marketing message and sign up button */
+      .jumbotron {
+        margin: 60px 0;
+        text-align: center;
+      }
+      .jumbotron h1 {
+        font-size: 72px;
+        line-height: 1;
+      }
+      .jumbotron .btn {
+        font-size: 21px;
+        padding: 14px 24px;
+      }
+
+      /* Supporting marketing content */
+      .marketing {
+        margin: 60px 0;
+      }
+      .marketing p + h4 {
+        margin-top: 28px;
+      }
+    </style>
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Fav and touch icons -->
+
+  </head>
+
+  <body>
+
+    <div class="container-narrow">
+
+      <div class="masthead">
+        <ul class="nav nav-pills pull-right">
+          <li class="active"><a href="index.html">Home</a></li>
+ 
+        </ul>
+		 <h1 class="muted">Receipt</h1>
+        <h3 class="muted">Get Receipt Test</h3>
+      </div>
+	https://<span id="url">bank.cloudcoin.global</span>/service/get_receipt?rn=ef50088c8218afe53ce2ecd655c2c786&account=CloudCoin@protonmai.com
+      <hr>
+
+      <div>
+	<form name="input" action="/service/get_receipt" method="GET">
+	<br>
+	Receipt Number:
+	<br>
+	<input type="Text" id="rn" size="50" name="rn" value="">
+	<br>
+	Account ID:
+	<br>
+	<input type="Text" id="account" size="50" name="account" value="">
+	<br>
+	<br>
+	<input type="submit" class="btn btn-large btn-success" value="Get Receipt">
+      </div>
+
+
+<!--
+      <div class="jumbotron">
+      <p>Press the button below to execute the following GET request</p>
+        <p id="p1">https://ccc.cloudcoin.global/teller/get_receipt.aspx?rn=efa730de249dbb026325816d2326adb7</p>
+		Receipt Number: <input type="text" id="button1" value="efa730de249dbb026325816d2326adb7" size="36"><br>
+		<button onclick="setA()">Set new Receipt Number</button>
+        <a class="btn btn-large btn-success" id="a1"
+		href="https://ccc.cloudcoin.global/teller/get_receipt.aspx?rn=efa730de249dbb026325816d2326adb7">Test Get Receipt</a>
+      </div>
+<script>
+function setA(){
+ a1.href="https://ccc.cloudcoin.global/teller/get_receipt.aspx?rn=" + button1.value;
+ p1.innerHTML = "https://ccc.cloudcoin.global/teller/get_receipt.aspx?rn=" + button1.value;
+}//end set anchore
+</script>
+-->
+      <hr>
+ 
+<div style="background-color:LightGoldenRodYellow; padding:30px; margin:20px;">
+          <h4>public get_receipt</h4>
+           <p>Asks the CloudBank to send it a receipt to see what coins where authenticated.</p>
+		  
+		  <b>Sample GET Request:</b>
+		  <pre>
+		  
+	https://<span id="url2">bank.cloudcoin.global</span>/service/get_receipt?rn=ef50088c8218afe53ce2ecd655c2c786&account=CloudCoin@protonmai.com
+
+		  </pre>
+		  <b>Sample response if good</b> If powning process has not been started
+		  <pre>
+{
+	"receipt_id": "e054a34f2790fd3353ea26e5d92d9d2f",
+	"time": "2016-49-21 7:49:PM",
+	"timezone": "UTC-7",
+	"bank_server": "ccc.cloudcoin.global",
+	"total_authentic": 5,
+	"total_fracked": 7,
+	"total_counterfeit": 1,
+	"total_lost": 0,
+	"receipt_detail": [{
+			"nn.sn": "1.16777216",
+			"status": "suspect",
+			"pown": "uuuuuuuuuuuuuuuuuuuuuuuuu",
+			"note": "Waiting"
+		},
+		{
+			"nn.sn": "1:1425632",
+			"status": "suspect",
+			"pown": "uuuuuuuuuuuuuuuuuuuuuuuuu",
+			"note": "Waiting"
+		},
+		{
+			"nn.sn": "1.956258",
+			"status": "suspect",
+			"pown": "uuuuuuuuuuuuuuuuuuuuuuuuu",
+			"note": "Waiting"
+		},
+		{
+			"nn.sn": "1.15666214",
+			"status": "suspect",
+			"pown": "uuuuuuuuuuuuuuuuuuuuuuuuu",
+			"note": "Waiting"
+		},
+		{
+			"nn.sn": "1.15265894",
+			"status": "suspect",
+			"pown": "uuuuuuuuuuuuuuuuuuuuuuuuu",
+			"note": "Waiting"
+		}
+
+	]
+
+}
+				
+		  </pre>
+		   <b>Sample response if good</b> If powning process is complete:
+		  <pre>
+		  
+{
+        "receipt_id":"e054a34f2790fd3353ea26e5d92d9d2f",
+	"time": "2016-49-21 7:49:PM",
+	"timezone": "UTC-7",
+	"bank_server": "ccc.cloudcoin.global",
+	"total_authentic": 5,
+	"total_fracked": 7,
+	"total_counterfeit": 1,
+	"total_lost": 0,
+	"receipt_detail": [{
+			"nn.sn": "1.16777216",
+			"status": "authentic",
+			"pown": "ppppppppepppppppppppeppp",
+			"note": "Moved to Bank"
+		},
+		{
+			"nn.sn": "1:1425632",
+			"status": "counterfeit",
+			"pown": "fffffffffpfffffffffffffff",
+			"note": "Sent to trash"
+		},
+		{
+			"nn.sn": "1.956258",
+			"status": "authentic",
+			"pown": "ppppppppppppppppppppppppf",
+			"note": "Moved to Fracked"
+		},
+		{
+			"nn.sn": "1.15666214",
+			"status": "lost",
+			"pown": "pfpfpfpfpfpfpfpfpfpfpfpfp",
+			"note": "Moved to Lost"
+		},
+		{
+			"nn.sn": "1.15265894",
+			"status": "lost",
+			"pown": "ppppffpeepfpppfpfffpfffpf",
+			"note": "STRINGS ATTACHED!"
+		}
+
+	]
+
+}
+		  </pre>
+		
+ </div>
+   
+
+      <hr>
+
+     
+
+    </div> <!-- /container -->
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+   <script>
+	
+		var CurrentUrl=window.location.host ;
+		document.getElementById("url").innerHTML=CurrentUrl;
+		document.getElementById("url2").innerHTML="<BR>"+CurrentUrl;
+	</script>
+	
+
+  </body>
+</html>

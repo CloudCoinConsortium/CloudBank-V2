@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<discovery xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.xmlsoap.org/disco/">
+  <contractRef ref="https://www.greenbyphone.com/eCheck.asmx?wsdl" docRef="https://www.greenbyphone.com/eCheck.asmx" xmlns="http://schemas.xmlsoap.org/disco/scl/" />
+  <soap address="https://www.greenbyphone.com/eCheck.asmx" xmlns:q1="CheckProcessing" binding="q1:eCheckSoap" xmlns="http://schemas.xmlsoap.org/disco/soap/" />
+  <soap address="https://www.greenbyphone.com/eCheck.asmx" xmlns:q2="CheckProcessing" binding="q2:eCheckSoap12" xmlns="http://schemas.xmlsoap.org/disco/soap/" />
+</discovery>

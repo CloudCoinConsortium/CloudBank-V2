@@ -1,0 +1,234 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Template &middot; Bootstrap 2.2.2 Documentation - BootstrapDocs</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+<link href="../css/bootstrap2.css" rel="stylesheet">
+    <!-- Le styles -->
+  
+    <style type="text/css">
+      body {
+        padding-top: 20px;
+        padding-bottom: 40px;
+      }
+
+      /* Custom container */
+      .container-narrow {
+        margin: 0 auto;
+        max-width: 700px;
+      }
+      .container-narrow > hr {
+        margin: 30px 0;
+      }
+
+      /* Main marketing message and sign up button */
+      .jumbotron {
+        margin: 60px 0;
+        text-align: center;
+      }
+      .jumbotron h1 {
+        font-size: 72px;
+        line-height: 1;
+      }
+      .jumbotron .btn {
+        font-size: 21px;
+        padding: 14px 24px;
+      }
+
+      /* Supporting marketing content */
+      .marketing {
+        margin: 60px 0;
+      }
+      .marketing p + h4 {
+        margin-top: 28px;
+      }
+    </style>
+    
+
+    <!-- Fav and touch icons -->
+
+  </head>
+
+  <body>
+
+  
+  
+    <div class="container-narrow">
+
+      <div class="masthead">
+        <ul class="nav nav-pills pull-right">
+          <li class="active"><a href="index.html">Home</a></li>
+        </ul>
+		<h1 class="muted">Deposit One Stack Service</h1>
+        <h3 class="muted">Test Deposit One Stack Service</h3>
+      </div>
+
+      <hr>
+
+	  
+	  
+	  <div id="page-wrapper">
+
+		<h3>Deposit One Stack File</h3>
+		<p>Allows you to upload a stack of CloudCoins into your bank. You must know your account and PK.</p>
+		
+		<form method="POST" action="../service/deposit_one_stack.aspx" >
+				
+		<input type="hidden" id="stack" name="stack">
+		<!--<div>
+		Private Key:<br>
+		<input type="text" id="pk" size="50" name="pk" value="">
+		</div>-->
+		<div>
+		Account:<br>
+		<input type="text" id="account" size="50" name="account" >
+		</div>
+		<div>
+		<br>
+		</div>
+		<div>
+			<br>
+			Select a text file: 
+			<input type="file" id="fileInput"><br><br>
+		</div>
+		<button class="btn btn-large btn-success">POST Stack (after you choose File)</button>
+		</form>
+
+		
+		
+	<!--	<button onclick="alert(stack.value)"> Click to see value of stack file</button>-->
+		<pre id="fileDisplayArea"><pre>
+		
+		
+
+	</div>
+	  
+	  
+	  
+	  <script>
+	  
+	  
+	  window.onload = function() {
+		var fileInput = document.getElementById('fileInput');
+		var fileDisplayArea = document.getElementById('fileDisplayArea');
+
+		fileInput.addEventListener('change', function(e) {
+			var file = fileInput.files[0];
+			//var textType = ([a-zA-Z0-9\s_\\.\-:])+(.stack)$ );
+
+		//	if (file.type.match(textType)) {
+				var reader = new FileReader();
+
+				reader.onload = function(e) {
+					fileDisplayArea.innerText = reader.result;
+					var str = reader.result;
+					str.replace(/\s/g, '');
+					str = str.replace(/[^\x20-\x7E]/gmi, "");
+					stack.value = str;
+				}
+
+				reader.readAsText(file);	
+			//} else {
+			//	fileDisplayArea.innerText = "File not supported!"
+			//}
+		});
+}
+
+	  
+	  </script>
+	  
+	  
+	  
+	  <hr>
+	  
+	
+ 	 
+<div style="background-color:LightSkyBlue; padding:30px; margin:20px;">		  
+          <h4>public deposit_one_stack</h4>
+           <p>The program must put a stack file in a folder that is accessible via the web to cors on the CloudBank Server. </p>
+		  
+		  <b>Sample POST Request:</b>
+		  <pre>
+		<span id="url">  
+	https://bank.cloudcoin.global/service/deposit_one_stack.aspx?</span>
+stack=
+{
+	"cloudcoin": [
+	{ 
+	"nn":"1", 
+	"sn":"1112240", 
+	"an": ["f5a52ee881daaae548c24a8eaff7176c", "415c2375a6fa48c4661f5af8d7c95541", 
+		"73e067b7b47c1556deebdca33f9a09fb", "9b90d265d102a565a702813fa2211f54", 
+		"e3e191ca987c8010a3adc49c6fc18417", "baa7578e207b7cfaa0b8336d7ed4a4f8", 
+		"6d8a5c66a589532fe9e5dc3932650cfa", "1170b354e097f2d90132869631409bd3", 
+		"b7bc83e8ee7529ff9f874866b901cf15", "a37f6c4af8fbcfbc4d77880fc29ddfbc",
+		"277668208e9bafd9393aebd36945a2c3", "ef50088c8218afe53ce2ecd655c2c786", 
+		"b7bbb01fbe6c3a830a17bd9a842b46c0", "737360e18596d74d784f563ca729aaea", 
+		"e054a34f2790fd3353ea26e5d92d9d2f", "7051afef36dc388e65e982bc853be417", 
+		"ea22cbae0394f6c6918691f2e2f2e267", "95d1278f54b5daca5898c62f267b6364", 
+		"b98560e11b7142d1addf5b9cf32898da", "e325f615f93ed682c7aadf6b2d77c17a",
+		"3e8f9d74290fe31d416b90db3a0d2ab1", "c92d1656ded0a4f68e5171c8331e0aea", 
+		"7a9cee66544934965bca0c0cb582ba73", "7a55437fa98c1b10d7f47d84f9accdf0", 
+		"c3577cced2d428f205355522bc1119b6"],
+	"ed":"7-2019",
+	"pown":"ppppppppppppppppppppppppp",
+	"aoid": []
+	}
+
+	]
+}
+		  
+		  </pre>
+		  <b>Sample Response if good:</b>
+		  <pre >
+{
+ "bank_server":"bank.cloudcoin.global",
+ "status":"importing",
+ "message":"The stack file has been imported and detection will begin automatically so long as they are not already in bank. 
+  Please check your reciept.",
+ "reciept":"640322f6d30c45328914b441ac0f4e5b",
+ "time":"2016-49-21 7:49:PM"
+}
+				
+		  </pre>
+		  <b>Sample Response if bad file bad:</b>
+		  <pre>
+{
+ "bank_server":"bank.cloudcoin.global",
+ "status":"error",
+ "message":"JSON: Your stack file was corrupted. Please check JSON validation.",
+ "reciept":"640322f6d30c45328914b441ac0f4e5b",
+ "time":"2016-49-21 7:49:PM"
+}
+				
+		  </pre>
+		  		  <b>Sample Response if nothing attached:</b>
+		  <pre>
+{
+ "bank_server":"bank.cloudcoin.global",
+ "status":"error",
+ "message":"LoadFile: The stack file was empty.",
+ "reciept":"640322f6d30c45328914b441ac0f4e5b",
+ "time":"2016-49-21 7:49:PM"
+}
+				
+		  </pre>
+		
+        </div>
+ </div>
+
+    </div> <!-- /container -->
+	<script>
+		var CurrentUrl=window.location.host + "/service/deposit_one_stack" ;
+		document.getElementById("url").innerHTML=CurrentUrl;
+</script   
+   <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+
+  </body>
+</html>

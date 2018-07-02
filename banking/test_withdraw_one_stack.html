@@ -1,0 +1,184 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Withdraw One Stack</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Le styles -->
+    <link href="../css/bootstrap2.css" rel="stylesheet">
+    <style type="text/css">
+      body {
+        padding-top: 20px;
+        padding-bottom: 40px;
+      }
+
+      /* Custom container */
+      .container-narrow {
+        margin: 0 auto;
+        max-width: 700px;
+      }
+      .container-narrow > hr {
+        margin: 30px 0;
+      }
+
+      /* Main marketing message and sign up button */
+      .jumbotron {
+        margin: 60px 0;
+        text-align: center;
+      }
+      .jumbotron h1 {
+        font-size: 72px;
+        line-height: 1;
+      }
+      .jumbotron .btn {
+        font-size: 21px;
+        padding: 14px 24px;
+      }
+
+      /* Supporting marketing content */
+      .marketing {
+        margin: 60px 0;
+      }
+      .marketing p + h4 {
+        margin-top: 28px;
+      }
+    </style>
+    <link href="../css/bootstrap-responsive.css" rel="stylesheet">
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Fav and touch icons -->
+
+  </head>
+
+  <body>
+
+    <div class="container-narrow">
+
+      <div class="masthead">
+        <ul class="nav nav-pills pull-right">
+          <li class="active"><a href="index.html">Home</a></li>
+        </ul>
+		<h1 class="muted">Withdraw One Stack</h1>
+        <h3 class="muted">Test Withdraw One Stack Service</h3>
+      </div>
+
+      <hr>
+
+      <div>
+	  GET Stack from CloudBank using: 
+<pre >
+	https://<span id="url5"></span>/service/withdraw_one_stack?amount=254&pk=ef50088c8218afe53ce2ecd655c2c786&account=CloudCoin@Protonmail.com
+</pre>
+	<form name="input" action="../service/withdraw_one_stack.aspx" method="GET">
+	<br>
+	Amount:
+	<br>
+	<input type="Number" min="0" id="amount" name="amount" value="">
+	<br>
+	Account:
+	<br>
+	<input type="Text" size="50" id="account" name="account" value="">
+	<br>
+	Private Key:
+	<br>
+	<input type="Text" id="pk" size="50" name="pk" value="">
+	<br>
+	<br>
+	<input type="submit" class="btn btn-large btn-success" value="Get Stack">
+	</form>
+
+
+	   
+      </div>
+
+      <hr>
+     
+<div style="background-color:LightSalmon; padding:30px; margin:20px;">
+          <h4>private withdraw_account</h4>
+                <p>Asks the CloudBank to send it a stack file and remove those coins from the bank.</p>
+		  
+		  <b>Sample GET Request:</b>
+		  <pre>
+		  
+	https://<span id="url2">https://bank.cloudcoin.global</span>/service/withdraw_account?amount=254&pk=ef50088c8218afe53ce2ecd655c2c786&account=CloudCoin@Protonmail.com
+
+		  
+		  </pre>
+		  <b>Sample response if good</b>
+		  <pre>
+{
+	"cloudcoin": [
+		{ 
+		"nn":"1", 
+		"sn":"1112240", 
+		"an": [
+		"f5a52ee881daaae548c24a8eaff7176c", "415c2375a6fa48c4661f5af8d7c95541", 
+		"73e067b7b47c1556deebdca33f9a09fb", "9b90d265d102a565a702813fa2211f54", 
+		"e3e191ca987c8010a3adc49c6fc18417", "baa7578e207b7cfaa0b8336d7ed4a4f8", 
+		"6d8a5c66a589532fe9e5dc3932650cfa", "1170b354e097f2d90132869631409bd3", 
+		"b7bc83e8ee7529ff9f874866b901cf15", "a37f6c4af8fbcfbc4d77880fc29ddfbc",
+		"277668208e9bafd9393aebd36945a2c3", "ef50088c8218afe53ce2ecd655c2c786", 
+		"b7bbb01fbe6c3a830a17bd9a842b46c0", "737360e18596d74d784f563ca729aaea", 
+		"e054a34f2790fd3353ea26e5d92d9d2f",	"7051afef36dc388e65e982bc853be417", 
+		"ea22cbae0394f6c6918691f2e2f2e267", "95d1278f54b5daca5898c62f267b6364", 
+		"b98560e11b7142d1addf5b9cf32898da", "e325f615f93ed682c7aadf6b2d77c17a",
+		"3e8f9d74290fe31d416b90db3a0d2ab1", "c92d1656ded0a4f68e5171c8331e0aea", 
+		"7a9cee66544934965bca0c0cb582ba73", "7a55437fa98c1b10d7f47d84f9accdf0", 
+		"c3577cced2d428f205355522bc1119b6"],
+		"ed":"7-2019",
+		"pown":"ppppppppppppppppppppppppp",
+		"aoid": []
+		},
+		{ 
+		"nn":"1", 
+		"sn":"1112241", 
+		"an": [
+		"f5a52ee881daaae548c24a8eaff7176c", "415c2375a6fa48c4661f5af8d7c95541", 
+		"73e067b7b47c1556deebdca33f9a09fb", "9b90d265d102a565a702813fa2211f54", 
+		"e3e191ca987c8010a3adc49c6fc18417", "baa7578e207b7cfaa0b8336d7ed4a4f8", 
+		"6d8a5c66a589532fe9e5dc3932650cfa", "1170b354e097f2d90132869631409bd3", 
+		"b7bc83e8ee7529ff9f874866b901cf15", "a37f6c4af8fbcfbc4d77880fc29ddfbc",
+		"277668208e9bafd9393aebd36945a2c3", "ef50088c8218afe53ce2ecd655c2c786", 
+		"b7bbb01fbe6c3a830a17bd9a842b46c0", "737360e18596d74d784f563ca729aaea", 
+		"e054a34f2790fd3353ea26e5d92d9d2f",	"7051afef36dc388e65e982bc853be417", 
+		"ea22cbae0394f6c6918691f2e2f2e267", "95d1278f54b5daca5898c62f267b6364", 
+		"b98560e11b7142d1addf5b9cf32898da", "e325f615f93ed682c7aadf6b2d77c17a",
+		"3e8f9d74290fe31d416b90db3a0d2ab1", "c92d1656ded0a4f68e5171c8331e0aea", 
+		"7a9cee66544934965bca0c0cb582ba73", "7a55437fa98c1b10d7f47d84f9accdf0", 
+		"c3577cced2d428f205355522bc1119b6"],
+		"ed":"7-2019",
+		"pown":"ppppppppppppppppppppppppp",
+		"aoid": []
+		}
+	]
+}
+				
+		  </pre>
+		
+ </div>
+ 
+
+    </div> <!-- /container -->
+<script>
+	
+		var CurrentUrl=window.location.host ;
+		
+		document.getElementById("url2").innerHTML=CurrentUrl;
+		document.getElementById("url3").innerHTML=CurrentUrl;
+		document.getElementById("url4").innerHTML=CurrentUrl;
+		document.getElementById("url5").innerHTML=CurrentUrl;
+	</script>
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+
+  </body>
+</html>

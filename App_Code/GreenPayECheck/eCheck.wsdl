@@ -1,0 +1,2839 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="CheckProcessing" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:s1="CheckProcessing/AbstractTypes" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="CheckProcessing" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="CheckProcessing">
+      <s:element name="OneTimeDraftRTV">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Client_ID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ApiPassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="EmailAddress" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Phone" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PhoneExtension" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Address1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Address2" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="City" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="State" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Zip" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Country" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RoutingNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="AccountNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BankName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CheckMemo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CheckAmount" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CheckDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CheckNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="x_delim_data" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="x_delim_char" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="OneTimeDraftRTVResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="OneTimeDraftRTVResult" type="tns:DraftResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="DraftResult">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Result" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ResultDescription" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="VerifyResult" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="VerifyResultDescription" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CheckNumber" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Check_ID" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="OneTimeDraftBV">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Client_ID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ApiPassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="EmailAddress" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Phone" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PhoneExtension" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Address1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Address2" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="City" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="State" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Zip" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Country" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RoutingNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="AccountNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BankName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CheckMemo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CheckAmount" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CheckDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CheckNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="x_delim_data" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="x_delim_char" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="OneTimeDraftBVResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="OneTimeDraftBVResult" type="tns:DraftResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RecurringDraftRTV">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Client_ID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ApiPassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="EmailAddress" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Phone" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PhoneExtension" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Address1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Address2" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="City" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="State" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Zip" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Country" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RoutingNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="AccountNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BankName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CheckMemo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CheckAmount" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CheckDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CheckNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RecurringType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RecurringOffset" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RecurringPayments" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="x_delim_data" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="x_delim_char" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RecurringDraftRTVResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RecurringDraftRTVResult" type="tns:DraftResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RecurringDraftBV">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Client_ID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ApiPassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="EmailAddress" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Phone" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PhoneExtension" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Address1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Address2" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="City" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="State" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Zip" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Country" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RoutingNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="AccountNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BankName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CheckMemo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CheckAmount" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CheckDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CheckNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RecurringType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RecurringOffset" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RecurringPayments" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="x_delim_data" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="x_delim_char" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RecurringDraftBVResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RecurringDraftBVResult" type="tns:DraftResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="VerificationResult">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Client_ID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ApiPassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Check_ID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="x_delim_data" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="x_delim_char" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="VerificationResultResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="VerificationResultResult" type="tns:DraftResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="VerificationOverride">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Client_ID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ApiPassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Check_ID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="x_delim_data" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="x_delim_char" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="VerificationOverrideResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="VerificationOverrideResult" type="tns:DraftResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CombinationInvoice">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Client_ID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ApiPassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PayorName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="EmailAddress" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ItemName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ItemDescription" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="InitialAmount" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="InitialPaymentDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RecurringAmount" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RecurringPaymentDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RecurringType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RecurringOffset" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RecurringPayments" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="x_delim_data" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="x_delim_char" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CombinationInvoiceResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CombinationInvoiceResult" type="tns:InvoiceResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="InvoiceResult">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Result" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ResultDescription" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PaymentResult" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PaymentResultDescription" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Invoice_ID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Check_ID" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="RecurringInvoice">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Client_ID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ApiPassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PayorName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="EmailAddress" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ItemName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ItemDescription" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Amount" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PaymentDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RecurringType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RecurringOffset" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RecurringPayments" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="x_delim_data" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="x_delim_char" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RecurringInvoiceResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RecurringInvoiceResult" type="tns:InvoiceResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="OneTimeInvoice">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Client_ID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ApiPassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PayorName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="EmailAddress" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ItemName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ItemDescription" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Amount" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PaymentDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="x_delim_data" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="x_delim_char" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="OneTimeInvoiceResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="OneTimeInvoiceResult" type="tns:InvoiceResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InvoiceStatus">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Client_ID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ApiPassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Invoice_ID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="x_delim_data" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="x_delim_char" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InvoiceStatusResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="InvoiceStatusResult" type="tns:InvoiceResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BillPayCheck">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Client_ID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ApiPassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Address1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Address2" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="City" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="State" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Zip" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Country" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RoutingNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="AccountNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BankName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CheckMemo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CheckAmount" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CheckDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CheckNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="x_delim_data" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="x_delim_char" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BillPayCheckResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="BillPayCheckResult" type="tns:BillPayCheckResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="BillPayCheckResult">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Result" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ResultDescription" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CheckNumber" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Check_ID" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="RecurringBillPayCheck">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Client_ID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ApiPassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Address1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Address2" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="City" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="State" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Zip" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Country" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RoutingNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="AccountNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BankName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CheckMemo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CheckAmount" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CheckDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CheckNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RecurringType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RecurringOffset" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RecurringPayments" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="x_delim_data" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="x_delim_char" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RecurringBillPayCheckResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RecurringBillPayCheckResult" type="tns:BillPayCheckResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BillPayCheckNoBankInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Client_ID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ApiPassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Address1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Address2" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="City" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="State" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Zip" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Country" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CheckMemo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CheckAmount" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CheckDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CheckNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="x_delim_data" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="x_delim_char" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BillPayCheckNoBankInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="BillPayCheckNoBankInfoResult" type="tns:BillPayCheckResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RecurringBillPayCheckNoBankInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Client_ID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ApiPassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Address1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Address2" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="City" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="State" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Zip" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Country" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CheckMemo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CheckAmount" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CheckDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CheckNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RecurringType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RecurringOffset" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RecurringPayments" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="x_delim_data" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="x_delim_char" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RecurringBillPayCheckNoBankInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RecurringBillPayCheckNoBankInfoResult" type="tns:BillPayCheckResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UploadSignatureImage">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Client_ID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ApiPassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Check_ID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ImageData" type="s:base64Binary" />
+            <s:element minOccurs="0" maxOccurs="1" name="x_delim_data" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="x_delim_char" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UploadSignatureImageResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UploadSignatureImageResult" type="tns:SignatureImageResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="SignatureImageResult">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Result" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ResultDescription" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="OneTimeDraftWithSignatureImage">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Client_ID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ApiPassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="EmailAddress" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Phone" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PhoneExtension" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Address1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Address2" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="City" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="State" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Zip" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Country" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RoutingNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="AccountNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BankName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CheckMemo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CheckAmount" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CheckDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CheckNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ImageData" type="s:base64Binary" />
+            <s:element minOccurs="0" maxOccurs="1" name="x_delim_data" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="x_delim_char" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="OneTimeDraftWithSignatureImageResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="OneTimeDraftWithSignatureImageResult" type="tns:DraftResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RecurringDraftWithSignatureImage">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Client_ID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ApiPassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="EmailAddress" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Phone" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PhoneExtension" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Address1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Address2" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="City" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="State" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Zip" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Country" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RoutingNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="AccountNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BankName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CheckMemo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CheckAmount" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CheckDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CheckNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ImageData" type="s:base64Binary" />
+            <s:element minOccurs="0" maxOccurs="1" name="RecurringType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RecurringOffset" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RecurringPayments" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="x_delim_data" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="x_delim_char" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RecurringDraftWithSignatureImageResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RecurringDraftWithSignatureImageResult" type="tns:DraftResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CancelCheck">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Client_ID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ApiPassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Check_ID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="x_delim_data" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="x_delim_char" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CancelCheckResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CancelCheckResult" type="tns:CancelCheckResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="CancelCheckResult">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Result" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ResultDescription" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="RefundCheck">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Client_ID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ApiPassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Check_ID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RefundMemo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RefundAmount" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="x_delim_data" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="x_delim_char" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RefundCheckResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RefundCheckResult" type="tns:RefundCheckResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="RefundCheckResult">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Result" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ResultDescription" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="RefundCheckNumber" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="RefundCheck_ID" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="CheckNote">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Client_ID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ApiPassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Check_ID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Note" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="x_delim_data" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="x_delim_char" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckNoteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CheckNoteResult" type="tns:CheckNoteResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="CheckNoteResult">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Result" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ResultDescription" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="CheckNoPhoneVerification">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Client_ID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ApiPassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Check_ID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="x_delim_data" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="x_delim_char" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckNoPhoneVerificationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CheckNoPhoneVerificationResult" type="tns:CheckNoPhoneVerificationResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="CheckNoPhoneVerificationResult">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Result" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ResultDescription" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ProcessInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Client_ID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ApiPassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Process_ID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="x_delim_data" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="x_delim_char" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ProcessInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ProcessInfoResult" type="tns:ProcessInfoResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ProcessInfoResult">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Result" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ResultDescription" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ProcessType" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Process_ID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="NameFirst" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="NameLast" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CompanyName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="EmailAddress" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Phone" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PhoneExtension" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Address1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Address2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="City" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="State" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Zip" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Country" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CheckMemo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CheckAmount" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CheckDate" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CheckNumber" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="RecurringType" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="RecurringOffset" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="RecurringPayments" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="CheckStatus">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Client_ID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ApiPassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Check_ID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="x_delim_data" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="x_delim_char" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckStatusResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CheckStatusResult" type="tns:CheckStatusResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="CheckStatusResult">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Result" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ResultDescription" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="VerifyResult" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="VerifyResultDescription" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="VerifyOverriden" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Deleted" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DeletedDate" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Processed" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ProcessedDate" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Rejected" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="RejectedDate" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CheckNumber" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Check_ID" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="DraftResult" nillable="true" type="tns:DraftResult" />
+      <s:element name="InvoiceResult" nillable="true" type="tns:InvoiceResult" />
+      <s:element name="BillPayCheckResult" nillable="true" type="tns:BillPayCheckResult" />
+      <s:element name="SignatureImageResult" nillable="true" type="tns:SignatureImageResult" />
+      <s:element name="CancelCheckResult" nillable="true" type="tns:CancelCheckResult" />
+      <s:element name="RefundCheckResult" nillable="true" type="tns:RefundCheckResult" />
+      <s:element name="CheckNoteResult" nillable="true" type="tns:CheckNoteResult" />
+      <s:element name="CheckNoPhoneVerificationResult" nillable="true" type="tns:CheckNoPhoneVerificationResult" />
+      <s:element name="ProcessInfoResult" nillable="true" type="tns:ProcessInfoResult" />
+      <s:element name="CheckStatusResult" nillable="true" type="tns:CheckStatusResult" />
+    </s:schema>
+    <s:schema targetNamespace="CheckProcessing/AbstractTypes">
+      <s:import namespace="http://schemas.xmlsoap.org/soap/encoding/" />
+      <s:complexType name="StringArray">
+        <s:complexContent mixed="false">
+          <s:restriction base="soapenc:Array">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="unbounded" name="String" type="s:string" />
+            </s:sequence>
+          </s:restriction>
+        </s:complexContent>
+      </s:complexType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="OneTimeDraftRTVSoapIn">
+    <wsdl:part name="parameters" element="tns:OneTimeDraftRTV" />
+  </wsdl:message>
+  <wsdl:message name="OneTimeDraftRTVSoapOut">
+    <wsdl:part name="parameters" element="tns:OneTimeDraftRTVResponse" />
+  </wsdl:message>
+  <wsdl:message name="OneTimeDraftBVSoapIn">
+    <wsdl:part name="parameters" element="tns:OneTimeDraftBV" />
+  </wsdl:message>
+  <wsdl:message name="OneTimeDraftBVSoapOut">
+    <wsdl:part name="parameters" element="tns:OneTimeDraftBVResponse" />
+  </wsdl:message>
+  <wsdl:message name="RecurringDraftRTVSoapIn">
+    <wsdl:part name="parameters" element="tns:RecurringDraftRTV" />
+  </wsdl:message>
+  <wsdl:message name="RecurringDraftRTVSoapOut">
+    <wsdl:part name="parameters" element="tns:RecurringDraftRTVResponse" />
+  </wsdl:message>
+  <wsdl:message name="RecurringDraftBVSoapIn">
+    <wsdl:part name="parameters" element="tns:RecurringDraftBV" />
+  </wsdl:message>
+  <wsdl:message name="RecurringDraftBVSoapOut">
+    <wsdl:part name="parameters" element="tns:RecurringDraftBVResponse" />
+  </wsdl:message>
+  <wsdl:message name="VerificationResultSoapIn">
+    <wsdl:part name="parameters" element="tns:VerificationResult" />
+  </wsdl:message>
+  <wsdl:message name="VerificationResultSoapOut">
+    <wsdl:part name="parameters" element="tns:VerificationResultResponse" />
+  </wsdl:message>
+  <wsdl:message name="VerificationOverrideSoapIn">
+    <wsdl:part name="parameters" element="tns:VerificationOverride" />
+  </wsdl:message>
+  <wsdl:message name="VerificationOverrideSoapOut">
+    <wsdl:part name="parameters" element="tns:VerificationOverrideResponse" />
+  </wsdl:message>
+  <wsdl:message name="CombinationInvoiceSoapIn">
+    <wsdl:part name="parameters" element="tns:CombinationInvoice" />
+  </wsdl:message>
+  <wsdl:message name="CombinationInvoiceSoapOut">
+    <wsdl:part name="parameters" element="tns:CombinationInvoiceResponse" />
+  </wsdl:message>
+  <wsdl:message name="RecurringInvoiceSoapIn">
+    <wsdl:part name="parameters" element="tns:RecurringInvoice" />
+  </wsdl:message>
+  <wsdl:message name="RecurringInvoiceSoapOut">
+    <wsdl:part name="parameters" element="tns:RecurringInvoiceResponse" />
+  </wsdl:message>
+  <wsdl:message name="OneTimeInvoiceSoapIn">
+    <wsdl:part name="parameters" element="tns:OneTimeInvoice" />
+  </wsdl:message>
+  <wsdl:message name="OneTimeInvoiceSoapOut">
+    <wsdl:part name="parameters" element="tns:OneTimeInvoiceResponse" />
+  </wsdl:message>
+  <wsdl:message name="InvoiceStatusSoapIn">
+    <wsdl:part name="parameters" element="tns:InvoiceStatus" />
+  </wsdl:message>
+  <wsdl:message name="InvoiceStatusSoapOut">
+    <wsdl:part name="parameters" element="tns:InvoiceStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="BillPayCheckSoapIn">
+    <wsdl:part name="parameters" element="tns:BillPayCheck" />
+  </wsdl:message>
+  <wsdl:message name="BillPayCheckSoapOut">
+    <wsdl:part name="parameters" element="tns:BillPayCheckResponse" />
+  </wsdl:message>
+  <wsdl:message name="RecurringBillPayCheckSoapIn">
+    <wsdl:part name="parameters" element="tns:RecurringBillPayCheck" />
+  </wsdl:message>
+  <wsdl:message name="RecurringBillPayCheckSoapOut">
+    <wsdl:part name="parameters" element="tns:RecurringBillPayCheckResponse" />
+  </wsdl:message>
+  <wsdl:message name="BillPayCheckNoBankInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:BillPayCheckNoBankInfo" />
+  </wsdl:message>
+  <wsdl:message name="BillPayCheckNoBankInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:BillPayCheckNoBankInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="RecurringBillPayCheckNoBankInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:RecurringBillPayCheckNoBankInfo" />
+  </wsdl:message>
+  <wsdl:message name="RecurringBillPayCheckNoBankInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:RecurringBillPayCheckNoBankInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="UploadSignatureImageSoapIn">
+    <wsdl:part name="parameters" element="tns:UploadSignatureImage" />
+  </wsdl:message>
+  <wsdl:message name="UploadSignatureImageSoapOut">
+    <wsdl:part name="parameters" element="tns:UploadSignatureImageResponse" />
+  </wsdl:message>
+  <wsdl:message name="OneTimeDraftWithSignatureImageSoapIn">
+    <wsdl:part name="parameters" element="tns:OneTimeDraftWithSignatureImage" />
+  </wsdl:message>
+  <wsdl:message name="OneTimeDraftWithSignatureImageSoapOut">
+    <wsdl:part name="parameters" element="tns:OneTimeDraftWithSignatureImageResponse" />
+  </wsdl:message>
+  <wsdl:message name="RecurringDraftWithSignatureImageSoapIn">
+    <wsdl:part name="parameters" element="tns:RecurringDraftWithSignatureImage" />
+  </wsdl:message>
+  <wsdl:message name="RecurringDraftWithSignatureImageSoapOut">
+    <wsdl:part name="parameters" element="tns:RecurringDraftWithSignatureImageResponse" />
+  </wsdl:message>
+  <wsdl:message name="CancelCheckSoapIn">
+    <wsdl:part name="parameters" element="tns:CancelCheck" />
+  </wsdl:message>
+  <wsdl:message name="CancelCheckSoapOut">
+    <wsdl:part name="parameters" element="tns:CancelCheckResponse" />
+  </wsdl:message>
+  <wsdl:message name="RefundCheckSoapIn">
+    <wsdl:part name="parameters" element="tns:RefundCheck" />
+  </wsdl:message>
+  <wsdl:message name="RefundCheckSoapOut">
+    <wsdl:part name="parameters" element="tns:RefundCheckResponse" />
+  </wsdl:message>
+  <wsdl:message name="CheckNoteSoapIn">
+    <wsdl:part name="parameters" element="tns:CheckNote" />
+  </wsdl:message>
+  <wsdl:message name="CheckNoteSoapOut">
+    <wsdl:part name="parameters" element="tns:CheckNoteResponse" />
+  </wsdl:message>
+  <wsdl:message name="CheckNoPhoneVerificationSoapIn">
+    <wsdl:part name="parameters" element="tns:CheckNoPhoneVerification" />
+  </wsdl:message>
+  <wsdl:message name="CheckNoPhoneVerificationSoapOut">
+    <wsdl:part name="parameters" element="tns:CheckNoPhoneVerificationResponse" />
+  </wsdl:message>
+  <wsdl:message name="ProcessInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:ProcessInfo" />
+  </wsdl:message>
+  <wsdl:message name="ProcessInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:ProcessInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="CheckStatusSoapIn">
+    <wsdl:part name="parameters" element="tns:CheckStatus" />
+  </wsdl:message>
+  <wsdl:message name="CheckStatusSoapOut">
+    <wsdl:part name="parameters" element="tns:CheckStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="OneTimeDraftRTVHttpGetIn">
+    <wsdl:part name="Client_ID" type="s:string" />
+    <wsdl:part name="ApiPassword" type="s:string" />
+    <wsdl:part name="Name" type="s:string" />
+    <wsdl:part name="EmailAddress" type="s:string" />
+    <wsdl:part name="Phone" type="s:string" />
+    <wsdl:part name="PhoneExtension" type="s:string" />
+    <wsdl:part name="Address1" type="s:string" />
+    <wsdl:part name="Address2" type="s:string" />
+    <wsdl:part name="City" type="s:string" />
+    <wsdl:part name="State" type="s:string" />
+    <wsdl:part name="Zip" type="s:string" />
+    <wsdl:part name="Country" type="s:string" />
+    <wsdl:part name="RoutingNumber" type="s:string" />
+    <wsdl:part name="AccountNumber" type="s:string" />
+    <wsdl:part name="BankName" type="s:string" />
+    <wsdl:part name="CheckMemo" type="s:string" />
+    <wsdl:part name="CheckAmount" type="s:string" />
+    <wsdl:part name="CheckDate" type="s:string" />
+    <wsdl:part name="CheckNumber" type="s:string" />
+    <wsdl:part name="x_delim_data" type="s:string" />
+    <wsdl:part name="x_delim_char" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="OneTimeDraftRTVHttpGetOut">
+    <wsdl:part name="Body" element="tns:DraftResult" />
+  </wsdl:message>
+  <wsdl:message name="OneTimeDraftBVHttpGetIn">
+    <wsdl:part name="Client_ID" type="s:string" />
+    <wsdl:part name="ApiPassword" type="s:string" />
+    <wsdl:part name="Name" type="s:string" />
+    <wsdl:part name="EmailAddress" type="s:string" />
+    <wsdl:part name="Phone" type="s:string" />
+    <wsdl:part name="PhoneExtension" type="s:string" />
+    <wsdl:part name="Address1" type="s:string" />
+    <wsdl:part name="Address2" type="s:string" />
+    <wsdl:part name="City" type="s:string" />
+    <wsdl:part name="State" type="s:string" />
+    <wsdl:part name="Zip" type="s:string" />
+    <wsdl:part name="Country" type="s:string" />
+    <wsdl:part name="RoutingNumber" type="s:string" />
+    <wsdl:part name="AccountNumber" type="s:string" />
+    <wsdl:part name="BankName" type="s:string" />
+    <wsdl:part name="CheckMemo" type="s:string" />
+    <wsdl:part name="CheckAmount" type="s:string" />
+    <wsdl:part name="CheckDate" type="s:string" />
+    <wsdl:part name="CheckNumber" type="s:string" />
+    <wsdl:part name="x_delim_data" type="s:string" />
+    <wsdl:part name="x_delim_char" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="OneTimeDraftBVHttpGetOut">
+    <wsdl:part name="Body" element="tns:DraftResult" />
+  </wsdl:message>
+  <wsdl:message name="RecurringDraftRTVHttpGetIn">
+    <wsdl:part name="Client_ID" type="s:string" />
+    <wsdl:part name="ApiPassword" type="s:string" />
+    <wsdl:part name="Name" type="s:string" />
+    <wsdl:part name="EmailAddress" type="s:string" />
+    <wsdl:part name="Phone" type="s:string" />
+    <wsdl:part name="PhoneExtension" type="s:string" />
+    <wsdl:part name="Address1" type="s:string" />
+    <wsdl:part name="Address2" type="s:string" />
+    <wsdl:part name="City" type="s:string" />
+    <wsdl:part name="State" type="s:string" />
+    <wsdl:part name="Zip" type="s:string" />
+    <wsdl:part name="Country" type="s:string" />
+    <wsdl:part name="RoutingNumber" type="s:string" />
+    <wsdl:part name="AccountNumber" type="s:string" />
+    <wsdl:part name="BankName" type="s:string" />
+    <wsdl:part name="CheckMemo" type="s:string" />
+    <wsdl:part name="CheckAmount" type="s:string" />
+    <wsdl:part name="CheckDate" type="s:string" />
+    <wsdl:part name="CheckNumber" type="s:string" />
+    <wsdl:part name="RecurringType" type="s:string" />
+    <wsdl:part name="RecurringOffset" type="s:string" />
+    <wsdl:part name="RecurringPayments" type="s:string" />
+    <wsdl:part name="x_delim_data" type="s:string" />
+    <wsdl:part name="x_delim_char" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="RecurringDraftRTVHttpGetOut">
+    <wsdl:part name="Body" element="tns:DraftResult" />
+  </wsdl:message>
+  <wsdl:message name="RecurringDraftBVHttpGetIn">
+    <wsdl:part name="Client_ID" type="s:string" />
+    <wsdl:part name="ApiPassword" type="s:string" />
+    <wsdl:part name="Name" type="s:string" />
+    <wsdl:part name="EmailAddress" type="s:string" />
+    <wsdl:part name="Phone" type="s:string" />
+    <wsdl:part name="PhoneExtension" type="s:string" />
+    <wsdl:part name="Address1" type="s:string" />
+    <wsdl:part name="Address2" type="s:string" />
+    <wsdl:part name="City" type="s:string" />
+    <wsdl:part name="State" type="s:string" />
+    <wsdl:part name="Zip" type="s:string" />
+    <wsdl:part name="Country" type="s:string" />
+    <wsdl:part name="RoutingNumber" type="s:string" />
+    <wsdl:part name="AccountNumber" type="s:string" />
+    <wsdl:part name="BankName" type="s:string" />
+    <wsdl:part name="CheckMemo" type="s:string" />
+    <wsdl:part name="CheckAmount" type="s:string" />
+    <wsdl:part name="CheckDate" type="s:string" />
+    <wsdl:part name="CheckNumber" type="s:string" />
+    <wsdl:part name="RecurringType" type="s:string" />
+    <wsdl:part name="RecurringOffset" type="s:string" />
+    <wsdl:part name="RecurringPayments" type="s:string" />
+    <wsdl:part name="x_delim_data" type="s:string" />
+    <wsdl:part name="x_delim_char" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="RecurringDraftBVHttpGetOut">
+    <wsdl:part name="Body" element="tns:DraftResult" />
+  </wsdl:message>
+  <wsdl:message name="VerificationResultHttpGetIn">
+    <wsdl:part name="Client_ID" type="s:string" />
+    <wsdl:part name="ApiPassword" type="s:string" />
+    <wsdl:part name="Check_ID" type="s:string" />
+    <wsdl:part name="x_delim_data" type="s:string" />
+    <wsdl:part name="x_delim_char" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="VerificationResultHttpGetOut">
+    <wsdl:part name="Body" element="tns:DraftResult" />
+  </wsdl:message>
+  <wsdl:message name="VerificationOverrideHttpGetIn">
+    <wsdl:part name="Client_ID" type="s:string" />
+    <wsdl:part name="ApiPassword" type="s:string" />
+    <wsdl:part name="Check_ID" type="s:string" />
+    <wsdl:part name="x_delim_data" type="s:string" />
+    <wsdl:part name="x_delim_char" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="VerificationOverrideHttpGetOut">
+    <wsdl:part name="Body" element="tns:DraftResult" />
+  </wsdl:message>
+  <wsdl:message name="CombinationInvoiceHttpGetIn">
+    <wsdl:part name="Client_ID" type="s:string" />
+    <wsdl:part name="ApiPassword" type="s:string" />
+    <wsdl:part name="PayorName" type="s:string" />
+    <wsdl:part name="EmailAddress" type="s:string" />
+    <wsdl:part name="ItemName" type="s:string" />
+    <wsdl:part name="ItemDescription" type="s:string" />
+    <wsdl:part name="InitialAmount" type="s:string" />
+    <wsdl:part name="InitialPaymentDate" type="s:string" />
+    <wsdl:part name="RecurringAmount" type="s:string" />
+    <wsdl:part name="RecurringPaymentDate" type="s:string" />
+    <wsdl:part name="RecurringType" type="s:string" />
+    <wsdl:part name="RecurringOffset" type="s:string" />
+    <wsdl:part name="RecurringPayments" type="s:string" />
+    <wsdl:part name="x_delim_data" type="s:string" />
+    <wsdl:part name="x_delim_char" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="CombinationInvoiceHttpGetOut">
+    <wsdl:part name="Body" element="tns:InvoiceResult" />
+  </wsdl:message>
+  <wsdl:message name="RecurringInvoiceHttpGetIn">
+    <wsdl:part name="Client_ID" type="s:string" />
+    <wsdl:part name="ApiPassword" type="s:string" />
+    <wsdl:part name="PayorName" type="s:string" />
+    <wsdl:part name="EmailAddress" type="s:string" />
+    <wsdl:part name="ItemName" type="s:string" />
+    <wsdl:part name="ItemDescription" type="s:string" />
+    <wsdl:part name="Amount" type="s:string" />
+    <wsdl:part name="PaymentDate" type="s:string" />
+    <wsdl:part name="RecurringType" type="s:string" />
+    <wsdl:part name="RecurringOffset" type="s:string" />
+    <wsdl:part name="RecurringPayments" type="s:string" />
+    <wsdl:part name="x_delim_data" type="s:string" />
+    <wsdl:part name="x_delim_char" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="RecurringInvoiceHttpGetOut">
+    <wsdl:part name="Body" element="tns:InvoiceResult" />
+  </wsdl:message>
+  <wsdl:message name="OneTimeInvoiceHttpGetIn">
+    <wsdl:part name="Client_ID" type="s:string" />
+    <wsdl:part name="ApiPassword" type="s:string" />
+    <wsdl:part name="PayorName" type="s:string" />
+    <wsdl:part name="EmailAddress" type="s:string" />
+    <wsdl:part name="ItemName" type="s:string" />
+    <wsdl:part name="ItemDescription" type="s:string" />
+    <wsdl:part name="Amount" type="s:string" />
+    <wsdl:part name="PaymentDate" type="s:string" />
+    <wsdl:part name="x_delim_data" type="s:string" />
+    <wsdl:part name="x_delim_char" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="OneTimeInvoiceHttpGetOut">
+    <wsdl:part name="Body" element="tns:InvoiceResult" />
+  </wsdl:message>
+  <wsdl:message name="InvoiceStatusHttpGetIn">
+    <wsdl:part name="Client_ID" type="s:string" />
+    <wsdl:part name="ApiPassword" type="s:string" />
+    <wsdl:part name="Invoice_ID" type="s:string" />
+    <wsdl:part name="x_delim_data" type="s:string" />
+    <wsdl:part name="x_delim_char" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="InvoiceStatusHttpGetOut">
+    <wsdl:part name="Body" element="tns:InvoiceResult" />
+  </wsdl:message>
+  <wsdl:message name="BillPayCheckHttpGetIn">
+    <wsdl:part name="Client_ID" type="s:string" />
+    <wsdl:part name="ApiPassword" type="s:string" />
+    <wsdl:part name="Name" type="s:string" />
+    <wsdl:part name="Address1" type="s:string" />
+    <wsdl:part name="Address2" type="s:string" />
+    <wsdl:part name="City" type="s:string" />
+    <wsdl:part name="State" type="s:string" />
+    <wsdl:part name="Zip" type="s:string" />
+    <wsdl:part name="Country" type="s:string" />
+    <wsdl:part name="RoutingNumber" type="s:string" />
+    <wsdl:part name="AccountNumber" type="s:string" />
+    <wsdl:part name="BankName" type="s:string" />
+    <wsdl:part name="CheckMemo" type="s:string" />
+    <wsdl:part name="CheckAmount" type="s:string" />
+    <wsdl:part name="CheckDate" type="s:string" />
+    <wsdl:part name="CheckNumber" type="s:string" />
+    <wsdl:part name="x_delim_data" type="s:string" />
+    <wsdl:part name="x_delim_char" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="BillPayCheckHttpGetOut">
+    <wsdl:part name="Body" element="tns:BillPayCheckResult" />
+  </wsdl:message>
+  <wsdl:message name="RecurringBillPayCheckHttpGetIn">
+    <wsdl:part name="Client_ID" type="s:string" />
+    <wsdl:part name="ApiPassword" type="s:string" />
+    <wsdl:part name="Name" type="s:string" />
+    <wsdl:part name="Address1" type="s:string" />
+    <wsdl:part name="Address2" type="s:string" />
+    <wsdl:part name="City" type="s:string" />
+    <wsdl:part name="State" type="s:string" />
+    <wsdl:part name="Zip" type="s:string" />
+    <wsdl:part name="Country" type="s:string" />
+    <wsdl:part name="RoutingNumber" type="s:string" />
+    <wsdl:part name="AccountNumber" type="s:string" />
+    <wsdl:part name="BankName" type="s:string" />
+    <wsdl:part name="CheckMemo" type="s:string" />
+    <wsdl:part name="CheckAmount" type="s:string" />
+    <wsdl:part name="CheckDate" type="s:string" />
+    <wsdl:part name="CheckNumber" type="s:string" />
+    <wsdl:part name="RecurringType" type="s:string" />
+    <wsdl:part name="RecurringOffset" type="s:string" />
+    <wsdl:part name="RecurringPayments" type="s:string" />
+    <wsdl:part name="x_delim_data" type="s:string" />
+    <wsdl:part name="x_delim_char" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="RecurringBillPayCheckHttpGetOut">
+    <wsdl:part name="Body" element="tns:BillPayCheckResult" />
+  </wsdl:message>
+  <wsdl:message name="BillPayCheckNoBankInfoHttpGetIn">
+    <wsdl:part name="Client_ID" type="s:string" />
+    <wsdl:part name="ApiPassword" type="s:string" />
+    <wsdl:part name="Name" type="s:string" />
+    <wsdl:part name="Address1" type="s:string" />
+    <wsdl:part name="Address2" type="s:string" />
+    <wsdl:part name="City" type="s:string" />
+    <wsdl:part name="State" type="s:string" />
+    <wsdl:part name="Zip" type="s:string" />
+    <wsdl:part name="Country" type="s:string" />
+    <wsdl:part name="CheckMemo" type="s:string" />
+    <wsdl:part name="CheckAmount" type="s:string" />
+    <wsdl:part name="CheckDate" type="s:string" />
+    <wsdl:part name="CheckNumber" type="s:string" />
+    <wsdl:part name="x_delim_data" type="s:string" />
+    <wsdl:part name="x_delim_char" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="BillPayCheckNoBankInfoHttpGetOut">
+    <wsdl:part name="Body" element="tns:BillPayCheckResult" />
+  </wsdl:message>
+  <wsdl:message name="RecurringBillPayCheckNoBankInfoHttpGetIn">
+    <wsdl:part name="Client_ID" type="s:string" />
+    <wsdl:part name="ApiPassword" type="s:string" />
+    <wsdl:part name="Name" type="s:string" />
+    <wsdl:part name="Address1" type="s:string" />
+    <wsdl:part name="Address2" type="s:string" />
+    <wsdl:part name="City" type="s:string" />
+    <wsdl:part name="State" type="s:string" />
+    <wsdl:part name="Zip" type="s:string" />
+    <wsdl:part name="Country" type="s:string" />
+    <wsdl:part name="CheckMemo" type="s:string" />
+    <wsdl:part name="CheckAmount" type="s:string" />
+    <wsdl:part name="CheckDate" type="s:string" />
+    <wsdl:part name="CheckNumber" type="s:string" />
+    <wsdl:part name="RecurringType" type="s:string" />
+    <wsdl:part name="RecurringOffset" type="s:string" />
+    <wsdl:part name="RecurringPayments" type="s:string" />
+    <wsdl:part name="x_delim_data" type="s:string" />
+    <wsdl:part name="x_delim_char" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="RecurringBillPayCheckNoBankInfoHttpGetOut">
+    <wsdl:part name="Body" element="tns:BillPayCheckResult" />
+  </wsdl:message>
+  <wsdl:message name="UploadSignatureImageHttpGetIn">
+    <wsdl:part name="Client_ID" type="s:string" />
+    <wsdl:part name="ApiPassword" type="s:string" />
+    <wsdl:part name="Check_ID" type="s:string" />
+    <wsdl:part name="ImageData" type="s1:StringArray" />
+    <wsdl:part name="x_delim_data" type="s:string" />
+    <wsdl:part name="x_delim_char" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="UploadSignatureImageHttpGetOut">
+    <wsdl:part name="Body" element="tns:SignatureImageResult" />
+  </wsdl:message>
+  <wsdl:message name="OneTimeDraftWithSignatureImageHttpGetIn">
+    <wsdl:part name="Client_ID" type="s:string" />
+    <wsdl:part name="ApiPassword" type="s:string" />
+    <wsdl:part name="Name" type="s:string" />
+    <wsdl:part name="EmailAddress" type="s:string" />
+    <wsdl:part name="Phone" type="s:string" />
+    <wsdl:part name="PhoneExtension" type="s:string" />
+    <wsdl:part name="Address1" type="s:string" />
+    <wsdl:part name="Address2" type="s:string" />
+    <wsdl:part name="City" type="s:string" />
+    <wsdl:part name="State" type="s:string" />
+    <wsdl:part name="Zip" type="s:string" />
+    <wsdl:part name="Country" type="s:string" />
+    <wsdl:part name="RoutingNumber" type="s:string" />
+    <wsdl:part name="AccountNumber" type="s:string" />
+    <wsdl:part name="BankName" type="s:string" />
+    <wsdl:part name="CheckMemo" type="s:string" />
+    <wsdl:part name="CheckAmount" type="s:string" />
+    <wsdl:part name="CheckDate" type="s:string" />
+    <wsdl:part name="CheckNumber" type="s:string" />
+    <wsdl:part name="ImageData" type="s1:StringArray" />
+    <wsdl:part name="x_delim_data" type="s:string" />
+    <wsdl:part name="x_delim_char" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="OneTimeDraftWithSignatureImageHttpGetOut">
+    <wsdl:part name="Body" element="tns:DraftResult" />
+  </wsdl:message>
+  <wsdl:message name="RecurringDraftWithSignatureImageHttpGetIn">
+    <wsdl:part name="Client_ID" type="s:string" />
+    <wsdl:part name="ApiPassword" type="s:string" />
+    <wsdl:part name="Name" type="s:string" />
+    <wsdl:part name="EmailAddress" type="s:string" />
+    <wsdl:part name="Phone" type="s:string" />
+    <wsdl:part name="PhoneExtension" type="s:string" />
+    <wsdl:part name="Address1" type="s:string" />
+    <wsdl:part name="Address2" type="s:string" />
+    <wsdl:part name="City" type="s:string" />
+    <wsdl:part name="State" type="s:string" />
+    <wsdl:part name="Zip" type="s:string" />
+    <wsdl:part name="Country" type="s:string" />
+    <wsdl:part name="RoutingNumber" type="s:string" />
+    <wsdl:part name="AccountNumber" type="s:string" />
+    <wsdl:part name="BankName" type="s:string" />
+    <wsdl:part name="CheckMemo" type="s:string" />
+    <wsdl:part name="CheckAmount" type="s:string" />
+    <wsdl:part name="CheckDate" type="s:string" />
+    <wsdl:part name="CheckNumber" type="s:string" />
+    <wsdl:part name="ImageData" type="s1:StringArray" />
+    <wsdl:part name="RecurringType" type="s:string" />
+    <wsdl:part name="RecurringOffset" type="s:string" />
+    <wsdl:part name="RecurringPayments" type="s:string" />
+    <wsdl:part name="x_delim_data" type="s:string" />
+    <wsdl:part name="x_delim_char" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="RecurringDraftWithSignatureImageHttpGetOut">
+    <wsdl:part name="Body" element="tns:DraftResult" />
+  </wsdl:message>
+  <wsdl:message name="CancelCheckHttpGetIn">
+    <wsdl:part name="Client_ID" type="s:string" />
+    <wsdl:part name="ApiPassword" type="s:string" />
+    <wsdl:part name="Check_ID" type="s:string" />
+    <wsdl:part name="x_delim_data" type="s:string" />
+    <wsdl:part name="x_delim_char" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="CancelCheckHttpGetOut">
+    <wsdl:part name="Body" element="tns:CancelCheckResult" />
+  </wsdl:message>
+  <wsdl:message name="RefundCheckHttpGetIn">
+    <wsdl:part name="Client_ID" type="s:string" />
+    <wsdl:part name="ApiPassword" type="s:string" />
+    <wsdl:part name="Check_ID" type="s:string" />
+    <wsdl:part name="RefundMemo" type="s:string" />
+    <wsdl:part name="RefundAmount" type="s:string" />
+    <wsdl:part name="x_delim_data" type="s:string" />
+    <wsdl:part name="x_delim_char" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="RefundCheckHttpGetOut">
+    <wsdl:part name="Body" element="tns:RefundCheckResult" />
+  </wsdl:message>
+  <wsdl:message name="CheckNoteHttpGetIn">
+    <wsdl:part name="Client_ID" type="s:string" />
+    <wsdl:part name="ApiPassword" type="s:string" />
+    <wsdl:part name="Check_ID" type="s:string" />
+    <wsdl:part name="Note" type="s:string" />
+    <wsdl:part name="x_delim_data" type="s:string" />
+    <wsdl:part name="x_delim_char" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="CheckNoteHttpGetOut">
+    <wsdl:part name="Body" element="tns:CheckNoteResult" />
+  </wsdl:message>
+  <wsdl:message name="CheckNoPhoneVerificationHttpGetIn">
+    <wsdl:part name="Client_ID" type="s:string" />
+    <wsdl:part name="ApiPassword" type="s:string" />
+    <wsdl:part name="Check_ID" type="s:string" />
+    <wsdl:part name="x_delim_data" type="s:string" />
+    <wsdl:part name="x_delim_char" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="CheckNoPhoneVerificationHttpGetOut">
+    <wsdl:part name="Body" element="tns:CheckNoPhoneVerificationResult" />
+  </wsdl:message>
+  <wsdl:message name="ProcessInfoHttpGetIn">
+    <wsdl:part name="Client_ID" type="s:string" />
+    <wsdl:part name="ApiPassword" type="s:string" />
+    <wsdl:part name="Process_ID" type="s:string" />
+    <wsdl:part name="x_delim_data" type="s:string" />
+    <wsdl:part name="x_delim_char" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ProcessInfoHttpGetOut">
+    <wsdl:part name="Body" element="tns:ProcessInfoResult" />
+  </wsdl:message>
+  <wsdl:message name="CheckStatusHttpGetIn">
+    <wsdl:part name="Client_ID" type="s:string" />
+    <wsdl:part name="ApiPassword" type="s:string" />
+    <wsdl:part name="Check_ID" type="s:string" />
+    <wsdl:part name="x_delim_data" type="s:string" />
+    <wsdl:part name="x_delim_char" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="CheckStatusHttpGetOut">
+    <wsdl:part name="Body" element="tns:CheckStatusResult" />
+  </wsdl:message>
+  <wsdl:message name="OneTimeDraftRTVHttpPostIn">
+    <wsdl:part name="Client_ID" type="s:string" />
+    <wsdl:part name="ApiPassword" type="s:string" />
+    <wsdl:part name="Name" type="s:string" />
+    <wsdl:part name="EmailAddress" type="s:string" />
+    <wsdl:part name="Phone" type="s:string" />
+    <wsdl:part name="PhoneExtension" type="s:string" />
+    <wsdl:part name="Address1" type="s:string" />
+    <wsdl:part name="Address2" type="s:string" />
+    <wsdl:part name="City" type="s:string" />
+    <wsdl:part name="State" type="s:string" />
+    <wsdl:part name="Zip" type="s:string" />
+    <wsdl:part name="Country" type="s:string" />
+    <wsdl:part name="RoutingNumber" type="s:string" />
+    <wsdl:part name="AccountNumber" type="s:string" />
+    <wsdl:part name="BankName" type="s:string" />
+    <wsdl:part name="CheckMemo" type="s:string" />
+    <wsdl:part name="CheckAmount" type="s:string" />
+    <wsdl:part name="CheckDate" type="s:string" />
+    <wsdl:part name="CheckNumber" type="s:string" />
+    <wsdl:part name="x_delim_data" type="s:string" />
+    <wsdl:part name="x_delim_char" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="OneTimeDraftRTVHttpPostOut">
+    <wsdl:part name="Body" element="tns:DraftResult" />
+  </wsdl:message>
+  <wsdl:message name="OneTimeDraftBVHttpPostIn">
+    <wsdl:part name="Client_ID" type="s:string" />
+    <wsdl:part name="ApiPassword" type="s:string" />
+    <wsdl:part name="Name" type="s:string" />
+    <wsdl:part name="EmailAddress" type="s:string" />
+    <wsdl:part name="Phone" type="s:string" />
+    <wsdl:part name="PhoneExtension" type="s:string" />
+    <wsdl:part name="Address1" type="s:string" />
+    <wsdl:part name="Address2" type="s:string" />
+    <wsdl:part name="City" type="s:string" />
+    <wsdl:part name="State" type="s:string" />
+    <wsdl:part name="Zip" type="s:string" />
+    <wsdl:part name="Country" type="s:string" />
+    <wsdl:part name="RoutingNumber" type="s:string" />
+    <wsdl:part name="AccountNumber" type="s:string" />
+    <wsdl:part name="BankName" type="s:string" />
+    <wsdl:part name="CheckMemo" type="s:string" />
+    <wsdl:part name="CheckAmount" type="s:string" />
+    <wsdl:part name="CheckDate" type="s:string" />
+    <wsdl:part name="CheckNumber" type="s:string" />
+    <wsdl:part name="x_delim_data" type="s:string" />
+    <wsdl:part name="x_delim_char" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="OneTimeDraftBVHttpPostOut">
+    <wsdl:part name="Body" element="tns:DraftResult" />
+  </wsdl:message>
+  <wsdl:message name="RecurringDraftRTVHttpPostIn">
+    <wsdl:part name="Client_ID" type="s:string" />
+    <wsdl:part name="ApiPassword" type="s:string" />
+    <wsdl:part name="Name" type="s:string" />
+    <wsdl:part name="EmailAddress" type="s:string" />
+    <wsdl:part name="Phone" type="s:string" />
+    <wsdl:part name="PhoneExtension" type="s:string" />
+    <wsdl:part name="Address1" type="s:string" />
+    <wsdl:part name="Address2" type="s:string" />
+    <wsdl:part name="City" type="s:string" />
+    <wsdl:part name="State" type="s:string" />
+    <wsdl:part name="Zip" type="s:string" />
+    <wsdl:part name="Country" type="s:string" />
+    <wsdl:part name="RoutingNumber" type="s:string" />
+    <wsdl:part name="AccountNumber" type="s:string" />
+    <wsdl:part name="BankName" type="s:string" />
+    <wsdl:part name="CheckMemo" type="s:string" />
+    <wsdl:part name="CheckAmount" type="s:string" />
+    <wsdl:part name="CheckDate" type="s:string" />
+    <wsdl:part name="CheckNumber" type="s:string" />
+    <wsdl:part name="RecurringType" type="s:string" />
+    <wsdl:part name="RecurringOffset" type="s:string" />
+    <wsdl:part name="RecurringPayments" type="s:string" />
+    <wsdl:part name="x_delim_data" type="s:string" />
+    <wsdl:part name="x_delim_char" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="RecurringDraftRTVHttpPostOut">
+    <wsdl:part name="Body" element="tns:DraftResult" />
+  </wsdl:message>
+  <wsdl:message name="RecurringDraftBVHttpPostIn">
+    <wsdl:part name="Client_ID" type="s:string" />
+    <wsdl:part name="ApiPassword" type="s:string" />
+    <wsdl:part name="Name" type="s:string" />
+    <wsdl:part name="EmailAddress" type="s:string" />
+    <wsdl:part name="Phone" type="s:string" />
+    <wsdl:part name="PhoneExtension" type="s:string" />
+    <wsdl:part name="Address1" type="s:string" />
+    <wsdl:part name="Address2" type="s:string" />
+    <wsdl:part name="City" type="s:string" />
+    <wsdl:part name="State" type="s:string" />
+    <wsdl:part name="Zip" type="s:string" />
+    <wsdl:part name="Country" type="s:string" />
+    <wsdl:part name="RoutingNumber" type="s:string" />
+    <wsdl:part name="AccountNumber" type="s:string" />
+    <wsdl:part name="BankName" type="s:string" />
+    <wsdl:part name="CheckMemo" type="s:string" />
+    <wsdl:part name="CheckAmount" type="s:string" />
+    <wsdl:part name="CheckDate" type="s:string" />
+    <wsdl:part name="CheckNumber" type="s:string" />
+    <wsdl:part name="RecurringType" type="s:string" />
+    <wsdl:part name="RecurringOffset" type="s:string" />
+    <wsdl:part name="RecurringPayments" type="s:string" />
+    <wsdl:part name="x_delim_data" type="s:string" />
+    <wsdl:part name="x_delim_char" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="RecurringDraftBVHttpPostOut">
+    <wsdl:part name="Body" element="tns:DraftResult" />
+  </wsdl:message>
+  <wsdl:message name="VerificationResultHttpPostIn">
+    <wsdl:part name="Client_ID" type="s:string" />
+    <wsdl:part name="ApiPassword" type="s:string" />
+    <wsdl:part name="Check_ID" type="s:string" />
+    <wsdl:part name="x_delim_data" type="s:string" />
+    <wsdl:part name="x_delim_char" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="VerificationResultHttpPostOut">
+    <wsdl:part name="Body" element="tns:DraftResult" />
+  </wsdl:message>
+  <wsdl:message name="VerificationOverrideHttpPostIn">
+    <wsdl:part name="Client_ID" type="s:string" />
+    <wsdl:part name="ApiPassword" type="s:string" />
+    <wsdl:part name="Check_ID" type="s:string" />
+    <wsdl:part name="x_delim_data" type="s:string" />
+    <wsdl:part name="x_delim_char" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="VerificationOverrideHttpPostOut">
+    <wsdl:part name="Body" element="tns:DraftResult" />
+  </wsdl:message>
+  <wsdl:message name="CombinationInvoiceHttpPostIn">
+    <wsdl:part name="Client_ID" type="s:string" />
+    <wsdl:part name="ApiPassword" type="s:string" />
+    <wsdl:part name="PayorName" type="s:string" />
+    <wsdl:part name="EmailAddress" type="s:string" />
+    <wsdl:part name="ItemName" type="s:string" />
+    <wsdl:part name="ItemDescription" type="s:string" />
+    <wsdl:part name="InitialAmount" type="s:string" />
+    <wsdl:part name="InitialPaymentDate" type="s:string" />
+    <wsdl:part name="RecurringAmount" type="s:string" />
+    <wsdl:part name="RecurringPaymentDate" type="s:string" />
+    <wsdl:part name="RecurringType" type="s:string" />
+    <wsdl:part name="RecurringOffset" type="s:string" />
+    <wsdl:part name="RecurringPayments" type="s:string" />
+    <wsdl:part name="x_delim_data" type="s:string" />
+    <wsdl:part name="x_delim_char" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="CombinationInvoiceHttpPostOut">
+    <wsdl:part name="Body" element="tns:InvoiceResult" />
+  </wsdl:message>
+  <wsdl:message name="RecurringInvoiceHttpPostIn">
+    <wsdl:part name="Client_ID" type="s:string" />
+    <wsdl:part name="ApiPassword" type="s:string" />
+    <wsdl:part name="PayorName" type="s:string" />
+    <wsdl:part name="EmailAddress" type="s:string" />
+    <wsdl:part name="ItemName" type="s:string" />
+    <wsdl:part name="ItemDescription" type="s:string" />
+    <wsdl:part name="Amount" type="s:string" />
+    <wsdl:part name="PaymentDate" type="s:string" />
+    <wsdl:part name="RecurringType" type="s:string" />
+    <wsdl:part name="RecurringOffset" type="s:string" />
+    <wsdl:part name="RecurringPayments" type="s:string" />
+    <wsdl:part name="x_delim_data" type="s:string" />
+    <wsdl:part name="x_delim_char" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="RecurringInvoiceHttpPostOut">
+    <wsdl:part name="Body" element="tns:InvoiceResult" />
+  </wsdl:message>
+  <wsdl:message name="OneTimeInvoiceHttpPostIn">
+    <wsdl:part name="Client_ID" type="s:string" />
+    <wsdl:part name="ApiPassword" type="s:string" />
+    <wsdl:part name="PayorName" type="s:string" />
+    <wsdl:part name="EmailAddress" type="s:string" />
+    <wsdl:part name="ItemName" type="s:string" />
+    <wsdl:part name="ItemDescription" type="s:string" />
+    <wsdl:part name="Amount" type="s:string" />
+    <wsdl:part name="PaymentDate" type="s:string" />
+    <wsdl:part name="x_delim_data" type="s:string" />
+    <wsdl:part name="x_delim_char" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="OneTimeInvoiceHttpPostOut">
+    <wsdl:part name="Body" element="tns:InvoiceResult" />
+  </wsdl:message>
+  <wsdl:message name="InvoiceStatusHttpPostIn">
+    <wsdl:part name="Client_ID" type="s:string" />
+    <wsdl:part name="ApiPassword" type="s:string" />
+    <wsdl:part name="Invoice_ID" type="s:string" />
+    <wsdl:part name="x_delim_data" type="s:string" />
+    <wsdl:part name="x_delim_char" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="InvoiceStatusHttpPostOut">
+    <wsdl:part name="Body" element="tns:InvoiceResult" />
+  </wsdl:message>
+  <wsdl:message name="BillPayCheckHttpPostIn">
+    <wsdl:part name="Client_ID" type="s:string" />
+    <wsdl:part name="ApiPassword" type="s:string" />
+    <wsdl:part name="Name" type="s:string" />
+    <wsdl:part name="Address1" type="s:string" />
+    <wsdl:part name="Address2" type="s:string" />
+    <wsdl:part name="City" type="s:string" />
+    <wsdl:part name="State" type="s:string" />
+    <wsdl:part name="Zip" type="s:string" />
+    <wsdl:part name="Country" type="s:string" />
+    <wsdl:part name="RoutingNumber" type="s:string" />
+    <wsdl:part name="AccountNumber" type="s:string" />
+    <wsdl:part name="BankName" type="s:string" />
+    <wsdl:part name="CheckMemo" type="s:string" />
+    <wsdl:part name="CheckAmount" type="s:string" />
+    <wsdl:part name="CheckDate" type="s:string" />
+    <wsdl:part name="CheckNumber" type="s:string" />
+    <wsdl:part name="x_delim_data" type="s:string" />
+    <wsdl:part name="x_delim_char" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="BillPayCheckHttpPostOut">
+    <wsdl:part name="Body" element="tns:BillPayCheckResult" />
+  </wsdl:message>
+  <wsdl:message name="RecurringBillPayCheckHttpPostIn">
+    <wsdl:part name="Client_ID" type="s:string" />
+    <wsdl:part name="ApiPassword" type="s:string" />
+    <wsdl:part name="Name" type="s:string" />
+    <wsdl:part name="Address1" type="s:string" />
+    <wsdl:part name="Address2" type="s:string" />
+    <wsdl:part name="City" type="s:string" />
+    <wsdl:part name="State" type="s:string" />
+    <wsdl:part name="Zip" type="s:string" />
+    <wsdl:part name="Country" type="s:string" />
+    <wsdl:part name="RoutingNumber" type="s:string" />
+    <wsdl:part name="AccountNumber" type="s:string" />
+    <wsdl:part name="BankName" type="s:string" />
+    <wsdl:part name="CheckMemo" type="s:string" />
+    <wsdl:part name="CheckAmount" type="s:string" />
+    <wsdl:part name="CheckDate" type="s:string" />
+    <wsdl:part name="CheckNumber" type="s:string" />
+    <wsdl:part name="RecurringType" type="s:string" />
+    <wsdl:part name="RecurringOffset" type="s:string" />
+    <wsdl:part name="RecurringPayments" type="s:string" />
+    <wsdl:part name="x_delim_data" type="s:string" />
+    <wsdl:part name="x_delim_char" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="RecurringBillPayCheckHttpPostOut">
+    <wsdl:part name="Body" element="tns:BillPayCheckResult" />
+  </wsdl:message>
+  <wsdl:message name="BillPayCheckNoBankInfoHttpPostIn">
+    <wsdl:part name="Client_ID" type="s:string" />
+    <wsdl:part name="ApiPassword" type="s:string" />
+    <wsdl:part name="Name" type="s:string" />
+    <wsdl:part name="Address1" type="s:string" />
+    <wsdl:part name="Address2" type="s:string" />
+    <wsdl:part name="City" type="s:string" />
+    <wsdl:part name="State" type="s:string" />
+    <wsdl:part name="Zip" type="s:string" />
+    <wsdl:part name="Country" type="s:string" />
+    <wsdl:part name="CheckMemo" type="s:string" />
+    <wsdl:part name="CheckAmount" type="s:string" />
+    <wsdl:part name="CheckDate" type="s:string" />
+    <wsdl:part name="CheckNumber" type="s:string" />
+    <wsdl:part name="x_delim_data" type="s:string" />
+    <wsdl:part name="x_delim_char" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="BillPayCheckNoBankInfoHttpPostOut">
+    <wsdl:part name="Body" element="tns:BillPayCheckResult" />
+  </wsdl:message>
+  <wsdl:message name="RecurringBillPayCheckNoBankInfoHttpPostIn">
+    <wsdl:part name="Client_ID" type="s:string" />
+    <wsdl:part name="ApiPassword" type="s:string" />
+    <wsdl:part name="Name" type="s:string" />
+    <wsdl:part name="Address1" type="s:string" />
+    <wsdl:part name="Address2" type="s:string" />
+    <wsdl:part name="City" type="s:string" />
+    <wsdl:part name="State" type="s:string" />
+    <wsdl:part name="Zip" type="s:string" />
+    <wsdl:part name="Country" type="s:string" />
+    <wsdl:part name="CheckMemo" type="s:string" />
+    <wsdl:part name="CheckAmount" type="s:string" />
+    <wsdl:part name="CheckDate" type="s:string" />
+    <wsdl:part name="CheckNumber" type="s:string" />
+    <wsdl:part name="RecurringType" type="s:string" />
+    <wsdl:part name="RecurringOffset" type="s:string" />
+    <wsdl:part name="RecurringPayments" type="s:string" />
+    <wsdl:part name="x_delim_data" type="s:string" />
+    <wsdl:part name="x_delim_char" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="RecurringBillPayCheckNoBankInfoHttpPostOut">
+    <wsdl:part name="Body" element="tns:BillPayCheckResult" />
+  </wsdl:message>
+  <wsdl:message name="UploadSignatureImageHttpPostIn">
+    <wsdl:part name="Client_ID" type="s:string" />
+    <wsdl:part name="ApiPassword" type="s:string" />
+    <wsdl:part name="Check_ID" type="s:string" />
+    <wsdl:part name="ImageData" type="s1:StringArray" />
+    <wsdl:part name="x_delim_data" type="s:string" />
+    <wsdl:part name="x_delim_char" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="UploadSignatureImageHttpPostOut">
+    <wsdl:part name="Body" element="tns:SignatureImageResult" />
+  </wsdl:message>
+  <wsdl:message name="OneTimeDraftWithSignatureImageHttpPostIn">
+    <wsdl:part name="Client_ID" type="s:string" />
+    <wsdl:part name="ApiPassword" type="s:string" />
+    <wsdl:part name="Name" type="s:string" />
+    <wsdl:part name="EmailAddress" type="s:string" />
+    <wsdl:part name="Phone" type="s:string" />
+    <wsdl:part name="PhoneExtension" type="s:string" />
+    <wsdl:part name="Address1" type="s:string" />
+    <wsdl:part name="Address2" type="s:string" />
+    <wsdl:part name="City" type="s:string" />
+    <wsdl:part name="State" type="s:string" />
+    <wsdl:part name="Zip" type="s:string" />
+    <wsdl:part name="Country" type="s:string" />
+    <wsdl:part name="RoutingNumber" type="s:string" />
+    <wsdl:part name="AccountNumber" type="s:string" />
+    <wsdl:part name="BankName" type="s:string" />
+    <wsdl:part name="CheckMemo" type="s:string" />
+    <wsdl:part name="CheckAmount" type="s:string" />
+    <wsdl:part name="CheckDate" type="s:string" />
+    <wsdl:part name="CheckNumber" type="s:string" />
+    <wsdl:part name="ImageData" type="s1:StringArray" />
+    <wsdl:part name="x_delim_data" type="s:string" />
+    <wsdl:part name="x_delim_char" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="OneTimeDraftWithSignatureImageHttpPostOut">
+    <wsdl:part name="Body" element="tns:DraftResult" />
+  </wsdl:message>
+  <wsdl:message name="RecurringDraftWithSignatureImageHttpPostIn">
+    <wsdl:part name="Client_ID" type="s:string" />
+    <wsdl:part name="ApiPassword" type="s:string" />
+    <wsdl:part name="Name" type="s:string" />
+    <wsdl:part name="EmailAddress" type="s:string" />
+    <wsdl:part name="Phone" type="s:string" />
+    <wsdl:part name="PhoneExtension" type="s:string" />
+    <wsdl:part name="Address1" type="s:string" />
+    <wsdl:part name="Address2" type="s:string" />
+    <wsdl:part name="City" type="s:string" />
+    <wsdl:part name="State" type="s:string" />
+    <wsdl:part name="Zip" type="s:string" />
+    <wsdl:part name="Country" type="s:string" />
+    <wsdl:part name="RoutingNumber" type="s:string" />
+    <wsdl:part name="AccountNumber" type="s:string" />
+    <wsdl:part name="BankName" type="s:string" />
+    <wsdl:part name="CheckMemo" type="s:string" />
+    <wsdl:part name="CheckAmount" type="s:string" />
+    <wsdl:part name="CheckDate" type="s:string" />
+    <wsdl:part name="CheckNumber" type="s:string" />
+    <wsdl:part name="ImageData" type="s1:StringArray" />
+    <wsdl:part name="RecurringType" type="s:string" />
+    <wsdl:part name="RecurringOffset" type="s:string" />
+    <wsdl:part name="RecurringPayments" type="s:string" />
+    <wsdl:part name="x_delim_data" type="s:string" />
+    <wsdl:part name="x_delim_char" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="RecurringDraftWithSignatureImageHttpPostOut">
+    <wsdl:part name="Body" element="tns:DraftResult" />
+  </wsdl:message>
+  <wsdl:message name="CancelCheckHttpPostIn">
+    <wsdl:part name="Client_ID" type="s:string" />
+    <wsdl:part name="ApiPassword" type="s:string" />
+    <wsdl:part name="Check_ID" type="s:string" />
+    <wsdl:part name="x_delim_data" type="s:string" />
+    <wsdl:part name="x_delim_char" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="CancelCheckHttpPostOut">
+    <wsdl:part name="Body" element="tns:CancelCheckResult" />
+  </wsdl:message>
+  <wsdl:message name="RefundCheckHttpPostIn">
+    <wsdl:part name="Client_ID" type="s:string" />
+    <wsdl:part name="ApiPassword" type="s:string" />
+    <wsdl:part name="Check_ID" type="s:string" />
+    <wsdl:part name="RefundMemo" type="s:string" />
+    <wsdl:part name="RefundAmount" type="s:string" />
+    <wsdl:part name="x_delim_data" type="s:string" />
+    <wsdl:part name="x_delim_char" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="RefundCheckHttpPostOut">
+    <wsdl:part name="Body" element="tns:RefundCheckResult" />
+  </wsdl:message>
+  <wsdl:message name="CheckNoteHttpPostIn">
+    <wsdl:part name="Client_ID" type="s:string" />
+    <wsdl:part name="ApiPassword" type="s:string" />
+    <wsdl:part name="Check_ID" type="s:string" />
+    <wsdl:part name="Note" type="s:string" />
+    <wsdl:part name="x_delim_data" type="s:string" />
+    <wsdl:part name="x_delim_char" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="CheckNoteHttpPostOut">
+    <wsdl:part name="Body" element="tns:CheckNoteResult" />
+  </wsdl:message>
+  <wsdl:message name="CheckNoPhoneVerificationHttpPostIn">
+    <wsdl:part name="Client_ID" type="s:string" />
+    <wsdl:part name="ApiPassword" type="s:string" />
+    <wsdl:part name="Check_ID" type="s:string" />
+    <wsdl:part name="x_delim_data" type="s:string" />
+    <wsdl:part name="x_delim_char" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="CheckNoPhoneVerificationHttpPostOut">
+    <wsdl:part name="Body" element="tns:CheckNoPhoneVerificationResult" />
+  </wsdl:message>
+  <wsdl:message name="ProcessInfoHttpPostIn">
+    <wsdl:part name="Client_ID" type="s:string" />
+    <wsdl:part name="ApiPassword" type="s:string" />
+    <wsdl:part name="Process_ID" type="s:string" />
+    <wsdl:part name="x_delim_data" type="s:string" />
+    <wsdl:part name="x_delim_char" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ProcessInfoHttpPostOut">
+    <wsdl:part name="Body" element="tns:ProcessInfoResult" />
+  </wsdl:message>
+  <wsdl:message name="CheckStatusHttpPostIn">
+    <wsdl:part name="Client_ID" type="s:string" />
+    <wsdl:part name="ApiPassword" type="s:string" />
+    <wsdl:part name="Check_ID" type="s:string" />
+    <wsdl:part name="x_delim_data" type="s:string" />
+    <wsdl:part name="x_delim_char" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="CheckStatusHttpPostOut">
+    <wsdl:part name="Body" element="tns:CheckStatusResult" />
+  </wsdl:message>
+  <wsdl:portType name="eCheckSoap">
+    <wsdl:operation name="OneTimeDraftRTV">
+      <wsdl:input message="tns:OneTimeDraftRTVSoapIn" />
+      <wsdl:output message="tns:OneTimeDraftRTVSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="OneTimeDraftBV">
+      <wsdl:input message="tns:OneTimeDraftBVSoapIn" />
+      <wsdl:output message="tns:OneTimeDraftBVSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RecurringDraftRTV">
+      <wsdl:input message="tns:RecurringDraftRTVSoapIn" />
+      <wsdl:output message="tns:RecurringDraftRTVSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RecurringDraftBV">
+      <wsdl:input message="tns:RecurringDraftBVSoapIn" />
+      <wsdl:output message="tns:RecurringDraftBVSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="VerificationResult">
+      <wsdl:input message="tns:VerificationResultSoapIn" />
+      <wsdl:output message="tns:VerificationResultSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="VerificationOverride">
+      <wsdl:input message="tns:VerificationOverrideSoapIn" />
+      <wsdl:output message="tns:VerificationOverrideSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CombinationInvoice">
+      <wsdl:input message="tns:CombinationInvoiceSoapIn" />
+      <wsdl:output message="tns:CombinationInvoiceSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RecurringInvoice">
+      <wsdl:input message="tns:RecurringInvoiceSoapIn" />
+      <wsdl:output message="tns:RecurringInvoiceSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="OneTimeInvoice">
+      <wsdl:input message="tns:OneTimeInvoiceSoapIn" />
+      <wsdl:output message="tns:OneTimeInvoiceSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InvoiceStatus">
+      <wsdl:input message="tns:InvoiceStatusSoapIn" />
+      <wsdl:output message="tns:InvoiceStatusSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="BillPayCheck">
+      <wsdl:input message="tns:BillPayCheckSoapIn" />
+      <wsdl:output message="tns:BillPayCheckSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RecurringBillPayCheck">
+      <wsdl:input message="tns:RecurringBillPayCheckSoapIn" />
+      <wsdl:output message="tns:RecurringBillPayCheckSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="BillPayCheckNoBankInfo">
+      <wsdl:input message="tns:BillPayCheckNoBankInfoSoapIn" />
+      <wsdl:output message="tns:BillPayCheckNoBankInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RecurringBillPayCheckNoBankInfo">
+      <wsdl:input message="tns:RecurringBillPayCheckNoBankInfoSoapIn" />
+      <wsdl:output message="tns:RecurringBillPayCheckNoBankInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UploadSignatureImage">
+      <wsdl:input message="tns:UploadSignatureImageSoapIn" />
+      <wsdl:output message="tns:UploadSignatureImageSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="OneTimeDraftWithSignatureImage">
+      <wsdl:input message="tns:OneTimeDraftWithSignatureImageSoapIn" />
+      <wsdl:output message="tns:OneTimeDraftWithSignatureImageSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RecurringDraftWithSignatureImage">
+      <wsdl:input message="tns:RecurringDraftWithSignatureImageSoapIn" />
+      <wsdl:output message="tns:RecurringDraftWithSignatureImageSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CancelCheck">
+      <wsdl:input message="tns:CancelCheckSoapIn" />
+      <wsdl:output message="tns:CancelCheckSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RefundCheck">
+      <wsdl:input message="tns:RefundCheckSoapIn" />
+      <wsdl:output message="tns:RefundCheckSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckNote">
+      <wsdl:input message="tns:CheckNoteSoapIn" />
+      <wsdl:output message="tns:CheckNoteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckNoPhoneVerification">
+      <wsdl:input message="tns:CheckNoPhoneVerificationSoapIn" />
+      <wsdl:output message="tns:CheckNoPhoneVerificationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ProcessInfo">
+      <wsdl:input message="tns:ProcessInfoSoapIn" />
+      <wsdl:output message="tns:ProcessInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckStatus">
+      <wsdl:input message="tns:CheckStatusSoapIn" />
+      <wsdl:output message="tns:CheckStatusSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="eCheckHttpGet">
+    <wsdl:operation name="OneTimeDraftRTV">
+      <wsdl:input message="tns:OneTimeDraftRTVHttpGetIn" />
+      <wsdl:output message="tns:OneTimeDraftRTVHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="OneTimeDraftBV">
+      <wsdl:input message="tns:OneTimeDraftBVHttpGetIn" />
+      <wsdl:output message="tns:OneTimeDraftBVHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RecurringDraftRTV">
+      <wsdl:input message="tns:RecurringDraftRTVHttpGetIn" />
+      <wsdl:output message="tns:RecurringDraftRTVHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RecurringDraftBV">
+      <wsdl:input message="tns:RecurringDraftBVHttpGetIn" />
+      <wsdl:output message="tns:RecurringDraftBVHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="VerificationResult">
+      <wsdl:input message="tns:VerificationResultHttpGetIn" />
+      <wsdl:output message="tns:VerificationResultHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="VerificationOverride">
+      <wsdl:input message="tns:VerificationOverrideHttpGetIn" />
+      <wsdl:output message="tns:VerificationOverrideHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CombinationInvoice">
+      <wsdl:input message="tns:CombinationInvoiceHttpGetIn" />
+      <wsdl:output message="tns:CombinationInvoiceHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RecurringInvoice">
+      <wsdl:input message="tns:RecurringInvoiceHttpGetIn" />
+      <wsdl:output message="tns:RecurringInvoiceHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="OneTimeInvoice">
+      <wsdl:input message="tns:OneTimeInvoiceHttpGetIn" />
+      <wsdl:output message="tns:OneTimeInvoiceHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InvoiceStatus">
+      <wsdl:input message="tns:InvoiceStatusHttpGetIn" />
+      <wsdl:output message="tns:InvoiceStatusHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="BillPayCheck">
+      <wsdl:input message="tns:BillPayCheckHttpGetIn" />
+      <wsdl:output message="tns:BillPayCheckHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RecurringBillPayCheck">
+      <wsdl:input message="tns:RecurringBillPayCheckHttpGetIn" />
+      <wsdl:output message="tns:RecurringBillPayCheckHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="BillPayCheckNoBankInfo">
+      <wsdl:input message="tns:BillPayCheckNoBankInfoHttpGetIn" />
+      <wsdl:output message="tns:BillPayCheckNoBankInfoHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RecurringBillPayCheckNoBankInfo">
+      <wsdl:input message="tns:RecurringBillPayCheckNoBankInfoHttpGetIn" />
+      <wsdl:output message="tns:RecurringBillPayCheckNoBankInfoHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UploadSignatureImage">
+      <wsdl:input message="tns:UploadSignatureImageHttpGetIn" />
+      <wsdl:output message="tns:UploadSignatureImageHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="OneTimeDraftWithSignatureImage">
+      <wsdl:input message="tns:OneTimeDraftWithSignatureImageHttpGetIn" />
+      <wsdl:output message="tns:OneTimeDraftWithSignatureImageHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RecurringDraftWithSignatureImage">
+      <wsdl:input message="tns:RecurringDraftWithSignatureImageHttpGetIn" />
+      <wsdl:output message="tns:RecurringDraftWithSignatureImageHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CancelCheck">
+      <wsdl:input message="tns:CancelCheckHttpGetIn" />
+      <wsdl:output message="tns:CancelCheckHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RefundCheck">
+      <wsdl:input message="tns:RefundCheckHttpGetIn" />
+      <wsdl:output message="tns:RefundCheckHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckNote">
+      <wsdl:input message="tns:CheckNoteHttpGetIn" />
+      <wsdl:output message="tns:CheckNoteHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckNoPhoneVerification">
+      <wsdl:input message="tns:CheckNoPhoneVerificationHttpGetIn" />
+      <wsdl:output message="tns:CheckNoPhoneVerificationHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ProcessInfo">
+      <wsdl:input message="tns:ProcessInfoHttpGetIn" />
+      <wsdl:output message="tns:ProcessInfoHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckStatus">
+      <wsdl:input message="tns:CheckStatusHttpGetIn" />
+      <wsdl:output message="tns:CheckStatusHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="eCheckHttpPost">
+    <wsdl:operation name="OneTimeDraftRTV">
+      <wsdl:input message="tns:OneTimeDraftRTVHttpPostIn" />
+      <wsdl:output message="tns:OneTimeDraftRTVHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="OneTimeDraftBV">
+      <wsdl:input message="tns:OneTimeDraftBVHttpPostIn" />
+      <wsdl:output message="tns:OneTimeDraftBVHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RecurringDraftRTV">
+      <wsdl:input message="tns:RecurringDraftRTVHttpPostIn" />
+      <wsdl:output message="tns:RecurringDraftRTVHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RecurringDraftBV">
+      <wsdl:input message="tns:RecurringDraftBVHttpPostIn" />
+      <wsdl:output message="tns:RecurringDraftBVHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="VerificationResult">
+      <wsdl:input message="tns:VerificationResultHttpPostIn" />
+      <wsdl:output message="tns:VerificationResultHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="VerificationOverride">
+      <wsdl:input message="tns:VerificationOverrideHttpPostIn" />
+      <wsdl:output message="tns:VerificationOverrideHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CombinationInvoice">
+      <wsdl:input message="tns:CombinationInvoiceHttpPostIn" />
+      <wsdl:output message="tns:CombinationInvoiceHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RecurringInvoice">
+      <wsdl:input message="tns:RecurringInvoiceHttpPostIn" />
+      <wsdl:output message="tns:RecurringInvoiceHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="OneTimeInvoice">
+      <wsdl:input message="tns:OneTimeInvoiceHttpPostIn" />
+      <wsdl:output message="tns:OneTimeInvoiceHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InvoiceStatus">
+      <wsdl:input message="tns:InvoiceStatusHttpPostIn" />
+      <wsdl:output message="tns:InvoiceStatusHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="BillPayCheck">
+      <wsdl:input message="tns:BillPayCheckHttpPostIn" />
+      <wsdl:output message="tns:BillPayCheckHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RecurringBillPayCheck">
+      <wsdl:input message="tns:RecurringBillPayCheckHttpPostIn" />
+      <wsdl:output message="tns:RecurringBillPayCheckHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="BillPayCheckNoBankInfo">
+      <wsdl:input message="tns:BillPayCheckNoBankInfoHttpPostIn" />
+      <wsdl:output message="tns:BillPayCheckNoBankInfoHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RecurringBillPayCheckNoBankInfo">
+      <wsdl:input message="tns:RecurringBillPayCheckNoBankInfoHttpPostIn" />
+      <wsdl:output message="tns:RecurringBillPayCheckNoBankInfoHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UploadSignatureImage">
+      <wsdl:input message="tns:UploadSignatureImageHttpPostIn" />
+      <wsdl:output message="tns:UploadSignatureImageHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="OneTimeDraftWithSignatureImage">
+      <wsdl:input message="tns:OneTimeDraftWithSignatureImageHttpPostIn" />
+      <wsdl:output message="tns:OneTimeDraftWithSignatureImageHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RecurringDraftWithSignatureImage">
+      <wsdl:input message="tns:RecurringDraftWithSignatureImageHttpPostIn" />
+      <wsdl:output message="tns:RecurringDraftWithSignatureImageHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CancelCheck">
+      <wsdl:input message="tns:CancelCheckHttpPostIn" />
+      <wsdl:output message="tns:CancelCheckHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RefundCheck">
+      <wsdl:input message="tns:RefundCheckHttpPostIn" />
+      <wsdl:output message="tns:RefundCheckHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckNote">
+      <wsdl:input message="tns:CheckNoteHttpPostIn" />
+      <wsdl:output message="tns:CheckNoteHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckNoPhoneVerification">
+      <wsdl:input message="tns:CheckNoPhoneVerificationHttpPostIn" />
+      <wsdl:output message="tns:CheckNoPhoneVerificationHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ProcessInfo">
+      <wsdl:input message="tns:ProcessInfoHttpPostIn" />
+      <wsdl:output message="tns:ProcessInfoHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckStatus">
+      <wsdl:input message="tns:CheckStatusHttpPostIn" />
+      <wsdl:output message="tns:CheckStatusHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="eCheckSoap" type="tns:eCheckSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="OneTimeDraftRTV">
+      <soap:operation soapAction="CheckProcessing/OneTimeDraftRTV" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OneTimeDraftBV">
+      <soap:operation soapAction="CheckProcessing/OneTimeDraftBV" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RecurringDraftRTV">
+      <soap:operation soapAction="CheckProcessing/RecurringDraftRTV" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RecurringDraftBV">
+      <soap:operation soapAction="CheckProcessing/RecurringDraftBV" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VerificationResult">
+      <soap:operation soapAction="CheckProcessing/VerificationResult" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VerificationOverride">
+      <soap:operation soapAction="CheckProcessing/VerificationOverride" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CombinationInvoice">
+      <soap:operation soapAction="CheckProcessing/CombinationInvoice" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RecurringInvoice">
+      <soap:operation soapAction="CheckProcessing/RecurringInvoice" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OneTimeInvoice">
+      <soap:operation soapAction="CheckProcessing/OneTimeInvoice" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InvoiceStatus">
+      <soap:operation soapAction="CheckProcessing/InvoiceStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BillPayCheck">
+      <soap:operation soapAction="CheckProcessing/BillPayCheck" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RecurringBillPayCheck">
+      <soap:operation soapAction="CheckProcessing/RecurringBillPayCheck" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BillPayCheckNoBankInfo">
+      <soap:operation soapAction="CheckProcessing/BillPayCheckNoBankInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RecurringBillPayCheckNoBankInfo">
+      <soap:operation soapAction="CheckProcessing/RecurringBillPayCheckNoBankInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UploadSignatureImage">
+      <soap:operation soapAction="CheckProcessing/UploadSignatureImage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OneTimeDraftWithSignatureImage">
+      <soap:operation soapAction="CheckProcessing/OneTimeDraftWithSignatureImage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RecurringDraftWithSignatureImage">
+      <soap:operation soapAction="CheckProcessing/RecurringDraftWithSignatureImage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CancelCheck">
+      <soap:operation soapAction="CheckProcessing/CancelCheck" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RefundCheck">
+      <soap:operation soapAction="CheckProcessing/RefundCheck" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckNote">
+      <soap:operation soapAction="CheckProcessing/CheckNote" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckNoPhoneVerification">
+      <soap:operation soapAction="CheckProcessing/CheckNoPhoneVerification" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProcessInfo">
+      <soap:operation soapAction="CheckProcessing/ProcessInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckStatus">
+      <soap:operation soapAction="CheckProcessing/CheckStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="eCheckSoap12" type="tns:eCheckSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="OneTimeDraftRTV">
+      <soap12:operation soapAction="CheckProcessing/OneTimeDraftRTV" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OneTimeDraftBV">
+      <soap12:operation soapAction="CheckProcessing/OneTimeDraftBV" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RecurringDraftRTV">
+      <soap12:operation soapAction="CheckProcessing/RecurringDraftRTV" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RecurringDraftBV">
+      <soap12:operation soapAction="CheckProcessing/RecurringDraftBV" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VerificationResult">
+      <soap12:operation soapAction="CheckProcessing/VerificationResult" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VerificationOverride">
+      <soap12:operation soapAction="CheckProcessing/VerificationOverride" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CombinationInvoice">
+      <soap12:operation soapAction="CheckProcessing/CombinationInvoice" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RecurringInvoice">
+      <soap12:operation soapAction="CheckProcessing/RecurringInvoice" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OneTimeInvoice">
+      <soap12:operation soapAction="CheckProcessing/OneTimeInvoice" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InvoiceStatus">
+      <soap12:operation soapAction="CheckProcessing/InvoiceStatus" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BillPayCheck">
+      <soap12:operation soapAction="CheckProcessing/BillPayCheck" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RecurringBillPayCheck">
+      <soap12:operation soapAction="CheckProcessing/RecurringBillPayCheck" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BillPayCheckNoBankInfo">
+      <soap12:operation soapAction="CheckProcessing/BillPayCheckNoBankInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RecurringBillPayCheckNoBankInfo">
+      <soap12:operation soapAction="CheckProcessing/RecurringBillPayCheckNoBankInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UploadSignatureImage">
+      <soap12:operation soapAction="CheckProcessing/UploadSignatureImage" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OneTimeDraftWithSignatureImage">
+      <soap12:operation soapAction="CheckProcessing/OneTimeDraftWithSignatureImage" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RecurringDraftWithSignatureImage">
+      <soap12:operation soapAction="CheckProcessing/RecurringDraftWithSignatureImage" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CancelCheck">
+      <soap12:operation soapAction="CheckProcessing/CancelCheck" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RefundCheck">
+      <soap12:operation soapAction="CheckProcessing/RefundCheck" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckNote">
+      <soap12:operation soapAction="CheckProcessing/CheckNote" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckNoPhoneVerification">
+      <soap12:operation soapAction="CheckProcessing/CheckNoPhoneVerification" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProcessInfo">
+      <soap12:operation soapAction="CheckProcessing/ProcessInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckStatus">
+      <soap12:operation soapAction="CheckProcessing/CheckStatus" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="eCheckHttpGet" type="tns:eCheckHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="OneTimeDraftRTV">
+      <http:operation location="/OneTimeDraftRTV" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OneTimeDraftBV">
+      <http:operation location="/OneTimeDraftBV" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RecurringDraftRTV">
+      <http:operation location="/RecurringDraftRTV" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RecurringDraftBV">
+      <http:operation location="/RecurringDraftBV" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VerificationResult">
+      <http:operation location="/VerificationResult" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VerificationOverride">
+      <http:operation location="/VerificationOverride" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CombinationInvoice">
+      <http:operation location="/CombinationInvoice" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RecurringInvoice">
+      <http:operation location="/RecurringInvoice" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OneTimeInvoice">
+      <http:operation location="/OneTimeInvoice" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InvoiceStatus">
+      <http:operation location="/InvoiceStatus" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BillPayCheck">
+      <http:operation location="/BillPayCheck" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RecurringBillPayCheck">
+      <http:operation location="/RecurringBillPayCheck" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BillPayCheckNoBankInfo">
+      <http:operation location="/BillPayCheckNoBankInfo" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RecurringBillPayCheckNoBankInfo">
+      <http:operation location="/RecurringBillPayCheckNoBankInfo" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UploadSignatureImage">
+      <http:operation location="/UploadSignatureImage" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OneTimeDraftWithSignatureImage">
+      <http:operation location="/OneTimeDraftWithSignatureImage" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RecurringDraftWithSignatureImage">
+      <http:operation location="/RecurringDraftWithSignatureImage" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CancelCheck">
+      <http:operation location="/CancelCheck" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RefundCheck">
+      <http:operation location="/RefundCheck" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckNote">
+      <http:operation location="/CheckNote" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckNoPhoneVerification">
+      <http:operation location="/CheckNoPhoneVerification" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProcessInfo">
+      <http:operation location="/ProcessInfo" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckStatus">
+      <http:operation location="/CheckStatus" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="eCheckHttpPost" type="tns:eCheckHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="OneTimeDraftRTV">
+      <http:operation location="/OneTimeDraftRTV" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OneTimeDraftBV">
+      <http:operation location="/OneTimeDraftBV" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RecurringDraftRTV">
+      <http:operation location="/RecurringDraftRTV" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RecurringDraftBV">
+      <http:operation location="/RecurringDraftBV" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VerificationResult">
+      <http:operation location="/VerificationResult" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VerificationOverride">
+      <http:operation location="/VerificationOverride" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CombinationInvoice">
+      <http:operation location="/CombinationInvoice" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RecurringInvoice">
+      <http:operation location="/RecurringInvoice" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OneTimeInvoice">
+      <http:operation location="/OneTimeInvoice" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InvoiceStatus">
+      <http:operation location="/InvoiceStatus" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BillPayCheck">
+      <http:operation location="/BillPayCheck" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RecurringBillPayCheck">
+      <http:operation location="/RecurringBillPayCheck" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BillPayCheckNoBankInfo">
+      <http:operation location="/BillPayCheckNoBankInfo" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RecurringBillPayCheckNoBankInfo">
+      <http:operation location="/RecurringBillPayCheckNoBankInfo" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UploadSignatureImage">
+      <http:operation location="/UploadSignatureImage" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OneTimeDraftWithSignatureImage">
+      <http:operation location="/OneTimeDraftWithSignatureImage" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RecurringDraftWithSignatureImage">
+      <http:operation location="/RecurringDraftWithSignatureImage" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CancelCheck">
+      <http:operation location="/CancelCheck" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RefundCheck">
+      <http:operation location="/RefundCheck" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckNote">
+      <http:operation location="/CheckNote" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckNoPhoneVerification">
+      <http:operation location="/CheckNoPhoneVerification" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProcessInfo">
+      <http:operation location="/ProcessInfo" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckStatus">
+      <http:operation location="/CheckStatus" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="eCheck">
+    <wsdl:port name="eCheckSoap" binding="tns:eCheckSoap">
+      <soap:address location="https://www.greenbyphone.com/eCheck.asmx" />
+    </wsdl:port>
+    <wsdl:port name="eCheckSoap12" binding="tns:eCheckSoap12">
+      <soap12:address location="https://www.greenbyphone.com/eCheck.asmx" />
+    </wsdl:port>
+    <wsdl:port name="eCheckHttpGet" binding="tns:eCheckHttpGet">
+      <http:address location="https://www.greenbyphone.com/eCheck.asmx" />
+    </wsdl:port>
+    <wsdl:port name="eCheckHttpPost" binding="tns:eCheckHttpPost">
+      <http:address location="https://www.greenbyphone.com/eCheck.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
