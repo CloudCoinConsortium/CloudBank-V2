@@ -56,7 +56,7 @@
             Response.End();
         }
 
-   
+  
 
         FileUtils fileUtils = new FileUtils( Directory.GetCurrentDirectory()+ path+@"\");
 
@@ -71,7 +71,7 @@
             Response.End();
         }else if(!File.Exists(FileLocation))
         {
-            serviceResponse.message = "Error: File not Found ";
+            serviceResponse.message = "Error: File not Found.";
             json = new JavaScriptSerializer().Serialize(serviceResponse);
             Response.Write(json);
             Response.End();
