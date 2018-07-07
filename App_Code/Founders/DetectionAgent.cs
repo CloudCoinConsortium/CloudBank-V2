@@ -93,7 +93,7 @@ using System.IO;
             string totalResponse = "";
             var client = new HttpClient();
             client.Timeout = TimeSpan.FromMilliseconds(timeout);
-    
+  //  log("Testing");
             try
             {
                 //POST THE REQUEST AND FILL THE ANSER IN totalResponse
@@ -103,12 +103,15 @@ using System.IO;
                 using (client)
                 {
                    // Console.Write("postHtml await for response: ");
-                    json = await client.PostAsync(fullUrl + "multi_detect", dataContent);
+                   json = await client.PostAsync(fullUrl + "multi_detect", dataContent);
+                   totalResponse = await json.Content.ReadAsStringAsync();
+				//   log( totalResponse );
 
                     //Console.Write(".");
                     if (json.IsSuccessStatusCode)//200 status good
                     {
                         totalResponse = await json.Content.ReadAsStringAsync();
+
                         Console.Out.WriteLine("RAIDA " + RAIDANumber + " returned good: " + json.StatusCode);
                       //  Console.Out.WriteLine(totalResponse);
                     }
@@ -401,4 +404,39 @@ using System.IO;
             return pos;
         }//end ordinal Index of
 
-    }
+    public void log(string info) 
+    {
+        string path = @"C:\inetpub\wwwroot\bank_v2\MultiDetectLog.txt";
+        // This text is added only once to the file.
+        if (!File.Exists(path)) 
+        {
+            // Create a file to write to.
+            using (StreamWriter sw = File.CreateText(path)) 
+            {
+                sw.WriteLine(info);
+
+            }	
+        }
+
+        // This text is always added, making the file longer over time
+        // if it is not deleted.
+        using (StreamWriter sw = File.AppendText(path)) 
+        {
+            sw.WriteLine(info);
+
+        }	
+
+
+    }// end log
+		
+		
+		
+		
+    }//end class
+	
+	
+	
+	
+	
+	
+	
