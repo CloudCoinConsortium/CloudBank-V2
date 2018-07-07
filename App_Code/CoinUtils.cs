@@ -1,4 +1,4 @@
-﻿
+
 using System;
 using System.Linq;
 using System.Security.Cryptography;
@@ -551,27 +551,34 @@ using System.Text.RegularExpressions;
 
         public void sortToFolder()
         {
-			if (charCount(cc.pown, 'p') > 20 )
-            {
-               
-                Console.Out.WriteLine("Greater than 20 passed");
-				if ( !isFracked() )
+			if(charCount(cc.pown, 'p') > 19)//Did 20 or more pass?
+			{
+				if( charCount(cc.pown, 'p') > 0 )//Any Fails?
+				{
+				 folder = Folder.Fracked;
+				 return;
+				}
+				else//no fails
 				{
 					folder = Folder.Bank;
+					return;
+				}//There were fracked
+			}
+			else //less than 20 passed
+			{
+				if(   (charCount(cc.pown, 'p') + charCount(cc.pown, 'f')) > 15)// is the RAIDA healthy
+				{
+					folder = Folder.Counterfeit;
 					return;
 				}
 				else
 				{
-					folder = Folder.Fracked;
+					folder = Folder.Lost;
 					return;
-				}//end if else not fracked
-            }
-            else
-            {
-                Console.Out.WriteLine("Less than 20 passed");
-				folder = Folder.Counterfeit;
-				return;
-            }//end if else not fracked
+				}// end if RAIDA health low
+			
+			}//end if else 20 did pass
+			
 			
 		/*		
 			
