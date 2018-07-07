@@ -1,7 +1,5 @@
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Web;
 using DocumentFormat.OpenXml;
 using DocumentFormat.OpenXml.Packaging;
 using DocumentFormat.OpenXml.Spreadsheet;
@@ -12,27 +10,19 @@ using System.Web.Configuration;
 /// </summary>
 public class BankXMLUtils
 {
-	string billPayFilePathAndName;
-	
-	/*
-	This allows you to access an excel spreed sheet and make changes. 
-	
-	
-	*/
-    public BankXMLUtils( string billPayFilePathAndName )
+    public BankXMLUtils()
     {
         //
         // TODO: Add constructor logic here
         //
-		this.billPayFilePathAndName = billPayFilePathAndName;
     }
 
     public void AddToPendingChecks(string guidout, string payto, string emailto, string memo, double amount, string signedby, string youremail, string othercontactinfo)
     {
-        //string billPayFilePathAndName = AppDomain.CurrentDomain.BaseDirectory + @"\" + WebConfigurationManager.AppSettings["root"] + @"\billpay.xlsx";
+        string filepath = AppDomain.CurrentDomain.BaseDirectory + @"\" + WebConfigurationManager.AppSettings["root"] + @"\billpay.xlsx";
 
         //open the excel using openxml sdk  
-        using (SpreadsheetDocument doc = SpreadsheetDocument.Open(billPayFilePathAndName, true))
+        using (SpreadsheetDocument doc = SpreadsheetDocument.Open(filepath, true))
         {
             WorkbookPart wbPart = doc.WorkbookPart;
             int worksheetcount = doc.WorkbookPart.Workbook.Sheets.Count();
@@ -123,10 +113,10 @@ public class BankXMLUtils
 
     public int FindCheckRow(string guid)
     {
-        string billPayFilePathAndName = AppDomain.CurrentDomain.BaseDirectory + @"\" + WebConfigurationManager.AppSettings["root"] + @"\billpay.xlsx";
+        string filepath = AppDomain.CurrentDomain.BaseDirectory + @"\" + WebConfigurationManager.AppSettings["root"] + @"\billpay.xlsx";
 
         //open the excel using openxml sdk  
-        using (SpreadsheetDocument doc = SpreadsheetDocument.Open(billPayFilePathAndName, true))
+        using (SpreadsheetDocument doc = SpreadsheetDocument.Open(filepath, true))
         {
             WorkbookPart wbPart = doc.WorkbookPart;
             int worksheetcount = doc.WorkbookPart.Workbook.Sheets.Count();
@@ -168,10 +158,10 @@ public class BankXMLUtils
     {
         int checkIndex = checkRow - 1;
 
-        string billPayFilePathAndName = AppDomain.CurrentDomain.BaseDirectory + @"\" + WebConfigurationManager.AppSettings["root"] + @"\billpay.xlsx";
+        string filepath = AppDomain.CurrentDomain.BaseDirectory + @"\" + WebConfigurationManager.AppSettings["root"] + @"\billpay.xlsx";
 
         //open the excel using openxml sdk  
-        using (SpreadsheetDocument doc = SpreadsheetDocument.Open(billPayFilePathAndName, true))
+        using (SpreadsheetDocument doc = SpreadsheetDocument.Open(filepath, true))
         {
             WorkbookPart wbPart = doc.WorkbookPart;
             int worksheetcount = doc.WorkbookPart.Workbook.Sheets.Count();
@@ -287,10 +277,10 @@ public class BankXMLUtils
 
     public void DeleteFromPending(int checkRow)
     {
-        string billPayFilePathAndName = AppDomain.CurrentDomain.BaseDirectory + @"\" + WebConfigurationManager.AppSettings["root"] + @"\billpay.xlsx";
+        string filepath = AppDomain.CurrentDomain.BaseDirectory + @"\" + WebConfigurationManager.AppSettings["root"] + @"\billpay.xlsx";
 
         //open the excel using openxml sdk  
-        using (SpreadsheetDocument doc = SpreadsheetDocument.Open(billPayFilePathAndName, true))
+        using (SpreadsheetDocument doc = SpreadsheetDocument.Open(filepath, true))
         {
             WorkbookPart wbPart = doc.WorkbookPart;
             int worksheetcount = doc.WorkbookPart.Workbook.Sheets.Count();
