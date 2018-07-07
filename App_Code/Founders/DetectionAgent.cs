@@ -213,7 +213,7 @@ using System.IO;
                             response[i].success = true;
                             response[i].milliseconds = Convert.ToInt32(ts.Milliseconds);
                         }
-                        else if (responseArray[i].Contains("fail") && responseArray[i].Length < 200)//less than 200 incase there is a fail message inside errored page
+                        else if (responseArray[i].Contains("fail") && responseArray[i].Length < 220)//less than 200 incase there is a fail message inside errored page
                         {
                             response[i].fullResponse = responseArray[i];
                             response[i].outcome = "fail";
