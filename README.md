@@ -228,7 +228,7 @@ Allows a stack of CloudCoins to be uploaded and powned on the server. This servi
 
 Sample POST Request:
 ```http
-https://bank.cloudcoin.global/service/deposit_one_stack
+https://bank.cloudcoin.global/service/deposit_one_stack_with_change
 account=CloudCoin@Protonmail.com
 amount_to_deposite=137
 amount_sent=250
