@@ -231,6 +231,7 @@ Sample POST Request:
 https://bank.cloudcoin.global/service/deposit_one_stack
 account=CloudCoin@Protonmail.com
 amount_to_deposite=137
+amount_sent=250
 stack=
 {
 	"cloudcoin": [
