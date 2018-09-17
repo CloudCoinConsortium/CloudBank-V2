@@ -1,6 +1,18 @@
 # CloudBank-V2
 Uses new Core2
 
+[Key file format](README.md#key-file-format)
+
+[PRINT WELCOME SERVICE](README.md#print-welcome-service)
+
+[ECHO RAIDA SERVICE](README.md#echo-raida-service)
+
+[DEPOSIT SERVICE](README.md#deposit-service)
+
+[DEPOSIT SERVICE WITH CHANGE](README.md#deposit-service-with-change)
+
+
+
 # CLOUDCOIN CONSORTIUM'S CLOUDSERVER VERSION 2 June-22-2018 MIT LICENCE
 
 This Software is provided as is with all faults, defects 
@@ -1486,6 +1498,83 @@ Note that there still may be some change or CloudCoins that were not sent to the
 
 }
 ```
+
+
+
+
+## Pay Forward Service
+
+Allows RAIDA to send Authenticity Numbers that can be combined and placed into accounts. 
+
+The parameter "to_account_name_or_number" will either be an account name that is on the CloudServer or a serial number of a cloudcoin. 
+The idea is that anonymouse transactions can happen if the serial number is used. 
+
+change_to_account_name_or_number could be "keep" as in keep the change. 
+
+
+
+Sample GET request
+```http
+https://bank.cloudcoin.global/service/combroker?
+raida=1&
+nn=1&
+sn=16773897&
+an=b25fc7a548c341c98cefbac35689aff1&
+to_account_name_or_number=8877676&
+change_to_account_name_or_number=depository&
+method=bank&
+from_email=Sean@Worthington.net&
+total_to_send=385&
+memo=We love Pay Forward!
+```
+Response if success:
+```http
+{
+"bank_server":"Bank.CloudCoin.Global",
+"status":"paid",
+"version":"2.0",
+"message":"The CloudCoins were placed in the specified account name or number.",
+"time":"2018-06-23T05:18:34.3025868Z"
+}
+```
+
+Response if fail due to missing paramters:
+```http
+{
+"bank_server":"Bank.CloudCoin.Global",
+"status":"fail",
+"version":"2.0",
+"message":"Missing parameters. This request requires, NN, SN, AN, to_account_name_or_number,
+change_to_account_name_or_number,method,from_email,total_to_send,memo",
+"time":"2018-06-23T05:18:34.3025868Z"
+}
+```
+
+Response if fail if account name does not exist:
+```http
+{
+"bank_server":"Bank.CloudCoin.Global",
+"status":"fail",
+"version":"2.0",
+"message":"Account: Account name does not exist on communication broker.",
+"time":"2018-06-23T05:18:34.3025868Z"
+}
+
+Response if fail for any other reason:
+```http
+{
+"bank_server":"Bank.CloudCoin.Global",
+"status":"fail",
+"version":"2.0",
+"message":"Failed because put reason here",
+"time":"2018-06-23T05:18:34.3025868Z"
+}
+```
+
+
+```
+
+
 # END OF CLOUDBANK VERSION 1
 
 
@@ -1616,6 +1705,9 @@ Response if fail:
 	"time": "2016-40-21 10:40:PM"
 }
 ```
+
+
+
 
 
 
