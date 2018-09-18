@@ -1583,11 +1583,11 @@ Response if fail for any other reason:
 
 Allows a client to get money from a Communication Broker.  
 
-The client must know 
+The client must know the account name or number that they are using.
 
+The client must first get a ticket to prove that they own that box. 
 
-This request comes from the RAIDA. Note that the RAIDA generates a ticket so that the bank can check to see if it is authentic if the bank wants to. 
-
+Actio is either Download or "bank" which means move it to thei bank. 
 
 
 Sample GET request
@@ -1596,7 +1596,7 @@ https://bank.cloudcoin.global/service/retrieve?
 account_name_or_number=8877676&
 from_email=Sean@Worthington.net&
 ticket=5AB9FA9D23324E52B8BAE707826870DA8760BD4F97ED&
-memo=We love Pay Forward!
+action=download
 ```
 Response if success:
 ```http
