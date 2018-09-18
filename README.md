@@ -11,6 +11,10 @@ Uses new Core2
 
 [DEPOSIT SERVICE WITH CHANGE](README.md#deposit-service-with-change)
 
+[Pay Forward Service](README.md#pay-forward-service)
+
+[Retrieve Pay Forward Service](README.md#retrieve-pay-forward-service)
+
 
 
 # CLOUDCOIN CONSORTIUM'S CLOUDSERVER VERSION 2 June-22-2018 MIT LICENCE
@@ -1500,8 +1504,6 @@ Note that there still may be some change or CloudCoins that were not sent to the
 ```
 
 
-
-
 ## Pay Forward Service
 
 Allows RAIDA to send Authenticity Numbers that can be combined and placed into accounts. 
@@ -1576,7 +1578,72 @@ Response if fail for any other reason:
 ```
 
 
+
+## Retrieve Pay Forward Service
+
+Allows a client to get money from a Communication Broker.  
+
+The client must know 
+
+
+This request comes from the RAIDA. Note that the RAIDA generates a ticket so that the bank can check to see if it is authentic if the bank wants to. 
+
+
+
+Sample GET request
+```http
+https://bank.cloudcoin.global/service/retrieve?
+account_name_or_number=8877676&
+from_email=Sean@Worthington.net&
+ticket=5AB9FA9D23324E52B8BAE707826870DA8760BD4F97ED&
+memo=We love Pay Forward!
 ```
+Response if success:
+```http
+{
+"bank_server":"Bank.CloudCoin.Global",
+"status":"paid",
+"version":"2.0",
+"message":"The CloudCoins were placed in the specified account name or number.",
+"time":"2018-06-23T05:18:34.3025868Z"
+}
+```
+
+Response if fail due to missing paramters:
+```http
+{
+"bank_server":"Bank.CloudCoin.Global",
+"status":"fail",
+"version":"2.0",
+"message":"Missing parameters. This request requires, NN, SN, AN, to_account_name_or_number,
+change_to_account_name_or_number,method,from_email,total_to_send,memo",
+"time":"2018-06-23T05:18:34.3025868Z"
+}
+```
+
+Response if fail if account name does not exist:
+```http
+{
+"bank_server":"Bank.CloudCoin.Global",
+"status":"fail",
+"version":"2.0",
+"message":"Account: Account name does not exist on communication broker.",
+"time":"2018-06-23T05:18:34.3025868Z"
+}
+
+Response if fail for any other reason:
+```http
+{
+"bank_server":"Bank.CloudCoin.Global",
+"status":"fail",
+"version":"2.0",
+"message":"Failed because put reason here",
+"time":"2018-06-23T05:18:34.3025868Z"
+}
+```
+
+
+
 
 
 # END OF CLOUDBANK VERSION 1
