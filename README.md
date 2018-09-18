@@ -1512,6 +1512,9 @@ The idea is that anonymouse transactions can happen if the serial number is used
 change_to_account_name_or_number could be "keep" as in keep the change. 
 
 
+This request comes from the RAIDA. Note that the RAIDA generates a ticket so that the bank can check to see if it is authentic if the bank wants to. 
+
+
 
 Sample GET request
 ```http
@@ -1525,6 +1528,7 @@ change_to_account_name_or_number=depository&
 method=bank&
 from_email=Sean@Worthington.net&
 total_to_send=385&
+ticket=5AB9FA9D23324E52B8BAE707826870DA8760BD4F97ED&
 memo=We love Pay Forward!
 ```
 Response if success:
