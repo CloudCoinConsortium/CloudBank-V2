@@ -1,16 +1,16 @@
 
+
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <title>Template &middot; Bootstrap 2.2.2 Documentation - BootstrapDocs</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
-    <meta name="author" content="">
+<head>
+<meta charset="utf-8">
+<title>Template &middot; Bootstrap 2.2.2 Documentation - BootstrapDocs</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="">
+<meta name="author" content="">
 <link href="../css/bootstrap2.css" rel="stylesheet">
-    <!-- Le styles -->
-  
-    <style type="text/css">
+
+<style type="text/css">
       body {
         padding-top: 20px;
         padding-bottom: 40px;
@@ -47,62 +47,40 @@
         margin-top: 28px;
       }
     </style>
-    
 
-    <!-- Fav and touch icons -->
+</head>
+<body>
+<div class="container-narrow">
+<div class="masthead">
+<ul class="nav nav-pills pull-right">
+<li class="active"><a href="index.html">Home</a></li>
+</ul>
+<h1 class="muted">Deposit One Stack Service</h1>
+<h3 class="muted">Test Deposit One Stack Service</h3>
+</div>
+<hr>
+<div id="page-wrapper">
+<h3>Deposit One Stack File</h3>
+<p>Allows you to upload a stack of CloudCoins into your bank. You must know your account and PK.</p>
+<form method="POST" action="../service/deposit_one_stack.aspx">
+<input type="hidden" id="stack" name="stack">
 
-  </head>
+<div>
+Account:<br>
+<input type="text" id="account" size="50" name="account">
+</div>
+<div>
+<br>
+</div>
+<div>
+<br>
+Select a text file:
+<input type="file" id="fileInput"><br><br>
+</div>
+<button class="btn btn-large btn-success">POST Stack (after you choose File)</button>
+</form>
 
-  <body>
-
-  
-  
-    <div class="container-narrow">
-
-      <div class="masthead">
-        <ul class="nav nav-pills pull-right">
-          <li class="active"><a href="index.html">Home</a></li>
-        </ul>
-		<h1 class="muted">Deposit One Stack Service</h1>
-        <h3 class="muted">Test Deposit One Stack Service</h3>
-      </div>
-
-      <hr>
-
-	  
-	  
-	  <div id="page-wrapper">
-
-		<h3>Deposit One Stack File</h3>
-		<p>Allows you to upload a stack of CloudCoins into your bank. You must know your account and PK.</p>
-		
-		<form method="POST" action="../service/deposit_one_stack.aspx" >
-				
-		<input type="hidden" id="stack" name="stack">
-		<!--<div>
-		Private Key:<br>
-		<input type="text" id="pk" size="50" name="pk" value="">
-		</div>-->
-		<div>
-		Account:<br>
-		<input type="text" id="account" size="50" name="account" >
-		</div>
-		<div>
-		<br>
-		</div>
-		<div>
-			<br>
-			Select a text file: 
-			<input type="file" id="fileInput"><br><br>
-		</div>
-		<button class="btn btn-large btn-success">POST Stack (after you choose File)</button>
-		</form>
-
-		
-		
-	<!--	<button onclick="alert(stack.value)"> Click to see value of stack file</button>-->
-		<pre id="fileDisplayArea"><pre>
-		
+<pre id="fileDisplayArea"><pre>		
 		
 
 	</div>
@@ -152,8 +130,7 @@
            <p>The program must put a stack file in a folder that is accessible via the web to cors on the CloudBank Server. </p>
 		  
 		  <b>Sample POST Request:</b>
-		  <pre>
-		<span id="url">  
+		  <pre>		<span id="url">  
 	https://bank.cloudcoin.global/service/deposit_one_stack.aspx?</span>
 stack=
 {
@@ -184,8 +161,7 @@ stack=
 		  
 		  </pre>
 		  <b>Sample Response if good:</b>
-		  <pre >
-{
+		  <pre>{
  "bank_server":"bank.cloudcoin.global",
  "status":"importing",
  "message":"The stack file has been imported and detection will begin automatically so long as they are not already in bank. 
@@ -196,8 +172,7 @@ stack=
 				
 		  </pre>
 		  <b>Sample Response if bad file bad:</b>
-		  <pre>
-{
+		  <pre>{
  "bank_server":"bank.cloudcoin.global",
  "status":"error",
  "message":"JSON: Your stack file was corrupted. Please check JSON validation.",
@@ -207,8 +182,7 @@ stack=
 				
 		  </pre>
 		  		  <b>Sample Response if nothing attached:</b>
-		  <pre>
-{
+		  <pre>{
  "bank_server":"bank.cloudcoin.global",
  "status":"error",
  "message":"LoadFile: The stack file was empty.",
@@ -221,14 +195,14 @@ stack=
         </div>
  </div>
 
-    </div> <!-- /container -->
+    </div> 
 	<script>
 		var CurrentUrl=window.location.host + "/service/deposit_one_stack" ;
 		document.getElementById("url").innerHTML=CurrentUrl;
 </script   
    <!-- Le javascript
     ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
+    
 
   </body>
 </html>
