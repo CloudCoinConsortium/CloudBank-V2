@@ -1,16 +1,16 @@
 
+
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <title>Show Coins CloudService</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
-    <meta name="author" content="">
+<head>
+<meta charset="utf-8">
+<title>Show Coins CloudService</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="">
+<meta name="author" content="">
 
-    <!-- Le styles -->
-    <link href="../css/bootstrap2.css" rel="stylesheet">
-    <style type="text/css">
+<link href="../css/bootstrap2.css" rel="stylesheet">
+<style type="text/css">
       body {
         padding-top: 20px;
         padding-bottom: 40px;
@@ -47,70 +47,55 @@
         margin-top: 28px;
       }
     </style>
-    <link href="../css/bootstrap-responsive.css" rel="stylesheet">
+<link href="../css/bootstrap-responsive.css" rel="stylesheet">
 
-    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
-    <!--[if lt IE 9]>
+<!--[if lt IE 9]>
       <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
 
-    <!-- Fav and touch icons -->
-
-  </head>
-
-  <body>
-
-    <div class="container-narrow">
-
-      <div class="masthead">
-        <ul class="nav nav-pills pull-right">
-          <li class="active"><a href="index.html">Home</a></li>
-
-        </ul>
-		<h1 class="muted">Show Coins</h1>
-        <h3 class="muted">Show Coins Test</h3>
-      </div>
-
-      <hr>
-
-      <div >
-      <p>Pres the button below to execute the GET request. You must know your own PK and Account.</p>
-        <p id="url"></p>
-		<div>
-        <form name="input" action="../service/show_coins.aspx" method="GET">
-		<br>
-		Private Key:
-		<br>
-		<input type="Text" id="pk" size="50" name="pk" value="">
-		<br>
-		Account:
-		<br>
-		<input type="Text" id="account" size="50" name="account" value="">
-		<br>
-		<br>
-		<input type="submit" class="btn btn-large btn-success" value="Submit service/show_coins">
-		<div>
-		</form>
-      </div>
-
-      <hr>
-
-   
+</head>
+<body>
+<div class="container-narrow">
+<div class="masthead">
+<ul class="nav nav-pills pull-right">
+<li class="active"><a href="index.html">Home</a></li>
+</ul>
+<h1 class="muted">Show Coins</h1>
+<h3 class="muted">Show Coins Test</h3>
+</div>
+<hr>
+<div>
+<p>Pres the button below to execute the GET request. You must know your own PK and Account.</p>
+<p id="url"></p>
+<div>
+<form name="input" action="../service/show_coins.aspx" method="GET">
+<br>
+Private Key:
+<br>
+<input type="Text" id="pk" size="50" name="pk" value="">
+<br>
+Account:
+<br>
+<input type="Text" id="account" size="50" name="account" value="">
+<br>
+<br>
+<input type="submit" class="btn btn-large btn-success" value="Submit service/show_coins">
+<div>
+</form>
+</div>
+<hr>
 <div style="background-color:WhiteSmoke; padding:30px; margin:20px;">
-          <h4>Show Coins</h4>
-           <p>Gets the totals of CloudCoins in the bank. </p>
-		  
-		  <b>Sample request</b>
-		  <pre id="url2">
-		  
+<h4>Show Coins</h4>
+<p>Gets the totals of CloudCoins in the bank. </p>
+<b>Sample request</b>
+<pre id="url2">		  
 	https://bank.cloudcoin.global/service/show_coins
 		  
 		  </pre>
-		  <b>Sample response if good:</b>
-		  <pre>
-{
+<b>Sample response if good:</b>
+<pre>{
 	"bank_server":"Bank.CloudCoin.Global",
-	"account":"CloudCoin@Protonmail.com",
+	"account":"<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="7c3f101309183f1315123c2c0e13081312111d1510521f1311">[email&#160;protected]</a>",
 	"status":"coins_shown",
 	"message":"Coin totals returned.",
 	"ones":3,
@@ -123,11 +108,10 @@
 }
 				
 		  </pre>
-		  <b>Sample Response if fail:</b>
-		  <pre>
-{
+<b>Sample Response if fail:</b>
+<pre>{
 	 "bank_server":"bank.cloudcoin.global",
-	 "account":"CloudCoin@Protonmail.com",
+	 "account":"<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="27644b48524364484e49677755485348494a464e4b0944484a">[email&#160;protected]</a>",
 	 "status":"fail",
 	 "message":"Private key incorrect"
 	 "ones":0,
@@ -140,25 +124,16 @@
 }
 				
 		  </pre>
-		 
-	 </div>
-
-      <hr>
-
-     
-
-    </div> <!-- /container -->
-<script>
+</div>
+<hr>
+</div> 
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 	
 		var CurrentUrl=window.location.host ;
 		document.getElementById("url").innerHTML=CurrentUrl + "/service/echo?account=CloudCoin@Protonmail.com&pk=640322f6d30c45328914b441ac0f4e5b";
 	document.getElementById("url2").innerHTML="<BR>"+CurrentUrl+"/service/echo?account=CloudCoin@Protonmail.com&pk=640322f6d30c45328914b441ac0f4e5b<BR><BR>";
 		</script>
-	
-    <!-- Le javascript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    
 
-  </body>
+
+</body>
 </html>
