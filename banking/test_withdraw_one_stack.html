@@ -1,16 +1,16 @@
 
+
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <title>Withdraw One Stack</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
-    <meta name="author" content="">
+<head>
+<meta charset="utf-8">
+<title>Withdraw One Stack</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="">
+<meta name="author" content="">
 
-    <!-- Le styles -->
-    <link href="../css/bootstrap2.css" rel="stylesheet">
-    <style type="text/css">
+<link href="../css/bootstrap2.css" rel="stylesheet">
+<style type="text/css">
       body {
         padding-top: 20px;
         padding-bottom: 40px;
@@ -47,74 +47,57 @@
         margin-top: 28px;
       }
     </style>
-    <link href="../css/bootstrap-responsive.css" rel="stylesheet">
+<link href="../css/bootstrap-responsive.css" rel="stylesheet">
 
-    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
-    <!--[if lt IE 9]>
+<!--[if lt IE 9]>
       <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
 
-    <!-- Fav and touch icons -->
-
-  </head>
-
-  <body>
-
-    <div class="container-narrow">
-
-      <div class="masthead">
-        <ul class="nav nav-pills pull-right">
-          <li class="active"><a href="index.html">Home</a></li>
-        </ul>
-		<h1 class="muted">Withdraw One Stack</h1>
-        <h3 class="muted">Test Withdraw One Stack Service</h3>
-      </div>
-
-      <hr>
-
-      <div>
-	  GET Stack from CloudBank using: 
-<pre >
-	https://<span id="url5"></span>/service/withdraw_one_stack?amount=254&pk=ef50088c8218afe53ce2ecd655c2c786&account=CloudCoin@Protonmail.com
+</head>
+<body>
+<div class="container-narrow">
+<div class="masthead">
+<ul class="nav nav-pills pull-right">
+<li class="active"><a href="index.html">Home</a></li>
+</ul>
+<h1 class="muted">Withdraw One Stack</h1>
+<h3 class="muted">Test Withdraw One Stack Service</h3>
+</div>
+<hr>
+<div>
+GET Stack from CloudBank using:
+<pre>	https://<span id="url"></span>/service/withdraw_one_stack?a<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="2845475d465c151a1d1c0e5843154d4e1d181810104b101a1910494e4d1d1b4b4d1a4d4b4c1e1d1d4b1a4b1f101e0e494b4b475d465c156b44475d4c6b47414668">[email&#160;protected]</a>Protonmail.com
 </pre>
-	<form name="input" action="../service/withdraw_one_stack.aspx" method="GET">
-	<br>
-	Amount:
-	<br>
-	<input type="Number" min="0" id="amount" name="amount" value="">
-	<br>
-	Account:
-	<br>
-	<input type="Text" size="50" id="account" name="account" value="">
-	<br>
-	Private Key:
-	<br>
-	<input type="Text" id="pk" size="50" name="pk" value="">
-	<br>
-	<br>
-	<input type="submit" class="btn btn-large btn-success" value="Get Stack">
-	</form>
-
-
-	   
-      </div>
-
-      <hr>
-     
+<form name="input" action="../service/withdraw_one_stack.aspx" method="POST">
+<br>
+Amount:
+<br>
+<input type="Number" min="0" id="amount" name="amount" value="">
+<br>
+Account:
+<br>
+<input type="Text" size="50" id="account" name="account" value="">
+<br>
+Private Key:
+<br>
+<input type="Text" id="pk" size="50" name="pk" value="">
+<br>
+<br>
+<input type="submit" class="btn btn-large btn-success" value="Get Stack">
+</form>
+</div>
+<hr>
 <div style="background-color:LightSalmon; padding:30px; margin:20px;">
-          <h4>private withdraw_account</h4>
-                <p>Asks the CloudBank to send it a stack file and remove those coins from the bank.</p>
-		  
-		  <b>Sample GET Request:</b>
-		  <pre>
-		  
-	https://<span id="url2">https://bank.cloudcoin.global</span>/service/withdraw_account?amount=254&pk=ef50088c8218afe53ce2ecd655c2c786&account=CloudCoin@Protonmail.com
+<h4>private withdraw_account</h4>
+<p>Asks the CloudBank to send it a stack file and remove those coins from the bank.</p>
+<b>Sample GET Request:</b>
+<pre>		  
+	<span id="url2">https://bank.cloudcoin.global</span>/service/withdraw_account?a<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="5934362c372d646b6c6d7f2932643c3f6c696961613a616b6861383f3c6c6a3a3c6b3c3a3d6f6c6c3a6b3a6e616f7f383a3a362c372d641a35362c3d1a36303719">[email&#160;protected]</a>Protonmail.com
 
 		  
 		  </pre>
-		  <b>Sample response if good</b>
-		  <pre>
-{
+<b>Sample response if good</b>
+<pre>{
 	"cloudcoin": [
 		{ 
 		"nn":"1", 
@@ -162,23 +145,19 @@
 }
 				
 		  </pre>
-		
- </div>
- 
-
-    </div> <!-- /container -->
-<script>
+</div>
+</div> 
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 	
 		var CurrentUrl=window.location.host ;
-		
+			
+		document.getElementById("url").innerHTML=CurrentUrl;
 		document.getElementById("url2").innerHTML=CurrentUrl;
 		document.getElementById("url3").innerHTML=CurrentUrl;
 		document.getElementById("url4").innerHTML=CurrentUrl;
 		document.getElementById("url5").innerHTML=CurrentUrl;
 	</script>
-    <!-- Le javascript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
 
-  </body>
+
+</body>
 </html>
