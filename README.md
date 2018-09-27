@@ -15,6 +15,8 @@ Uses new Core2
 
 [Retrieve Pay Forward Service](README.md#retrieve-pay-forward-service)
 
+[New Account](README.md#new-account)
+
 
 
 # CLOUDCOIN CONSORTIUM'S CLOUDSERVER VERSION 2 June-22-2018 MIT LICENCE
@@ -1741,38 +1743,41 @@ Account IDs cannot contain any of the following characters:
 ```
 Your CloudBank may treat your Account identifiers as either case sensitive or case insensitive. This depends on if your CloudBank is hosted on a Linux (PHP) or Windows (C#) System. 
 
+
+## New Account
+
+Allows the administrator of the bank to create a new account
+
 POST:
 ```http
 https://cloudcoin.global/bank/account.php?
 
-uid=e24b3a755916472f8768e4e9992827a0 (recover uid if left off)
+admin_password=e24b3a755916472f8768e4e9992827a0 
 
-pw=74307d8442f54763ba6ffab7fdc9b610 (recover password if left off)
+account_name=newcompany
 
-newpw=fbd9bf492bf149aeac3dc2a5bdcc38b2 (option. Change password if include.)
+pw=74307d8442f54763ba6ffab7fdc9b610
 
-email=Billy@Hotsplt.com (recover email if left off)
-
-newmail=Billy@Protonmail.com (optional. Change email if included)
 ```
 
-Note: If the account has already been created the API just says success. 
+Note: If the account has already been created the API just says success. "newcompany" will be replaced with the actaul name of the account. 
 Response if success:
 ```http
 {
 	"server": "www.myBank.com",
 	"status": "added",
-	"message": "Account was created for user e24b3a755916472f8768e4e9992827a0. Username and Password sent to email provided.",
+	"message": "Account was created for user newcompany.",
 	"time": "2016-40-21 10:40:PM"
 }
 ```
 
 Response if fail:
+ "newcompany" will be replaced with the actaul name of the account. 
 ```http
 {
 	"server": "www.myBank.com",
 	"status": "notadded",
-	"message": "Account was not created for user e24b3a755916472f8768e4e9992827a0.",
+	"message": "Account was not created for user newcompany.",
 	"time": "2016-40-21 10:40:PM"
 }
 ```
