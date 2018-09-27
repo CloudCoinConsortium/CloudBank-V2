@@ -1750,17 +1750,11 @@ Allows the administrator of the bank to create a new account
 
 POST:
 ```http
-https://cloudcoin.global/bank/account.php?
-
-admin_password=e24b3a755916472f8768e4e9992827a0 
-
-account_name=newcompany
-
-pw=74307d8442f54763ba6ffab7fdc9b610
+https://bank.cloudcoin.global/service/new_account?admin_password=e24b3a755916472f8768e4e9992827a&account_name=newcompany&pw=74307d8442f54763ba6ffab7fdc9b610
 
 ```
 
-Note: If the account has already been created the API just says success. "newcompany" will be replaced with the actaul name of the account. 
+Note: If the account has already been created the API just says success. "newcompany" will be replaced with the actual name of the account. 
 Response if success:
 ```http
 {
@@ -1771,17 +1765,37 @@ Response if success:
 }
 ```
 
-Response if fail:
+Response if fail because password is not strong enough:
  "newcompany" will be replaced with the actaul name of the account. 
 ```http
 {
 	"server": "www.myBank.com",
 	"status": "notadded",
-	"message": "Account was not created for user newcompany.",
+	"message": "Password not strong enough. Account was not created for user newcompany.",
 	"time": "2016-40-21 10:40:PM"
 }
 ```
 
+Response if fail because account name exists:
+ "newcompany" will be replaced with the actaul name of the account. 
+```http
+{
+	"server": "www.myBank.com",
+	"status": "notadded",
+	"message": "Exists. Account was not created for user newcompany because the account already exists.",
+	"time": "2016-40-21 10:40:PM"
+}
+```
+Response if fail because account name does not meet requirements:
+ "newcompany" will be replaced with the actaul name of the account. 
+```http
+{
+	"server": "www.myBank.com",
+	"status": "notadded",
+	"message": "Nameing Violation. Account was not created for user newcompany because the name proposed did not meet requirements.",
+	"time": "2016-40-21 10:40:PM"
+}
+```
 
 
 
