@@ -1522,6 +1522,7 @@ This request comes from the RAIDA. Note that the RAIDA generates a ticket so tha
 Sample GET request
 ```http
 https://bank.cloudcoin.global/service/combroker?
+order_number=99884&
 raida=1&
 nn=1&
 sn=16773897&
