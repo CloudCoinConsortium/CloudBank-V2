@@ -1505,15 +1505,18 @@ Note that there still may be some change or CloudCoins that were not sent to the
 ```
 
 
-## Pay Forward Service
+## Pay Forward Receiver Service
 
-Allows RAIDA to send Authenticity Numbers that can be combined and placed into accounts. 
+Allows RAIDA to send Authenticity Numbers that can be combined and placed into accounts.The steps are: 
 
-The parameter "to_account_name_or_number" will either be an account name that is on the CloudServer or a serial number of a cloudcoin. 
-The idea is that anonymouse transactions can happen if the serial number is used. 
+1. The Receiver Service validates the POST Parameters.
+2. The Receiver Service sends a multi hints request to the Multi Hints service of the RAIDA to see if ticket is good. 
+3. The Receiver Service stores the entire request in “Incoming” folder in and creates a order number subfolder there for the entire request. Within that order's folder, a folder is created for every coin serial number. The title of the names of the files will be The AN number and a ".txt" extension. 
+
+
+The parameter "to_account_name_or_number" will either be an account name that is on the CloudServer or a serial number of a cloudcoin. The serial number is a serial number that the person who will claim the coin so that they can identifiy that the coins is meant for them. The idea is that anonymouse transactions can happen if the serial number is used. 
 
 change_to_account_name_or_number could be "keep" as in keep the change. 
-
 
 This request comes from the RAIDA. Note that the RAIDA generates a ticket so that the bank can check to see if it is authentic if the bank wants to. 
 
@@ -1521,7 +1524,7 @@ This request comes from the RAIDA. Note that the RAIDA generates a ticket so tha
 
 Sample POST request that includes 3 CloudCoins. 
 ```http
-https://bank.cloudcoin.global/service/combroker?
+https://bank.cloudcoin.global/service/receiver?
 order_number=99884&
 raida=1&
 to_account_name_or_number=8877676&
