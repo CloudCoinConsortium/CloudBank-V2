@@ -471,7 +471,7 @@ Sample Response if fail:
  "bank_server":"bank.cloudcoin.global",
  "account":"CloudCoin@Protonmail.com",
  "status":"fail",
- "message":"Private key incorrect"
+ "message":"Private key incorrect",
  "ones":0,
  "fives":0,
  "twentyfives":0,
@@ -519,7 +519,7 @@ Sample Response if fail:
  "bank_server":"bank.cloudcoin.global",
  "account":"CloudCoin@Protonmail.com",
  "status":"fail",
- "message":"Private key incorrect"
+ "message":"Private key incorrect",
  "time":"2016-49-21 7:49:PM"
 }
 ```
@@ -559,7 +559,7 @@ Sample Response if good:
  "status":"coins_for_sale",
  "currencies":["dollars","bitcoin"],
  "prices":[.03,.0098],
- "methods":["green.money","stripe","paypal"]
+ "methods":["green.money","stripe","paypal"],
  "ones":205,
  "fives":10,
  "twentyfives":105,
@@ -576,7 +576,7 @@ Sample Response if fail:
  "exchange_server":"bank.cloudcoin.global",
  "account":"CloudCoin@Protonmail.com",
  "status":"fail",
- "message":"Some error happened"
+ "message":"Some error happened",
  "time":"2018-06-23T05:53:39.4155794Z",
  "version":"2.0"
 }
@@ -614,7 +614,7 @@ Sample Response if fail:
  "exchange_server":"bank.cloudcoin.global",
  "account":"CloudCoin@Protonmail.com",
  "status":"fail",
- "message":"Some error happened"
+ "message":"Some error happened",
  "time":"2018-06-23T05:53:39.4155794Z",
  "version":"2.0"
 }
