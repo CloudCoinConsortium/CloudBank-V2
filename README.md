@@ -11,7 +11,7 @@ Uses new Core2
 
 [DEPOSIT SERVICE WITH CHANGE](README.md#deposit-service-with-change)
 
-[Pay Forward Service](README.md#pay-forward-service)
+[RECEIVE FROM RAIDA](README.md#receive-from-raida)
 
 [Retrieve Pay Forward Service](README.md#retrieve-pay-forward-service)
 
@@ -1505,14 +1505,27 @@ Note that there still may be some change or CloudCoins that were not sent to the
 ```
 
 
-## Pay Forward Receiver Service ( receive_from_raida )
+## Receive From Raida
 
 Allows RAIDA to send Authenticity Numbers that can be combined and placed into accounts.The steps are: 
 
 1. The Receiver Service validates the POST Parameters.
 2. The Receiver Service sends a multi hints request to the Multi Hints service of the RAIDA to see if ticket is good. 
-3. The Receiver Service stores the entire request in “Incoming” folder in and creates a order number subfolder there for the entire request. Within that order's folder, a folder is created for every coin serial number. The title of the names of the files will be The AN number and a ".txt" extension. 
+3. The Receiver Service stores the entire request in “Incoming” folder in and creates a order number subfolder there for the entire request. Within that order's folder, a folder is created for every coin serial number. The title of the names of the files will be The raida number, AN number and a ".txt" extension. 
 
+Sample Files in the Imported/8772992/16777216/ (imported, OrderNumber, Serial Number)
+
+```html
+0.6fc740a03462463a8a417287a6996567.txt
+1.29789830cc244322a702ebe9e0ce652a.txt
+3.e33a71be3cff4f789389d59575877680.txt
+.
+.
+.
+23.dadd9adcbc524661ab7527a77029f0f3.txt
+24.352a0355cd0141c1bd7c9e596991f53f.txt
+
+```
 
 The parameter "to_account_name_or_number" will either be an account name that is on the CloudServer or a serial number of a cloudcoin. The serial number is a serial number that the person who will claim the coin so that they can identifiy that the coins is meant for them. The idea is that anonymouse transactions can happen if the serial number is used. 
 
