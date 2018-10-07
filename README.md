@@ -1505,7 +1505,7 @@ Note that there still may be some change or CloudCoins that were not sent to the
 ```
 
 
-## Pay Forward Receiver Service
+## Pay Forward Receiver Service ( recieve_from_raida )
 
 Allows RAIDA to send Authenticity Numbers that can be combined and placed into accounts.The steps are: 
 
@@ -1524,7 +1524,7 @@ This request comes from the RAIDA. Note that the RAIDA generates a ticket so tha
 
 Sample POST request that includes 3 CloudCoins. 
 ```http
-https://bank.cloudcoin.global/service/receiver?
+https://bank.cloudcoin.global/service/recieve_from_raida?
 order_number=99884&
 raida=1&
 to_account_name_or_number=8877676&
