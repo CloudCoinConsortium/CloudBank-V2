@@ -1519,21 +1519,34 @@ This request comes from the RAIDA. Note that the RAIDA generates a ticket so tha
 
 
 
-Sample GET request
+Sample POST request that includes 3 CloudCoins. 
 ```http
 https://bank.cloudcoin.global/service/combroker?
 order_number=99884&
 raida=1&
-nn=1&
-sn=16773897&
-an=b25fc7a548c341c98cefbac35689aff1&
 to_account_name_or_number=8877676&
 change_to_account_name_or_number=depository&
 method=bank&
 from_email=Sean@Worthington.net&
 total_to_send=385&
-ticket=5AB9FA9D23324E52B8BAE707826870DA8760BD4F97ED&
 memo=We love Pay Forward!
+
+nn[]=1&
+nn[]=1&
+nn[]=1&
+
+sn[]=16773897&
+sn[]=16773898&
+sn[]=16773899&
+
+an[]=b25fc7a548c341c98cefbac35689aff1&
+an[]=c6856721b1234696825156a7187f6256&
+an[]=0157f12707cd4318aaa60e150514a839&
+
+ticket[]=5AB9FA9D23324E52B8BAE707826870DA8760BD4F97ED&
+ticket[]=CC8C977B96584DA3B8DCAEE4C018FB3DB96584DA3B8D&
+ticket[]=B96584DA3B8D3F747E5EC78747CAA1E0A0EFF20A3916&
+
 ```
 Response if success:
 ```http
