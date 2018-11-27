@@ -1632,11 +1632,34 @@ action=download
 Response if success:
 ```http
 {
-"bank_server":"Bank.CloudCoin.Global",
-"status":"paid",
-"version":"2.0",
-"message":"The CloudCoins were placed in the specified account name or number.",
-"time":"2018-06-23T05:18:34.3025868Z"
+	"cloudcoin": 
+	[
+		{ 
+		"nn":"1", 
+		"sn":"1353489", 
+		"an": ["b78c68929dea65558e167976fcc31f60", "13985cb480d45ddb41f1b4601de359a3", "fcd842d59b8f526b720647196ef1d698", "5cde2c80ca0738181cac13dc9e07669c", "85f5a97c5deb6fab7b193ca89e4b4a27",
+			"1401293332c26d29e703dcff1d9c8574", "f30e88c56e2ce873bc1b7566c4710291", "9a0fb5219971d3678b0ea46aff6d6b50", "73b515652b2d6d2cf10a084c51799e59", "865e234567f25feadb36d2bb1d33a641",
+			"a7cde58b1e915beb4a96565fc01de8cc", "ae74d014288c4292a492158571b18e6c", "a6ef3f5e19af241bf3608553ddd06c3e", "157225a614f345630979fd77a4c7e425", "cab958c341d4406f42c6b40c5e1ad747",
+			"dde3ac4586b572650de258b238dc3ff3", "8fb07919d15f572f7b7ce518a1cdd12c", "7068cea69910599c6b9f8e97d7422156", "8eba83834514b7c9e26cf44c5c81acb8", "70f3bf09ab4d49a2538e0d5a42fc3471",
+			"906aef802ef9e98cc3048f1971d85ae1", "843c9b961687dd2b5bd5199581fc9a67", "a2df053780776cc4ccf46676d626c7b5", "0c54a99ac2eb5e9e3624580100aa33d2", "1289f5a6c6c4372d3de51b12372d524d"],
+		"ed":"11-2020",
+		"pown":"ppppppppppppppppppppppppp",
+		"aoid": []
+		}
+,
+		{ 
+		"nn":"1", 
+		"sn":"1353490", 
+		"an": ["b60c9f334d5073c4317eab5bd14e2055", "7752ab10ea43518c958b2c3c51bfbcd2", "f566c5637998c694e1270bd18fec802c", "fda1a04284c4ee2e937d2d55a8d7d245", "2d903b1f830061c0afc1e005ad855a81",
+			"6a560829b5cf4868898d314ec6bde8b0", "6282c3d654c1fc06a7a9fdbdcd79c41b", "be31582115444e53a662020c934df5d8", "7007cfa54750fa889a055efd24aef195", "d6d5271085545dbe86e685bdcef031fa",
+			"a74deccee27c15fcf50945c8b38fe23e", "40a2abcf692ec9c0674673921d10c4d7", "cfc97536b804dcc4a27913478874a4e0", "4c06bb21dd88f307c1b4e92b2d0dc0b9", "a837615c120de70b4ccf33478cd10177",
+			"c144d923dd7d319a9eecdd7595a6ed84", "94a7ceb99d2c24bda65835991c563e5b", "744714bdb6ba06a8f58204916af9952b", "950396d59e7307625928d14530f01659", "4bd9ad35de4c345c59902adf8c557d94",
+			"7fa42b7e25724c3de6b54dd5d054b066", "11c0cbefc3ffddb7c9cd7a4509f654e6", "195ade35b846570be01df9b99960b19b", "f5b3e678ae7b1d65347972b89fd1ea02", "78f3f866b544b6896466ad8037bc62fd"],
+		"ed":"11-2020",
+		"pown":"ppppppppppppppppppppppppp",
+		"aoid": []
+		}
+	] 
 }
 ```
 
@@ -1651,6 +1674,17 @@ change_to_account_name_or_number,method,from_email,total_to_send,memo",
 "time":"2018-06-23T05:18:34.3025868Z"
 }
 ```
+
+Response if fail because ticket is bad:
+```http
+{
+"bank_server":"Bank.CloudCoin.Global",
+"status":"fail",
+"version":"2.0",
+"message":"Ticket: Ticket was bad.",
+"time":"2018-06-23T05:18:34.3025868Z"
+}
+
 
 Response if fail if account name does not exist:
 ```http
