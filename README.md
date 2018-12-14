@@ -293,6 +293,18 @@ Sample Response if the server cannot make change:
 }
 ```
 
+Sample Response if the account does not exist on the server or if the password was not provided:
+```http
+{
+ "bank_server":"bank.cloudcoin.global",
+ "account":"CloudCoin@Protonmail.com",
+ "status":"fail",
+ "message":"Request Error: Private key or Account not found.",
+ "time":"2016-49-21 7:49:PM"
+}
+```
+
+
 
 Sample Response if bad file bad:
 ```http
