@@ -282,6 +282,20 @@ Sample Response if good:
  "time":"2016-49-21 7:49:PM"
 }
 ```
+
+Sample Response if good and the user sent the perfect amount was sent and there does not need to be change:
+```http
+{
+ "bank_server":"bank.cloudcoin.global",
+ "account":"CloudCoin@Protonmail.com",
+ "status":"importing",
+ "message":"The stack file has been imported and detection will begin automatically so long as they are not already in bank. Please check your reciept.",
+ "reciept":"640322f6d30c45328914b441ac0f4e5b",
+ "change_url":"none",
+ "time":"2016-49-21 7:49:PM"
+}
+```
+
 Sample Response if the server cannot make change:
 ```http
 {
