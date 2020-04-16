@@ -1,7 +1,13 @@
 # CloudBank-V2
 Uses new Core2
 
-[Key file format](README.md#key-file-format)
+[KEY FILE FORMAT](README.md#key-file-format)
+
+[SEND TO SKYWALLET](README.md#send-to-skywallet-service)
+
+[RECEIVE PAYMENT FROM SKYWALLET](README.md#receive-payment-from-skywallet-service)
+
+=============================
 
 [PRINT WELCOME SERVICE](README.md#print-welcome-service)
 
@@ -92,15 +98,28 @@ For security, the system admin must setup SSL and limit the servers that can con
 
 
 ## Key file format
-The CloudBank requires a key and will be in the following format
+The CloudBank requires a key and will be in the following format. Note that HTTPS is assumed. You may add a port number after the
+URL. The account can be in any form. 
+
 ```http
 {
-    "url":"bank.CloudCoin.Global",
+    "url":"bank.CloudCoin.Global:333",
     "privatekey":"6e2b96d6204a4212ae57ab84260e747f",
     "account":"CloudCoin@Protonmail.com"
 }
-```
 
+{
+    "url":"164.52.55.201",
+    "privatekey":"6e2b96d6204a4212ae57ab84260e747f",
+    "account":"CloudCoin.skywallet.cc"
+}
+
+{
+    "url":"164.52.55.201:8888",
+    "privatekey":"IlvetoHave123BigPasswordsÜÿ",
+    "account":"Johnny"
+}
+```
 
  Services
 ------------------------
@@ -235,6 +254,87 @@ Sample Response if receipt number already in use :
  "message":"Duplicate: The receipt number is already in use.",
  "reciept":"640322f6d30c45328914b441ac0f4e5b",
  "time":"2016-49-21 7:49:PM"
+}
+```
+
+## SEND_TO_SKYWALLET
+This allows the caller to send CloudCoins from the CloudBank to a Skywallet Account.The caller will specify the amount to be sent. 
+The CloudBank will make change if necessary. 
+
+
+Sample GET Request:
+
+```http
+https://bank.cloudcoin.global/service/send_to_skywallet?
+pk=baa7578e207b7cfaa0b8336d7ed4a4f8&
+account=depository&
+crypt_pw=34f3d967a2734e63bc6c2a37a7f25003&  //OPTIONAL
+amount=342&
+to=billy.skywallet.cc&
+payment_guid=3354e2f2a4054745b4720d58f71969e3
+base64=V2hpdGUgSG91c2Ugb2ZmaWNpYWxzIHNhaWQgdGhlIGd1aWRlbGluZXMgd2lsbCBiZSDigJxkYXRhLWRyaXZlbizigJ0gbm90IGRhdGUtZHJpdmVuLiBUaGV5IHdpbGwgYmUg4oCcZ292ZXJub3ItbGVk4oCdIGFuZCDigJxsYXllcmVkLOKAnSBub3QgYSBjb29raWUtY3V0dGVyIG9uZS1zaXplLWZpdHMtYWxsIGFwcHJvYWNoIGFuZCB3aWxsIGFkZHJlc3MgdGhlIG5hdGlvbiBzdGF0ZS1ieS1zdGF0ZSwgY291bnR5LWJ5LWM=
+
+```
+Sample Response if good:
+```http
+{
+"bank_server":"Bank.CloudCoin.Global",
+"account":"depository",
+"status":"coins_sent",
+"message":"All coins sent to Skywallet.",
+"time":"2018-06-23T05:53:39.4155794Z",
+"version":"2.0"
+}
+```
+
+Sample Response if fail:
+```http
+{
+ "bank_server":"bank.cloudcoin.global",
+ "account":"CloudCoin@Protonmail.com",
+ "status":"fail",
+ "message":"Private key incorrect",
+ "time":"2018-06-23T05:53:39.4155794Z",
+ "version":"2.0"
+}
+```
+
+## RECEIVE_PAYMENT_FROM_SKYWALLET
+
+Sample GET Request:
+```
+https://bank.cloudcoin.global/service/receive_payment_from_skywallet?
+pk=baa7578e207b7cfaa0b8336d7ed4a4f8&
+account=ourbank.skywallet.cc&
+crypt_pw=34f3d967a2734e63bc6c2a37a7f25003& //OPTIONAL
+sn[]=888734&sn[]=5734&sn[]=6734&sn[]=888734&sn[]=168734&
+
+Sample Response if good:
+```http
+{
+"bank_server":"Bank.CloudCoin.Global",
+"account":"CloudCoin@Protonmail.com",
+"status":"received",
+"message":"All coins were received.",
+"time":"2018-06-23T05:53:39.4155794Z",
+"version":"2.0"
+}
+```
+
+Sample Response if fail:
+```http
+{
+ "bank_server":"bank.cloudcoin.global",
+ "account":"CloudCoin@Protonmail.com",
+ "status":"fail",
+ "message":"Private key incorrect",
+ "ones":0,
+ "fives":0,
+ "twentyfives":0,
+ "hundreds":0,
+ "twohundredfifties":0,
+ "time":"2018-06-23T05:53:39.4155794Z",
+ "version":"2.0"
 }
 ```
 
