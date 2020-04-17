@@ -257,7 +257,7 @@ Sample Response if receipt number already in use :
 }
 ```
 
-## SEND_TO_SKYWALLET
+## SEND TO SKYWALLET
 This allows the caller to send CloudCoins from the CloudBank to a Skywallet Account.The caller will specify the amount to be sent. 
 The CloudBank will make change if necessary. 
 
@@ -275,6 +275,46 @@ payment_guid=3354e2f2a4054745b4720d58f71969e3
 base64=V2hpdGUgSG91c2Ugb2ZmaWNpYWxzIHNhaWQgdGhlIGd1aWRlbGluZXMgd2lsbCBiZSDigJxkYXRhLWRyaXZlbizigJ0gbm90IGRhdGUtZHJpdmVuLiBUaGV5IHdpbGwgYmUg4oCcZ292ZXJub3ItbGVk4oCdIGFuZCDigJxsYXllcmVkLOKAnSBub3QgYSBjb29raWUtY3V0dGVyIG9uZS1zaXplLWZpdHMtYWxsIGFwcHJvYWNoIGFuZCB3aWxsIGFkZHJlc3MgdGhlIG5hdGlvbiBzdGF0ZS1ieS1zdGF0ZSwgY291bnR5LWJ5LWM=
 
 ```
+PARAMETERS
+
+1. pk: The password used to access the CloudBank Wallet
+2. account: The name of the Wallet/Account on the CloudBank
+3. cypt_pw: OPTIONAL password if the wallet on the CloudBank is encrypted
+4. amount: Number of CloudCoins to be sent
+5. to: The Skywallet account that will receive the CloudCoins
+6. payment_guid: OPTIONAL. The GUID used to identify the payment
+7. base64: OPTIONAL. Meta data about the transaction that the receiver will find helpful converted into base64. This meta data is a
+JSON object the follows the following format: 
+
+
+base64 format:
+Note: Including the base64 is optional
+```json
+{
+"title":"RAIDA Data Supreem plan",
+"body":"You have purchased these CloudCoins from Acme coins sales. Call +1(530) 555-6985 for support.",
+"sender_account":"sean.CloudCoin.global",
+"sender_name":"Jon Sender",
+"sender_email":"webmaster@example.com",
+"url":"https://er.miroch.ru/c/6200c62cc6a94aa39f98894ad0347f35.html",
+"img":"https://er.miroch.ru/img/6200c62cc6a94aa39f98894ad0347f35.img"
+}
+
+Sample only using the title and body
+{
+"title":"RAIDA Data Supreem plan",
+"body":"You have purchased these CloudCoins from Acme coins sales. Call +1(530) 555-6985 for support.",
+"sender_account":"",
+"sender_name":"",
+"sender_email":"",
+"url":"",
+"img":""
+}
+
+```
+
+
+
 Sample Response if good:
 ```http
 {
@@ -299,7 +339,7 @@ Sample Response if fail:
 }
 ```
 
-## RECEIVE_PAYMENT_FROM_SKYWALLET
+## RECEIVE PAYMENT FROM SKYWALLET
 
 Sample GET Request:
 ```
@@ -307,7 +347,8 @@ https://bank.cloudcoin.global/service/receive_payment_from_skywallet?
 pk=baa7578e207b7cfaa0b8336d7ed4a4f8&
 account=ourbank.skywallet.cc&
 crypt_pw=34f3d967a2734e63bc6c2a37a7f25003& //OPTIONAL
-sn[]=888734&sn[]=5734&sn[]=6734&sn[]=888734&sn[]=168734&
+sn[]=888734&sn[]=5734&sn[]=6734&sn[]=888734&sn[]=168734
+
 
 Sample Response if good:
 ```http
