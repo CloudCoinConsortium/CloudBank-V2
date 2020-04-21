@@ -1,11 +1,11 @@
 # CloudBank-V2
 Uses new Core2
 
-[KEY FILE FORMAT](README.md#key-file-format)
+[Key File Format](README.md#key-file-format)
 
-[SEND TO SKYWALLET](README.md#send-to-skywallet-service)
+[SendToSkyWallet](README.md#sendtoskywallet)
 
-[RECEIVE PAYMENT FROM SKYWALLET](README.md#receive-payment-from-skywallet-service)
+[RecievePaymentFromSkyWallet](README.md#receivepaymentfromskywallet)
 
 =============================
 
@@ -104,20 +104,20 @@ URL. The account can be in any form.
 ```http
 {
     "url":"bank.CloudCoin.Global:333",
-    "privatekey":"6e2b96d6204a4212ae57ab84260e747f",
-    "account":"CloudCoin@Protonmail.com"
+    "account":"CloudCoin@Protonmail.com",
+    "password":"6e2b96d6204a4212ae57ab84260e747f"
 }
 
 {
     "url":"164.52.55.201",
-    "privatekey":"6e2b96d6204a4212ae57ab84260e747f",
-    "account":"CloudCoin.skywallet.cc"
+    "account":"CloudCoin.skywallet.cc",
+    "password":"6e2b96d6204a4212ae57ab84260e747f"
 }
 
 {
     "url":"164.52.55.201:8888",
-    "privatekey":"IlvetoHave123BigPasswordsÜÿ",
-    "account":"Johnny"
+    "account":"Johnny",
+    "password":"IlvetoHave123BigPasswordsÜÿ"   
 }
 ```
 
@@ -257,7 +257,7 @@ Sample Response if receipt number already in use :
 }
 ```
 
-## SEND TO SKYWALLET
+## SendToWallet
 This allows the caller to send CloudCoins from the CloudBank to a Skywallet Account.The caller will specify the amount to be sent. 
 The CloudBank will make change if necessary. 
 
@@ -339,24 +339,36 @@ Sample Response if fail:
 }
 ```
 
-## RECEIVE PAYMENT FROM SKYWALLET
+## ReceivePaymentFromSkywallet
 
 Sample GET Request:
 ```
 https://bank.cloudcoin.global/service/receive_payment_from_skywallet?
-pk=baa7578e207b7cfaa0b8336d7ed4a4f8&
 account=ourbank.skywallet.cc&
-crypt_pw=34f3d967a2734e63bc6c2a37a7f25003& //OPTIONAL
-sn[]=888734&sn[]=5734&sn[]=6734&sn[]=888734&sn[]=168734
+pw=baa7578e207b7cfaa0b8336d7ed4a4f8&
+wallet=payments_received
+wallet_pw=34f3d967a2734e63bc6c2a37a7f25003& //OPTIONAL
+tag=6200c62cc6a94aa39f98894ad0347f35
 
-
-Sample Response if good:
+Sample Response if 300 coins were received:
 ```http
 {
 "bank_server":"Bank.CloudCoin.Global",
 "account":"CloudCoin@Protonmail.com",
 "status":"received",
-"message":"All coins were received.",
+"message":"300",
+"time":"2018-06-23T05:53:39.4155794Z",
+"version":"2.0"
+}
+```
+
+Sample Response if no coins were received:
+```http
+{
+"bank_server":"Bank.CloudCoin.Global",
+"account":"CloudCoin@Protonmail.com",
+"status":"received",
+"message":"0",
 "time":"2018-06-23T05:53:39.4155794Z",
 "version":"2.0"
 }
@@ -369,13 +381,8 @@ Sample Response if fail:
  "account":"CloudCoin@Protonmail.com",
  "status":"fail",
  "message":"Private key incorrect",
- "ones":0,
- "fives":0,
- "twentyfives":0,
- "hundreds":0,
- "twohundredfifties":0,
- "time":"2018-06-23T05:53:39.4155794Z",
- "version":"2.0"
+ "version":"2.0",
+ "time":"2018-06-23T05:53:39.4155794Z"
 }
 ```
 
