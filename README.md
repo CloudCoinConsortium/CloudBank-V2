@@ -257,7 +257,7 @@ Sample Response if receipt number already in use :
 }
 ```
 
-## SendToWallet
+## SendToSkyWallet
 This allows the caller to send CloudCoins from the CloudBank to a Skywallet Account.The caller will specify the amount to be sent. 
 The CloudBank will make change if necessary. 
 
