@@ -105,19 +105,19 @@ URL. The account can be in any form.
 {
     "url":"bank.CloudCoin.Global:333",
     "account":"CloudCoin@Protonmail.com",
-    "password":"6e2b96d6204a4212ae57ab84260e747f"
+    "privatekey":"6e2b96d6204a4212ae57ab84260e747f"
 }
 
 {
     "url":"164.52.55.201",
     "account":"CloudCoin.skywallet.cc",
-    "password":"6e2b96d6204a4212ae57ab84260e747f"
+    "privatekey":"6e2b96d6204a4212ae57ab84260e747f"
 }
 
 {
     "url":"164.52.55.201:8888",
     "account":"Johnny",
-    "password":"IlvetoHave123BigPasswordsÜÿ"   
+    "privatekey":"IlvetoHave123BigPasswordsÜÿ"   
 }
 ```
 
