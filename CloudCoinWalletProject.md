@@ -37,14 +37,9 @@ Here is the main method: https://github.com/CloudCoinConsortium/CloudBank-Java/b
 * Get Receipt
 * Receive Payment From Skywallet. 
 
-
-## DEPOSIT ONE STACK
-
-The "deposit one stack" is a fire and forget service. It does not tell the caller if the stack was deposited correctly or not. Instead, it returns a receipt number. The user must call the "Get Receipt" service to see the outcome.
-Standard API: https://github.com/CloudCoinConsortium/CloudBank-V2/blob/master/README.md#deposit-service 
-Exsiting code line 101 https://github.com/CloudCoinConsortium/CloudBank-Java/blob/master/src/main/java/com/cloudcoin/bank/WebPages.java
-There is an working example of this here: https://bank.cloudcoin.global/banking/test_deposit_one_stack.html
-Note: The memo parameters has been added recently to the standard and will not be in the old code. 
+## SEND TO SKYWALLET
+Tells the CloudBank to take money from its default wallet and send it to the account specified. 
+https://github.com/CloudCoinConsortium/CloudBank-V2#withdraw-one-stack-service
 
 ## WITHDRAW ONE STACK
 
@@ -53,15 +48,19 @@ This needs a memo parameter added too.
 Here is a working example: 
 https://bank.cloudcoin.global/banking/test_withdraw_one_stack.html
 
+## DEPOSIT ONE STACK
+The "deposit one stack" is a fire and forget service. It does not tell the caller if the stack was deposited correctly or not. Instead, it returns a receipt number. The user must call the "Get Receipt" service to see the outcome.
+Standard API: https://github.com/CloudCoinConsortium/CloudBank-V2/blob/master/README.md#deposit-service 
+Exsiting code line 101 https://github.com/CloudCoinConsortium/CloudBank-Java/blob/master/src/main/java/com/cloudcoin/bank/WebPages.java
+There is an working example of this here: https://bank.cloudcoin.global/banking/test_deposit_one_stack.html
+Note: The memo parameters has been added recently to the standard and will not be in the old code. 
+
+
 ## GET RECIEPT 
 Allows the caller to know if their deposit was good. 
 
 https://github.com/CloudCoinConsortium/CloudBank-V2#withdraw-one-stack-service
 Working example: https://bank.cloudcoin.global/banking/test_get_receipt.html
-
-## SEND TO SKYWALLET
-Tells the CloudBank to take money from its default wallet and send it to the account specified. 
-https://github.com/CloudCoinConsortium/CloudBank-V2#withdraw-one-stack-service
 
 ## RECEIVE PAYMENT FROM SKYWALLET 
 Tells the CloudBank to download the coins with the memo/tag specified. The CloudBank will need to get the SNs of the 
