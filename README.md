@@ -189,6 +189,7 @@ Sample POST Request:
 ```http
 https://bank.cloudcoin.global/service/deposit_one_stack
 account=CloudCoin@Protonmail.com
+memo=Transaction 9988734
 stack=
 {
 	"cloudcoin": [
