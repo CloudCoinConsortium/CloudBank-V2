@@ -1,6 +1,8 @@
 # CloudBank in CloudCoin Wallet
 
 ## PHASE 1
+Note: Phase 1 will not include a GUI but will be done by configuration file (Unless it is easier to include a GUI to configure)
+
 In phase one, we will quickly get things going. We want to enable four or five remote services that will allow merchants to leverage the CloudCoin Wallet to quickly implement CloudCoin in their projects. 
 We will start with one default automatically created user and password that will have access to only one local wallet and one skywallet. 
  
@@ -32,10 +34,12 @@ Here is the main method: https://github.com/CloudCoinConsortium/CloudBank-Java/b
 # CloudBank Services to be created in Order of Importance
 
 * Send To Skywallet
+* Send To Email via Protonmail. 
 * Withdraw one stack
 * Deposit one Stack
 * Get Receipt
 * Receive Payment From Skywallet. 
+
 
 ## SEND TO SKYWALLET
 Tells the CloudBank to take money from its default wallet and send it to the account specified. 
