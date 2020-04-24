@@ -33,9 +33,9 @@ Here is the main method: https://github.com/CloudCoinConsortium/CloudBank-Java/b
 
 # CloudBank Services to be created in Order of Importance
 
+* Withdraw one stack
 * Send To Skywallet
 * Send To Email via Protonmail. 
-* Withdraw one stack
 * Deposit one Stack
 * Get Receipt
 * Receive Payment From Skywallet. 
