@@ -666,6 +666,15 @@ Sample GET Request:
 https://bank.CloudCoin.global/service/withdraw_one_stack?amount=254&pk=ef50088c8218afe53ce2ecd655c2c786&account=CloudCoin@Protonmail.com
 
 ```
+SAMPLE REQUEST FOR A STACK OF COINS FOR WALLET THAT IS ENCRYPTED IN THE WALLET
+```
+https://195.45.84.78:33/service/withdraw_one_stack?amount=254&pk=ef50088c8218afe53ce2ec&account=532fe9e5dc3932650cfa&ek=1170b354e097f2d
+```
+SAMPLE REQUEST WITH OPTIONAL MEMO
+```
+https://195.45.84.78:33/service/withdraw_one_stack?amount=254&pk=ef50088c8218afe53ce2ec&account=532fe9e5dc3932650cfa&base64=SGVyZSBpcyBhIG1lbW8=
+```
+
 sample response if good
 
 ```http
@@ -699,6 +708,21 @@ Sample Response if fail:
 }
 ```
 
+REQUIRED PARAMETERS
+```
+amount: The amount of CloudCoins to be returned in the stack.
+
+pk: The password that your CloudBank has generated for you.
+
+account: The account ID that your CloudBank has generated for you.
+```
+OPTIONAL PARAMETERS
+```
+ek: The password used to decrypt your CloudCoin Wallet.
+
+base64: This is actually a memo converted to base 64. A note that will be placed in the transaction file on the CloudCoin Wallet.
+```
+
 # Exchange Services
 
 These services allow you to exchange your CloudCoins for other money or even goods and services. Exchange services include:
@@ -710,9 +734,6 @@ These services allow you to exchange your CloudCoins for other money or even goo
 * Place order using Stripe and Fulfill
 * Fulfil Order with custom text
 * Advertsie on Exchange
-
-
-
 
 
 
