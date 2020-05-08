@@ -1,33 +1,55 @@
 # CloudBank-V2
 Uses new Core2
 
-[Key File Format](README.md#key-file-format)
+[KEY FILE FORMAT](README.md#key-file-format)
 
-[SendToSkyWallet](README.md#sendtoskywallet)
+## GENERAL SERVICES
 
-[RecieveFromSkyWallet](README.md#receivefromskywallet)
+[PRINT WELCOME](README.md#print-welcome)
 
-[RecievePaymentFromSkyWallet](README.md#receivepaymentfromskywallet)
+[ECHO RAIDA](README.md#echo-raida)
 
-=============================
+## TRANSFER SERVICE
 
-[PRINT WELCOME SERVICE](README.md#print-welcome-service)
+[TRANSFER BETWEEN SKYWALLETS](README.md#transfer-from-skywallet)
+(Transfers between skywallets can be verified with the RAIDA "View_receipt" service
 
-[ECHO RAIDA SERVICE](README.md#echo-raida-service)
+[RECEIVE FROM SKYWALLET](README.md#receive-from-skywallet)
 
-[DEPOSIT SERVICE](README.md#deposit-service)
+[SEND TO SKYWALLET](README.md#send-to-skywallet)
 
-[DEPOSIT SERVICE WITH CHANGE](README.md#deposit-service-with-change)
+## LOCAL WALLET SERVICES
 
-[RECEIVE FROM RAIDA](README.md#receive-from-raida)
+[SHOW COINS](README.md#show-coins)
 
-[Retrieve Pay Forward Service](README.md#retrieve-pay-forward-service)
+[DEPOSIT ONE STACK](README.md#deposit-one-stack)
 
-[New Account](README.md#new-account)
+[WITHDRAW ONE STACK](README.md#withdraw-one-stack)
+
+[GET RECEIPT](README.md#get-receipt)
 
 
+## FUTURE WALLET SERVICES
 
-# CLOUDCOIN CONSORTIUM'S CLOUDSERVER VERSION 2 June-22-2018 MIT LICENCE
+[NEW ACCOUNT](README.md#new-account)
+
+[Retrieve Pay Forward](README.md#retrieve-pay-forward-service) (Future Use)
+
+[NEW ACCOUNT](README.md#new-account) (Future use)
+
+[MARK COINS FOR SALE](README.md#mark-coins-for-stack) (future Use)
+
+[SHOW COINS FOR SALE](README.md#show-coins-for-stack) (Future Use)
+
+Transfer to other wallet
+
+Request Payment
+
+Accept request Payment
+
+[RECEIVE PAYMENT FROM SKYWALLET](README.md#receive-payment-from-skywallet) Future if needed
+
+# CLOUDCOIN CONSORTIUM'S CLOUDSERVER VERSION 2 A-22-2020 MIT LICENCE
 
 This Software is provided as is with all faults, defects 
 and errors, and without warranty of any kind.
@@ -43,18 +65,15 @@ CloudBank offers many services:
 4. Application Support
 
 
-
 # Banking Services
 The purpose is to allow software to pown coins. 
 Some examples of use:
 
 You sell products from your website and want to accept CloudCoins as payment. 
 
-You want to sell virtule goods in your minecraft server without worrying about charge backs.
+You want to sell virtual goods in your minecraft server without worrying about charge backs.
 
 You create an accounting system and want to recieve and export CloudCoins.
-
-
 
 NOTES: To Stop Replay attacks and other sercurity concenrs, HTTPS.
 
@@ -99,7 +118,7 @@ For security, the system admin must setup SSL and limit the servers that can con
 ----------------------------------------------------------------
 
 
-## Key file format
+## KEY FILE FORMAT
 The CloudBank requires a key and will be in the following format. Note that HTTPS is assumed. You may add a port number after the
 URL. The account can be in any form. 
 
@@ -118,7 +137,7 @@ URL. The account can be in any form.
 
 {
     "url":"164.52.55.201:8888",
-    "account":"Johnny",
+    "account":"6e2b96d6204a4212ae57ab84260e747f",
     "privatekey":"IlvetoHave123BigPasswordsÜÿ"   
 }
 ```
@@ -147,7 +166,7 @@ Response if success:
 }
 ```
 
-## ECHO RAIDA SERVICE
+## ECHO RAIDA
 
 Sample GET Request:
 ```http
@@ -182,7 +201,7 @@ Echo Response for bad
 
 Not enough RAIDA servers can be contacted to import new coins.
 
-## DEPOSIT SERVICE
+## DEPOSIT ONE STACK
 
 The program must put a stack file in a folder that is accessible via the web to cors on the CloudBank Server. The request is a post request but may include the GET parameter "rn" (receipt number). If the rn parameter is included it must be a GUID without hyphends. The service will then use the customer's rn as the receipt number instead of generating its own. 
 
@@ -260,7 +279,7 @@ Sample Response if receipt number already in use :
 }
 ```
 
-## SendToSkyWallet
+## SEND TO SKYWALLET
 This allows the caller to send CloudCoins from the CloudBank to a Skywallet Account.The caller will specify the amount to be sent. 
 The CloudBank will make change if necessary. 
 
@@ -342,7 +361,87 @@ Sample Response if fail:
 }
 ```
 
-## ReceiveFromSkywallet
+
+## TRANSFER BETWEEN SKYWALLETS
+This allows the caller to send CloudCoins from the CloudBank to a Skywallet Account.The caller will specify the amount to be sent. 
+The CloudBank will make change if necessary. 
+
+
+Sample GET Request:
+
+```http
+https://bank.cloudcoin.global/service/transfer_between_skywallets?
+pk=baa7578e207b7cfaa0b8336d7ed4a4f8&
+id_coin_crypt_pw=dGhlIGd1aWRlbGluZXMgd&
+account=depository&
+amount=342&
+to=billy.skywallet.cc&
+base64=V2hpdGUgSG91c2Ugb2ZmaWNpYWxzIHNhaWQgdGhlIGd1aWRlbGluZXMgd2lsbCBiZSDigJxkYXRhLWRyaXZlbizigJ0gbm90IGRhdGUtZHJpdmVuLiBUaGV5IHdpbGwgYmUg4oCcZ292ZXJub3ItbGVk4oCdIGFuZCDigJxsYXllcmVkLOKAnSBub3QgYSBjb29raWUtY3V0dGVyIG9uZS1zaXplLWZpdHMtYWxsIGFwcHJvYWNoIGFuZCB3aWxsIGFkZHJlc3MgdGhlIG5hdGlvbiBzdGF0ZS1ieS1zdGF0ZSwgY291bnR5LWJ5LWM=
+
+```
+PARAMETERS
+
+1. pk: The password used to access the CloudBank Wallet
+2. account: The name of the Wallet/Account on the CloudBank
+3. id_coin_crypt_pw: OPTIONAL password if the wallet on the CloudBank is encrypted
+4. amount: Number of CloudCoins to be sent
+5. to: The Skywallet account that will receive the CloudCoins
+6. payment_guid: OPTIONAL. The GUID used to identify the payment
+7. base64: OPTIONAL. Meta data about the transaction that the receiver will find helpful converted into base64. This meta data is a
+JSON object the follows the following format: 
+
+
+base64 format:
+Note: Including the base64 is optional
+```json
+{
+"title":"RAIDA Data Supreem plan",
+"body":"You have purchased these CloudCoins from Acme coins sales. Call +1(530) 555-6985 for support.",
+"sender_account":"sean.CloudCoin.global",
+"sender_name":"Jon Sender",
+"sender_email":"webmaster@example.com",
+"url":"https://er.miroch.ru/c/6200c62cc6a94aa39f98894ad0347f35.html",
+"img":"https://er.miroch.ru/img/6200c62cc6a94aa39f98894ad0347f35.img"
+}
+
+Sample only using the title and body
+{
+"title":"RAIDA Data Supreem plan",
+"body":"You have purchased these CloudCoins from Acme coins sales. Call +1(530) 555-6985 for support.",
+"sender_account":"",
+"sender_name":"",
+"sender_email":"",
+"url":"",
+"img":""
+}
+
+```
+
+Sample Response if good:
+```http
+{
+"bank_server":"Bank.CloudCoin.Global",
+"account":"depository",
+"status":"coins_sent",
+"message":"All coins sent to Skywallet.",
+"time":"2018-06-23T05:53:39.4155794Z",
+"version":"2.0"
+}
+```
+
+Sample Response if fail:
+```http
+{
+ "bank_server":"bank.cloudcoin.global",
+ "account":"CloudCoin@Protonmail.com",
+ "status":"fail",
+ "message":"Private key incorrect",
+ "time":"2018-06-23T05:53:39.4155794Z",
+ "version":"2.0"
+}
+```
+
+## RECEIVE FROM SKYWALLET
 
 Downloads all the coin in a Skywallet to a local wallet.
 This is will return that the process has started but not the results. 
@@ -369,7 +468,7 @@ Sample Response if 300 coins were received:
 
 
 
-## transfer_from_skywallet
+## Recieve_from_skywallet
 
 Downloads all the coin in a Skywallet to a local wallet.
 This is will return that the process has started but not the results. 
@@ -408,54 +507,6 @@ Sample Response if fail:
 }
 ```
 
-
-
-## ReceivePaymentFromSkywallet
-
-Sample GET Request:
-```
-https://bank.cloudcoin.global/service/receive_payment_from_skywallet?
-account=ourbank.skywallet.cc&
-pw=baa7578e207b7cfaa0b8336d7ed4a4f8&
-wallet=payments_received
-wallet_pw=34f3d967a2734e63bc6c2a37a7f25003& //OPTIONAL
-tag=6200c62cc6a94aa39f98894ad0347f35
-
-Sample Response if 300 coins were received:
-```http
-{
-"bank_server":"Bank.CloudCoin.Global",
-"account":"CloudCoin@Protonmail.com",
-"status":"received",
-"message":"300",
-"time":"2018-06-23T05:53:39.4155794Z",
-"version":"2.0"
-}
-```
-
-Sample Response if no coins were received:
-```http
-{
-"bank_server":"Bank.CloudCoin.Global",
-"account":"CloudCoin@Protonmail.com",
-"status":"received",
-"message":"0",
-"time":"2018-06-23T05:53:39.4155794Z",
-"version":"2.0"
-}
-```
-
-Sample Response if fail:
-```http
-{
- "bank_server":"bank.cloudcoin.global",
- "account":"CloudCoin@Protonmail.com",
- "status":"fail",
- "message":"Private key incorrect",
- "version":"2.0",
- "time":"2018-06-23T05:53:39.4155794Z"
-}
-```
 
 
 ## DEPOSIT SERVICE WITH CHANGE
@@ -577,7 +628,7 @@ Sample Response if receipt number already in use :
 
 
 
-## GET RECEIPT SERVICE
+## GET RECEIPT
 
 The get receipt service returns a receipt based on the receipt id. 
 
@@ -684,7 +735,7 @@ If powning process is complete:
 
 }
 ```
-## SHOW COINS SERVICE 
+## SHOW COINS
 
 Gets the totals of CloudCoins in the bank.
 
@@ -728,7 +779,7 @@ Sample Response if fail:
 ```
 
 
-## WITHDRAW ONE STACK SERVICE
+## WITHDRAW ONE STACK
 
 Sample GET Request:
 
