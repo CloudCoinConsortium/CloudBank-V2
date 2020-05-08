@@ -5,6 +5,8 @@ Uses new Core2
 
 [SendToSkyWallet](README.md#sendtoskywallet)
 
+[RecieveFromSkyWallet](README.md#receivefromskywallet)
+
 [RecievePaymentFromSkyWallet](README.md#receivepaymentfromskywallet)
 
 =============================
@@ -339,6 +341,74 @@ Sample Response if fail:
  "version":"2.0"
 }
 ```
+
+## ReceiveFromSkywallet
+
+Downloads all the coin in a Skywallet to a local wallet.
+This is will return that the process has started but not the results. 
+
+Sample GET Request:
+```
+https://bank.cloudcoin.global/service/receive_from_skywallet?
+pw=baa7578e207b7cfaa0b8336d7ed4a4f8&
+local_wallet=payments_received
+local_wallet_pw=34f3d967a2734e63bc6c2a37a7f25003& //OPTIONAL
+base64=6200c62cc6a94aa39f98894ad0347f35
+
+Sample Response if 300 coins were received:
+```http
+{
+"bank_server":"Bank.CloudCoin.Global",
+"account":"CloudCoin@Protonmail.com",
+"status":"started",
+"message":"The receive process has started.",
+"time":"2018-06-23T05:53:39.4155794Z",
+"version":"2.0"
+}
+```
+
+
+
+## transfer_from_skywallet
+
+Downloads all the coin in a Skywallet to a local wallet.
+This is will return that the process has started but not the results. 
+
+Sample GET Request:
+```
+https://bank.cloudcoin.global/service/receive_from_skywallet?
+pw=baa7578e207b7cfaa0b8336d7ed4a4f8&
+local_wallet=payments_received
+local_wallet_pw=34f3d967a2734e63bc6c2a37a7f25003& //OPTIONAL
+base64=6200c62cc6a94aa39f98894ad0347f35
+
+Sample Response if 300 coins were received:
+```http
+{
+"bank_server":"Bank.CloudCoin.Global",
+"account":"CloudCoin@Protonmail.com",
+"status":"started",
+"message":"The receive process has started.",
+"time":"2018-06-23T05:53:39.4155794Z",
+"version":"2.0"
+}
+```
+
+
+
+Sample Response if fail:
+```http
+{
+ "bank_server":"bank.cloudcoin.global",
+ "account":"CloudCoin@Protonmail.com",
+ "status":"fail",
+ "message":"Private key incorrect",
+ "version":"2.0",
+ "time":"2018-06-23T05:53:39.4155794Z"
+}
+```
+
+
 
 ## ReceivePaymentFromSkywallet
 
