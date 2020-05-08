@@ -31,6 +31,8 @@ Uses new Core2
 
 ## FUTURE WALLET SERVICES
 
+[WRITE & SEND CHECK SERVICE](README.md#write-&-send-check-service)
+
 [NEW ACCOUNT](README.md#new-account)
 
 [Retrieve Pay Forward](README.md#retrieve-pay-forward-service) (Future Use)
