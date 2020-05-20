@@ -291,11 +291,9 @@ Sample GET Request:
 ```http
 https://bank.cloudcoin.global/service/send_to_skywallet?
 pk=baa7578e207b7cfaa0b8336d7ed4a4f8&
-account=depository&
 crypt_pw=34f3d967a2734e63bc6c2a37a7f25003&  //OPTIONAL
 amount=342&
 to=billy.skywallet.cc&
-payment_guid=3354e2f2a4054745b4720d58f71969e3
 base64=V2hpdGUgSG91c2Ugb2ZmaWNpYWxzIHNhaWQgdGhlIGd1aWRlbGluZXMgd2lsbCBiZSDigJxkYXRhLWRyaXZlbizigJ0gbm90IGRhdGUtZHJpdmVuLiBUaGV5IHdpbGwgYmUg4oCcZ292ZXJub3ItbGVk4oCdIGFuZCDigJxsYXllcmVkLOKAnSBub3QgYSBjb29raWUtY3V0dGVyIG9uZS1zaXplLWZpdHMtYWxsIGFwcHJvYWNoIGFuZCB3aWxsIGFkZHJlc3MgdGhlIG5hdGlvbiBzdGF0ZS1ieS1zdGF0ZSwgY291bnR5LWJ5LWM=
 
 ```
