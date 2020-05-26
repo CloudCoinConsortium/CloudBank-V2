@@ -784,9 +784,16 @@ Sample Response if fail:
 Sample GET Request:
 
 ```http
-https://bank.CloudCoin.global/service/withdraw_one_stack?amount=254&pk=ef50088c8218afe53ce2ecd655c2c786&account=CloudCoin@Protonmail.com
+https://bank.CloudCoin.global/service/withdraw_one_stack?amount=254&pk=ef50088c8218afe53ce2ecd655c2c786&account=CloudCoin@Protonmail.com&memo=Removed for Something 
 
 ```
+
+* amount=254&
+* pk=ef50088c8218afe53ce2ecd655c2c786&
+* account=CloudCoin@Protonmail.com
+* memo=ForBilly
+
+
 SAMPLE REQUEST FOR A STACK OF COINS FOR WALLET THAT IS ENCRYPTED IN THE WALLET
 ```
 https://195.45.84.78:33/service/withdraw_one_stack?amount=254&pk=ef50088c8218afe53ce2ec&account=532fe9e5dc3932650cfa&ek=1170b354e097f2d
