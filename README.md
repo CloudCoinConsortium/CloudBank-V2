@@ -648,12 +648,12 @@ If powning process has not been started
 	"receipt_id": "e054a34f2790fd3353ea26e5d92d9d2f",
 	"time": "2016-49-21 7:49:PM",
 	"timezone": "UTC-7",
-	"bank_server": "bank.CloudCoin.Global",
+	"server": "bank.CloudCoin.Global",
 	"total_authentic": 5,
 	"total_fracked": 7,
 	"total_counterfeit": 1,
 	"total_lost": 0,
-	"receipt_detail": [{
+	"receipt": [{
 			"nn.sn": "1.16777216",
 			"status": "suspect",
 			"pown": "uuuuuuuuuuuuuuuuuuuuuuuuu",
@@ -695,12 +695,12 @@ If powning process is complete:
         "receipt_id":"e054a34f2790fd3353ea26e5d92d9d2f",
 	"time": "2016-49-21 7:49:PM",
 	"timezone": "UTC-7",
-	"bank_server": "bank.CloudCoin.Global",
+	"server": "bank.CloudCoin.Global",
 	"total_authentic": 5,
 	"total_fracked": 7,
 	"total_counterfeit": 1,
 	"total_lost": 0,
-	"receipt_detail": [{
+	"receip": [{
 			"nn.sn": "1.16777216",
 			"status": "authentic",
 			"pown": "ppppppppepppppppppppeppp",
