@@ -634,7 +634,7 @@ The get receipt service returns a receipt based on the receipt id.
 
 ### Sample Request
 ```http
-https://bitshares.CloudCoin.global/bank/get_receipt.aspx?rn=ef50088c8218afe53ce2ecd655c2c786&account=CloudCoin@Protonmail.com
+https://bitshares.CloudCoin.global/service/bank/get_receipt.aspx?rn=ef50088c8218afe53ce2ecd655c2c786&account=CloudCoin@Protonmail.com
 
 ```
 rn= Receipt Number.
